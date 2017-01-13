@@ -103,7 +103,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `parsjb`.`pastorais` (
+CREATE TABLE IF NOT EXISTS `parsjb`.`pastorals` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL DEFAULT NULL,
   `descricao` TEXT NULL DEFAULT NULL,
