@@ -46,9 +46,11 @@
 							<td>
 								<?php 
 								if (!is_null($comunidade['Comunidade']['foto_padroeiro'])) {									
+									echo '<div class="col-md-3 foto_view">';
 									echo $this->Html->image($comunidade['Comunidade']['foto_padroeiro'],
-															array('class' => 'img-responsive col-md-3 foto_view')); 
-									echo $this->Form->postLink('<span class="glyphicon glyphicon-remove" title="Apagar foto"></span>', array('action' => 'delete_foto', $comunidade['Comunidade']['id']), array('escape' => false), __('Deseja apagar a foto?')); 
+															array('class' => 'img-responsive img_view')); 
+									echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir foto</span>', array('action' => 'delete_foto', $comunidade['Comunidade']['id']), array('escape' => false), __('Deseja apagar a foto?')); 
+									echo '</div>';
 								}
 								?>
 							</td>
