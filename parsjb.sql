@@ -74,14 +74,7 @@ CREATE TABLE IF NOT EXISTS `parsjb`.`padres` (
   `nome` VARCHAR(200) NULL DEFAULT NULL,
   `texto` TEXT NULL DEFAULT NULL,
   `foto` VARCHAR(200) NULL DEFAULT NULL,
-  `comunidade_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`, `comunidade_id`),
-  INDEX `fk_padres_comunidades1_idx` (`comunidade_id` ASC),
-  CONSTRAINT `fk_padres_comunidades1`
-    FOREIGN KEY (`comunidade_id`)
-    REFERENCES `parsjb`.`comunidades` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
@@ -91,14 +84,7 @@ CREATE TABLE IF NOT EXISTS `parsjb`.`sacramentos` (
   `nome` VARCHAR(20) NULL DEFAULT NULL,
   `texto` TEXT NULL DEFAULT NULL,
   `foto` VARCHAR(200) NULL DEFAULT NULL,
-  `comunidade_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`, `comunidade_id`),
-  INDEX `fk_sacramentos_comunidades1_idx` (`comunidade_id` ASC),
-  CONSTRAINT `fk_sacramentos_comunidades1`
-    FOREIGN KEY (`comunidade_id`)
-    REFERENCES `parsjb`.`comunidades` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
