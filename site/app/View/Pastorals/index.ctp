@@ -1,9 +1,9 @@
-<div class="pastorals index">
+<div class="container pastorals index">
 
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Pastorals'); ?></h1>
+				<h1><?php echo __('Pastorais e Movimentos'); ?></h1>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -15,12 +15,11 @@
 		<div class="col-md-3">
 			<div class="actions">
 				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo __('Actions'); ?></div>
+					<div class="panel-heading"><?php echo __('Ações'); ?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('New Pastoral'), array('action' => 'add'), array('escape' => false)); ?></li>
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List'.__('Comunidades'), array('controller' => 'comunidades', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New'.__('Comunidade'), array('controller' => 'comunidades', 'action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-search"></span>&nbsp&nbsp;Detalhes Comunidade'), array('controller' => 'comunidades', 'action' => 'view', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>													
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Nova Pastoral / Movimento'), array('action' => 'add', $comunidade['Comunidade']['id']), array('escape' => false)); ?></li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -31,26 +30,18 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<thead>
 					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('nome'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('descricao'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('comunidade_id'); ?></th>
 						<th class="actions"></th>
 					</tr>
 				</thead>
 				<tbody>
 				<?php foreach ($pastorals as $pastoral): ?>
 					<tr>
-						<td nowrap><?php echo h($pastoral['Pastoral']['id']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($pastoral['Pastoral']['nome']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($pastoral['Pastoral']['descricao']); ?>&nbsp;</td>
-								<td>
-			<?php echo $this->Html->link($pastoral['Comunidade']['id'], array('controller' => 'comunidades', 'action' => 'view', $pastoral['Comunidade']['id'])); ?>
-		</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $pastoral['Pastoral']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $pastoral['Pastoral']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $pastoral['Pastoral']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $pastoral['Pastoral']['id'])); ?>
+							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $pastoral['Pastoral']['id'], $comunidade['Comunidade']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
+							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $pastoral['Pastoral']['id'], $comunidade['Comunidade']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
+							<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $pastoral['Pastoral']['id'], $comunidade['Comunidade']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $pastoral['Pastoral']['nome'])); ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>

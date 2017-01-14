@@ -15,14 +15,14 @@
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+
+    echo $this->Html->css('bootstrap.css');
+    echo $this->Html->css('style.css');
 	?>
 
-  	<!-- Latest compiled and minified CSS -->
-  	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-
   	<!-- Latest compiled and minified JavaScript -->
-  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -31,16 +31,16 @@
     <![endif]-->
 
     <style type="text/css">
-    	body{ padding: 70px 0px; }
+    	body{ padding: 0px 0px; }
     </style>
 
   </head>
 
   <body>
 
-    <?php echo $this->Element('navigation'); ?>
-
-    <div class="container">
+    <div class="container-fluid">
+      <?php echo $this->Element('navigation'); ?>
+      <br><br><br>
 
 			<?php echo $this->Session->flash(); ?>
 

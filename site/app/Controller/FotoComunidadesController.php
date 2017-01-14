@@ -17,6 +17,20 @@ class FotoComunidadesController extends AppController {
  */
 	public $components = array('Paginator', 'Flash', 'Session');
 
+	public function afterFilter() {
+        if ($this->action != 'index_login') {
+            $this->autenticarAdmin();
+        }
+    }
+
+    public function autenticarAdmin() {        
+        if (!$this->Session->check('Admin')) {
+            $this->redirect(array('controller' => 'admins',
+                                    'action' => 'index_login'));
+            exit();
+        } 
+    }
+
 /**
  * index method
  *

@@ -24,4 +24,20 @@ class Evento extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public $hasMany = array(
+		'FotoEvento' => array(
+			'className' => 'FotoEvento',
+			'foreignKey' => 'evento_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 }
