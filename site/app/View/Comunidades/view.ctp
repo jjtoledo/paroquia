@@ -28,46 +28,46 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<tbody>
 					<tr>
-							<th><?php echo __('Nome'); ?></th>
-							<td>
-								<?php echo h($comunidade['Comunidade']['nome']); ?>
-								&nbsp;
-							</td>
+						<th><?php echo __('Nome'); ?></th>
+						<td>
+							<?php echo h($comunidade['Comunidade']['nome']); ?>
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
-							<th><?php echo __('Historico'); ?></th>
-							<td>
-								<?php echo ($comunidade['Comunidade']['historico']); ?>
-								&nbsp;
-							</td>
+						<th><?php echo __('Historico'); ?></th>
+						<td>
+							<?php echo ($comunidade['Comunidade']['historico']); ?>
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
-							<th><?php echo __('Foto Padroeiro'); ?></th>
-							<td>
-								<?php 
-								if (!is_null($comunidade['Comunidade']['foto_padroeiro'])) {									
-									echo '<div class="col-md-3 foto_view">';
-									echo $this->Html->image($comunidade['Comunidade']['foto_padroeiro'],
-															array('class' => 'img-responsive img_view')); 
-									echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir foto</span>', array('action' => 'delete_foto', $comunidade['Comunidade']['id']), array('escape' => false), __('Deseja apagar a foto?')); 
-									echo '</div>';
-								}
-								?>
-							</td>
+						<th><?php echo __('Foto Padroeiro'); ?></th>
+						<td>
+							<?php 
+							if (!is_null($comunidade['Comunidade']['foto_padroeiro'])) {									
+								echo '<div class="col-md-3 foto_view">';
+								echo $this->Html->image($comunidade['Comunidade']['foto_padroeiro'],
+														array('class' => 'img-responsive img_view')); 
+								echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir foto</span>', array('action' => 'delete_foto', $comunidade['Comunidade']['id']), array('escape' => false), __('Deseja apagar a foto?')); 
+								echo '</div>';
+							}
+							?>
+						</td>
 					</tr>
 					<tr>
-							<th><?php echo __('Nome Padroeiro'); ?></th>
-							<td>
-								<?php echo h($comunidade['Comunidade']['nome_padroeiro']); ?>
-								&nbsp;
-							</td>
+						<th><?php echo __('Nome Padroeiro'); ?></th>
+						<td>
+							<?php echo h($comunidade['Comunidade']['nome_padroeiro']); ?>
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
-							<th><?php echo __('Hora Celeb'); ?></th>
-							<td>
-								<?php echo h($comunidade['Comunidade']['hora_celeb']); ?>
-								&nbsp;								
-							</td>
+						<th><?php echo __('Hora Celeb'); ?></th>
+						<td>
+							<?php echo h($comunidade['Comunidade']['hora_celeb']); ?>
+							&nbsp;								
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -80,10 +80,11 @@
 <div class="container related row">
 	<div class="row" style="margin-bottom: 20px">
 		<div class="col-md-12">
-			<!-- <h3><?php echo __('Dados Estatísticos'); ?></h3> -->
+			<h3><?php echo __('Adicionar fotos, eventos e pastorais / movimentos'); ?></h3> 
 			<hr style="border-bottom: 1px solid #ddd">
 		</div>
-		<div class="col-md-1 menu"></div>
+
+		<div class="col-md-3 menu"></div>
 
 		<div class="col-md-2 menu">
 				<div class="actions">
@@ -97,22 +98,11 @@
 				</div>
 		</div>
 		
-		<div class="col-md-2 menu">
-			<div class="actions">
-				<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Padres e Diáconos'), array('controller' => 'padres', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?> 
-			</div>
-		</div>
 
 		<div class="col-md-2 menu">
 			<div class="actions">
 				<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-grain"></span>&nbsp;&nbsp;Pastorais e Movimentos'), array('controller' => 'pastorals', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?> 
 			</div>
-		</div>
-
-		<div class="col-md-2 menu">
-				<div class="actions">
-					<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Sacramentos'), array('controller' => 'sacramentos', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?> 
-				</div>			
-		</div>
+		</div>	
 	</div>
 </div>

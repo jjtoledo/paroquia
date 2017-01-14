@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Comunidades'); ?></h1>
+				<h1><?php echo __('Paróquia'); ?></h1>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -19,6 +19,8 @@
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Nova Comunidade'), array('action' => 'add'), array('escape' => false)); ?></li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;Sacramentos'), array('controller' => 'sacramentos', 'action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;Padres e Diácono'), array('controller' => 'padres', 'action' => 'index'), array('escape' => false)); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -29,7 +31,7 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<thead>
 					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('nome'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('comunidades'); ?></th>
 						<th class="actions"></th>
 					</tr>
 				</thead>

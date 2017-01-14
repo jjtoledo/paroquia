@@ -65,14 +65,14 @@ class PadresController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Padre->create();
 			if ($this->Padre->save($this->request->data)) {
-				$this->Session->setFlash(__('The padre has been saved.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Padre salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The padre could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$comunidades = $this->Padre->Comunidade->find('list');
-		$this->set(compact('comunidades'));
+		$padre = $this->Padre->find('list');
+		$this->set(compact('padre'));
 	}
 
 /**
@@ -88,7 +88,7 @@ class PadresController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Padre->save($this->request->data)) {
-				$this->Session->setFlash(__('The padre has been saved.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Padre salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The padre could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
@@ -97,8 +97,8 @@ class PadresController extends AppController {
 			$options = array('conditions' => array('Padre.' . $this->Padre->primaryKey => $id));
 			$this->request->data = $this->Padre->find('first', $options);
 		}
-		$comunidades = $this->Padre->Comunidade->find('list');
-		$this->set(compact('comunidades'));
+		$padre = $this->Padre->find('list');
+		$this->set(compact('padre'));
 	}
 
 /**
