@@ -45,34 +45,8 @@ class Comunidade extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Padre' => array(
-			'className' => 'Padre',
-			'foreignKey' => 'comunidade_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Pastoral' => array(
 			'className' => 'Pastoral',
-			'foreignKey' => 'comunidade_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Sacramento' => array(
-			'className' => 'Sacramento',
 			'foreignKey' => 'comunidade_id',
 			'dependent' => false,
 			'conditions' => '',
