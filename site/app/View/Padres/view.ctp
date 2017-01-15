@@ -1,8 +1,8 @@
-<div class="padres view">
+<div class="container padres view">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Padre'); ?></h1>
+				<h1><?php echo __('Padre / Diácono'); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -15,12 +15,9 @@
 					<div class="panel-heading"><?php echo __('Actions'); ?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-									<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>&nbsp&nbsp;Edit Padre'), array('action' => 'edit', $padre['Padre']['id']), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Delete Padre'), array('action' => 'delete', $padre['Padre']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $padre['Padre']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;List Padres'), array('action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp&nbsp;New Padre'), array('action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;List Comunidades'), array('controller' => 'comunidades', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp&nbsp;New Comunidade'), array('controller' => 'comunidades', 'action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;Listar Padres / Diácono'), array('action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>&nbsp&nbsp;Editar Padre / Diácono'), array('action' => 'edit', $padre['Padre']['id']), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Excluir Padre / Diácono'), array('action' => 'delete', $padre['Padre']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $padre['Padre']['nome'])); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -30,41 +27,33 @@
 		<div class="col-md-9">			
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<tbody>
-				<tr>
-		<th><?php echo __('Id'); ?></th>
-		<td>
-			<?php echo h($padre['Padre']['id']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Nome'); ?></th>
-		<td>
-			<?php echo h($padre['Padre']['nome']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Texto'); ?></th>
-		<td>
-			<?php echo h($padre['Padre']['texto']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Foto'); ?></th>
-		<td>
-			<?php echo h($padre['Padre']['foto']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Comunidade'); ?></th>
-		<td>
-			<?php echo $this->Html->link($padre['Comunidade']['id'], array('controller' => 'comunidades', 'action' => 'view', $padre['Comunidade']['id'])); ?>
-			&nbsp;
-		</td>
-</tr>
+					<tr>
+						<th><?php echo __('Nome'); ?></th>
+						<td>
+							<?php echo h($padre['Padre']['nome']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Texto'); ?></th>
+						<td>
+							<?php echo ($padre['Padre']['texto']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Foto Padre / Diácono'); ?></th>
+						<td>
+							<?php 
+							if (!is_null($padre['Padre']['foto'])) {									
+								echo '<div class="col-md-3 foto_view">';
+								echo $this->Html->image($padre['Padre']['foto'], array('class' => 'img-responsive img_view')); 
+								echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir foto</span>', array('action' => 'delete_foto', $padre['Padre']['id']), array('escape' => false), __('Deseja apagar a foto?')); 
+								echo '</div>';
+							}
+							?>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 

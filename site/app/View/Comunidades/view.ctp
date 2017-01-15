@@ -16,6 +16,9 @@
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;Listar Comunidades'), array('action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-camera"></span>&nbsp;&nbsp;Adicionar Fotos'), array('controller' => 'foto_comunidades', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Adicionar Eventos'), array('controller' => 'eventos', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false)); ?>  </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-grain"></span>&nbsp;&nbsp;Adicionar Pastorais e Movimentos'), array('controller' => 'pastorals', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false)); ?>  </li>
 								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>&nbsp&nbsp;Editar Comunidade'), array('action' => 'edit', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>
 								<li><?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Excluir Comunidade'), array('action' => 'delete', $comunidade['Comunidade']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $comunidade['Comunidade']['nome'])); ?> </li>
 							</ul>
@@ -63,7 +66,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th><?php echo __('Hora Celeb'); ?></th>
+						<th><?php echo __('Horário das Celebrações'); ?></th>
 						<td>
 							<?php echo ($comunidade['Comunidade']['hora_celeb']); ?>
 							&nbsp;								
@@ -71,38 +74,6 @@
 					</tr>
 				</tbody>
 			</table>
-
 		</div><!-- end col md 9 -->
-
-	</div>
-</div>
-
-<div class="container related row">
-	<div class="row" style="margin-bottom: 20px">
-		<div class="col-md-12">
-			<h3><?php echo __('Adicionar fotos, eventos e pastorais / movimentos'); ?></h3> 
-			<hr style="border-bottom: 1px solid #ddd">
-		</div>
-
-		<div class="col-md-3 menu"></div>
-
-		<div class="col-md-2 menu">
-				<div class="actions">
-					<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-camera"></span>&nbsp;&nbsp;Fotos'), array('controller' => 'foto_comunidades', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?> 
-				</div>
-		</div>
-
-		<div class="col-md-2 menu">
-				<div class="actions">
-					<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Eventos'), array('controller' => 'eventos', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?> 
-				</div>
-		</div>
-		
-
-		<div class="col-md-2 menu">
-			<div class="actions">
-				<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-grain"></span>&nbsp;&nbsp;Pastorais e Movimentos'), array('controller' => 'pastorals', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?> 
-			</div>
-		</div>	
 	</div>
 </div>

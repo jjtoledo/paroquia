@@ -1,4 +1,4 @@
-<div class="padres index">
+<div class="container padres index">
 
 	<div class="row">
 		<div class="col-md-12">
@@ -18,9 +18,8 @@
 					<div class="panel-heading"><?php echo __('Actions'); ?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('New Padre'), array('action' => 'add'), array('escape' => false)); ?></li>
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List'.__('Comunidades'), array('controller' => 'comunidades', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New'.__('Comunidade'), array('controller' => 'comunidades', 'action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;Listar Comunidades'), array('controller' => 'comunidades', 'action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Novo Padre / Diácono'), array('action' => 'add'), array('escape' => false)); ?></li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -31,28 +30,18 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<thead>
 					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('nome'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('texto'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('foto'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('comunidade_id'); ?></th>
 						<th class="actions"></th>
 					</tr>
 				</thead>
 				<tbody>
 				<?php foreach ($padres as $padre): ?>
 					<tr>
-						<td nowrap><?php echo h($padre['Padre']['id']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($padre['Padre']['nome']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($padre['Padre']['texto']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($padre['Padre']['foto']); ?>&nbsp;</td>
-								<td>
-			<?php echo $this->Html->link($padre['Comunidade']['id'], array('controller' => 'comunidades', 'action' => 'view', $padre['Comunidade']['id'])); ?>
-		</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $padre['Padre']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $padre['Padre']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $padre['Padre']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $padre['Padre']['id'])); ?>
+							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $padre['Padre']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
+							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $padre['Padre']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
+							<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $padre['Padre']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $padre['Padre']['nome'])); ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>

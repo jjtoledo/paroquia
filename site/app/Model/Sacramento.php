@@ -3,7 +3,6 @@ App::uses('AppModel', 'Model');
 /**
  * Sacramento Model
  *
- * @property Sacramento $Sacramento
  */
 class Sacramento extends AppModel {
 

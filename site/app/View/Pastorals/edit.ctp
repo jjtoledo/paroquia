@@ -38,7 +38,7 @@
 					<?php echo $this->Tinymce->input('Pastoral.descricao', $options = array('label' => 'Descrição'), $tinyoptions = array(), $preset = null) ?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->submit(__('Salvar'), array('class' => 'btn btn-default')); ?>
+					<?php echo $this->Form->submit(__('Salvar'), array('class' => 'btn btn-primary')); ?>
 				</div>
 
 			<?php echo $this->Form->end() ?>
