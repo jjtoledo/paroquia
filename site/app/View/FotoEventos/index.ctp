@@ -1,9 +1,9 @@
-<div class="fotoEventos index">
+<div class="container fotoEventos index">
 
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Foto Eventos'); ?></h1>
+				<h1><?php echo __('Fotos do Evento'); ?></h1>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -15,12 +15,11 @@
 		<div class="col-md-3">
 			<div class="actions">
 				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo __('Actions'); ?></div>
+					<div class="panel-heading"><?php echo __('Ações'); ?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('New Foto Evento'), array('action' => 'add'), array('escape' => false)); ?></li>
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List'.__('Eventos'), array('controller' => 'eventos', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New'.__('Evento'), array('controller' => 'eventos', 'action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-search"></span>&nbsp&nbsp;Detalhes Evento'), array('controller' => 'eventos', 'action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?> </li>													
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Novas fotos'), array('action' => 'add', $evento['Evento']['id']), array('escape' => false)); ?></li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -28,54 +27,56 @@
 		</div><!-- end col md 3 -->
 
 		<div class="col-md-9">
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
-				<thead>
-					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('foto'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('descricao'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('evento_id'); ?></th>
-						<th class="actions"></th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($fotoEventos as $fotoEvento): ?>
-					<tr>
-						<td nowrap><?php echo h($fotoEvento['FotoEvento']['id']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($fotoEvento['FotoEvento']['foto']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($fotoEvento['FotoEvento']['descricao']); ?>&nbsp;</td>
-								<td>
-			<?php echo $this->Html->link($fotoEvento['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $fotoEvento['Evento']['id'])); ?>
-		</td>
-						<td class="actions">
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $fotoEvento['FotoEvento']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $fotoEvento['FotoEvento']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $fotoEvento['FotoEvento']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $fotoEvento['FotoEvento']['id'])); ?>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
-
-			<p>
-				<small><?php echo $this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')));?></small>
-			</p>
-
 			<?php
-			$params = $this->Paginator->params();
-			if ($params['pageCount'] > 1) {
+				echo '<div class="row">';
+				if (count($fotoEventos > 0)) {
+					for ($i=0; $i < count($fotoEventos); $i++) { 
+						echo '<div class="col-sm-6 col-md-4">';
+						echo '<div class="thumbnail">';
+						echo $this->Html->image($fotoEventos[$i]['FotoEvento']['foto'], array('class' => ' foto'));
+						echo '<div class="caption foto">';
+						echo $this->Form->end(); ?>
+						<?php echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir</span>', array('action' => 'delete', $fotoEventos[$i]['FotoEvento']['id'], $fotoEventos[$i]['FotoEvento']['evento_id']), array('escape' => false), __('Tem certeza que deseja excluir?'));
+						echo '&nbsp;&nbsp;<span class="btn btn-info edit" id="edit'.$fotoEventos[$i]['FotoEvento']['id'].'" value="'.$fotoEventos[$i]['FotoEvento']['id'].'">Descrição</span>';
+						echo '<span style="display:none" class="btn btn-default cancel" id="cancel'.$fotoEventos[$i]['FotoEvento']['id'].'" value="'.$fotoEventos[$i]['FotoEvento']['id'].'">Cancelar</span>';
+						echo '<div style="margin-top: 10px" hidden="true" id="'.$fotoEventos[$i]['FotoEvento']['id'].'">';
+					    echo $this->Form->create('FotoEvento', array('type' => 'post', 'class' => 'search-form', 'url' => 'edit/'.$fotoEventos[$i]['FotoEvento']['id'].'/'.$fotoEventos[$i]['FotoEvento']['evento_id']));
+					    echo $this->Form->input('id', array('id' => 'FotoId'.$fotoEventos[$i]['FotoEvento']['id']));	
+					    echo $this->Form->input('descricao', array('type' => 'textarea', 'label' => false, 'class' => 'form-control', 'placeholder' => 'Adicione a descrição', 'default' => $fotoEventos[$i]['FotoEvento']['descricao']));	
+					    ?>
+					    <div class="submit" style="margin-top: 10px">
+					    	<input type="submit" value="Salvar" class="btn btn-success">&nbsp;
+					    </div>
+				    </div>
+				    <?php
+						echo '</div>';
+						echo '</div>';
+						echo '</div>';
+					}
+				}
+				echo '</div>';
 			?>
-			<ul class="pagination pagination-sm">
-				<?php
-					echo $this->Paginator->prev('&larr; Previous', array('class' => 'prev','tag' => 'li','escape' => false), '<a onclick="return false;">&larr; Previous</a>', array('class' => 'prev disabled','tag' => 'li','escape' => false));
-					echo $this->Paginator->numbers(array('separator' => '','tag' => 'li','currentClass' => 'active','currentTag' => 'a'));
-					echo $this->Paginator->next('Next &rarr;', array('class' => 'next','tag' => 'li','escape' => false), '<a onclick="return false;">Next &rarr;</a>', array('class' => 'next disabled','tag' => 'li','escape' => false));
-				?>
-			</ul>
-			<?php } ?>
-
 		</div> <!-- end col md 9 -->
 	</div><!-- end row -->
+
+	<script type="text/javascript">
+		$(document).on("click", ".edit", function () {
+	    // Use $(this) to reference the clicked button
+	    var id = $(this).attr("value");
+	   	$(this).toggle(300);
+	   	$('#cancel'+id).toggle(300);
+	    $("#"+id).toggle(300);
+	    $("#FotoId"+id).attr('value', id);
+		});
+
+		$(document).on("click", ".cancel", function () {
+	    // Use $(this) to reference the clicked button
+	    var id = $(this).attr("value");
+	   	$(this).toggle(300);
+	   	$('#edit'+id).toggle(300);
+	    $("#"+id).toggle(300);
+		});
+	</script>
 
 
 </div><!-- end containing of content -->

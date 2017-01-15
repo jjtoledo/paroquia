@@ -43,6 +43,7 @@
 						<tr>
 							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
 							<td class="actions">
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-camera" title="Fotos"></span>', array('controller' => 'foto_eventos', 'action' => 'index', $evento['Evento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
@@ -67,6 +68,7 @@
 						<tr>
 							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
 							<td class="actions">
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-camera" title="Fotos"></span>', array('controller' => 'foto_eventos', 'action' => 'index', $evento['Evento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
@@ -91,6 +93,7 @@
 						<tr>
 							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
 							<td class="actions">
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-camera" title="Fotos"></span>', array('controller' => 'foto_eventos', 'action' => 'index', $evento['Evento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>

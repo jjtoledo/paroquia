@@ -36,10 +36,22 @@ class FotoEventosController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->FotoEvento->recursive = 0;
+	public function index($id = null) {
+		$this->Paginator->settings = array(
+			'conditions' => array(
+				'FotoEvento.evento_id' => $id
+			),
+			'order' => array(
+				'FotoEvento.id' => 'DESC'
+			)
+		);
 		$this->set('fotoEventos', $this->Paginator->paginate());
+
+		$this->loadModel('Evento');
+		$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
+		$this->set('evento', $this->Evento->find('first', $options));
 	}
+
 
 /**
  * view method
@@ -48,12 +60,18 @@ class FotoEventosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function view($id = null, $idEvento = null) {
 		if (!$this->FotoEvento->exists($id)) {
-			throw new NotFoundException(__('Invalid foto evento'));
+			throw new NotFoundException(__('Invalid Foto'));
 		}
 		$options = array('conditions' => array('FotoEvento.' . $this->FotoEvento->primaryKey => $id));
 		$this->set('fotoEvento', $this->FotoEvento->find('first', $options));
+
+		$this->loadModel('Evento');
+		$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $idEvento));
+		$this->set('evento', $this->Evento->find('first', $options));
+
+		$this->set('id', $id);
 	}
 
 /**
@@ -61,18 +79,29 @@ class FotoEventosController extends AppController {
  *
  * @return void
  */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->FotoEvento->create();
-			if ($this->FotoEvento->save($this->request->data)) {
-				$this->Session->setFlash(__('The foto evento has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The foto evento could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+	public function add($id = null) {
+		$this->request->data['FotoEvento']['evento_id'] = $id;
+		
+		$this->loadModel('Evento');
+		$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
+		$this->set('evento', $this->Evento->find('first', $options));
+
+		$photo = array();
+		if ($this->request->is('post')) {				
+			for ($i=0; $i < sizeof($this->request->data['FotoEvento']['fotos']); $i++) { 
+				$photo = array('FotoEvento' => 
+							array('evento_id' => $this->request->data['FotoEvento']['evento_id'],
+									'foto' => $this->request->data['FotoEvento']['fotos'][$i]));
+				$this->FotoEvento->create();			
+				if (!$this->FotoEvento->save($photo)) {
+					//debug($this->request->data['FotoEvento']['fotos']);
+					$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+				}
 			}
+			$this->Session->setFlash(__('Fotos salvas com sucesso.'), 'default', array('class' => '	alert alert-success'));
+			return $this->redirect(array('action' => 'index', $id));
 		}
-		$eventos = $this->FotoEvento->Evento->find('list');
-		$this->set(compact('eventos'));
+
 	}
 
 /**
@@ -82,23 +111,21 @@ class FotoEventosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null, $idEvento = null) {
 		if (!$this->FotoEvento->exists($id)) {
-			throw new NotFoundException(__('Invalid foto evento'));
+			throw new NotFoundException(__('Foto inválida'));
 		}
+
+		$this->request->data['FotoEvento']['evento_id'] = $idEvento;
+
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->FotoEvento->save($this->request->data)) {
-				$this->Session->setFlash(__('The foto evento has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Foto salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index', $idEvento));
 			} else {
-				$this->Session->setFlash(__('The foto evento could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 			}
-		} else {
-			$options = array('conditions' => array('FotoEvento.' . $this->FotoEvento->primaryKey => $id));
-			$this->request->data = $this->FotoEvento->find('first', $options);
 		}
-		$eventos = $this->FotoEvento->Evento->find('list');
-		$this->set(compact('eventos'));
 	}
 
 /**
@@ -108,17 +135,17 @@ class FotoEventosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $idEvento = null) {
 		$this->FotoEvento->id = $id;
 		if (!$this->FotoEvento->exists()) {
-			throw new NotFoundException(__('Invalid foto evento'));
+			throw new NotFoundException(__('Foto inválida'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->FotoEvento->delete()) {
-			$this->Session->setFlash(__('The foto evento has been deleted.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Foto exluída com sucesso.'), 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The foto evento could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index', $idEvento));
 	}
 }
