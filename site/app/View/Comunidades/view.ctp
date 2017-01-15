@@ -65,7 +65,7 @@
 					<tr>
 						<th><?php echo __('Hora Celeb'); ?></th>
 						<td>
-							<?php echo h($comunidade['Comunidade']['hora_celeb']); ?>
+							<?php echo ($comunidade['Comunidade']['hora_celeb']); ?>
 							&nbsp;								
 						</td>
 					</tr>

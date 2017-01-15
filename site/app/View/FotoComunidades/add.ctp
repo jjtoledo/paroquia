@@ -1,9 +1,9 @@
-<div class="fotoComunidades form">
+<div class="container fotoComunidades form">
 
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Add Foto Comunidade'); ?></h1>
+				<h1><?php echo __('Adicionar fotos'); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -17,29 +17,20 @@
 					<div class="panel-heading"><?php echo __('Actions'); ?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-
-																<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;'.__('List Foto Comunidades'), array('action' => 'index'), array('escape' => false)); ?></li>
-									<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;'.__('List Comunidades'), array('controller' => 'comunidades', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('New Comunidade'), array('controller' => 'comunidades', 'action' => 'add'), array('escape' => false)); ?> </li>
+							<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-menu-left"></span>&nbsp;&nbsp;'.__('Voltar'), array('action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>
 							</ul>
 						</div>
 					</div>
 				</div>			
 		</div><!-- end col md 3 -->
 		<div class="col-md-9">
-			<?php echo $this->Form->create('FotoComunidade', array('role' => 'form')); ?>
+			<?php echo $this->Form->create('FotoComunidade', array('role' => 'form', 'type' => 'file')); ?>
 
 				<div class="form-group">
-					<?php echo $this->Form->input('foto', array('class' => 'form-control', 'placeholder' => 'Foto'));?>
+					<?php echo $this->Form->input('fotos.', array('type' => 'file', 'multiple', 'label' => 'Fotos', 'required' => 'true'));?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->input('descricao', array('class' => 'form-control', 'placeholder' => 'Descricao'));?>
-				</div>
-				<div class="form-group">
-					<?php echo $this->Form->input('comunidade_id', array('class' => 'form-control', 'placeholder' => 'Comunidade Id'));?>
-				</div>
-				<div class="form-group">
-					<?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>
+					<?php echo $this->Form->submit(__('Adicionar'), array('class' => 'btn btn-primary')); ?>
 				</div>
 
 			<?php echo $this->Form->end() ?>

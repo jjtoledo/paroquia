@@ -36,10 +36,22 @@ class FotoComunidadesController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->FotoComunidade->recursive = 0;
+	public function index($id = null) {
+		$this->Paginator->settings = array(
+			'conditions' => array(
+				'FotoComunidade.comunidade_id' => $id
+			),
+			'order' => array(
+				'FotoComunidade.id' => 'DESC'
+			)
+		);
 		$this->set('fotoComunidades', $this->Paginator->paginate());
+
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $id));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
 	}
+
 
 /**
  * view method
@@ -48,12 +60,18 @@ class FotoComunidadesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function view($id = null, $idComunidade = null) {
 		if (!$this->FotoComunidade->exists($id)) {
-			throw new NotFoundException(__('Invalid foto comunidade'));
+			throw new NotFoundException(__('Invalid Foto'));
 		}
 		$options = array('conditions' => array('FotoComunidade.' . $this->FotoComunidade->primaryKey => $id));
 		$this->set('fotoComunidade', $this->FotoComunidade->find('first', $options));
+
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $idComunidade));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
+
+		$this->set('id', $id);
 	}
 
 /**
@@ -61,18 +79,29 @@ class FotoComunidadesController extends AppController {
  *
  * @return void
  */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->FotoComunidade->create();
-			if ($this->FotoComunidade->save($this->request->data)) {
-				$this->Session->setFlash(__('The foto comunidade has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The foto comunidade could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+	public function add($id = null) {
+		$this->request->data['FotoComunidade']['comunidade_id'] = $id;
+		
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $id));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
+
+		$photo = array();
+		if ($this->request->is('post')) {				
+			for ($i=0; $i < sizeof($this->request->data['FotoComunidade']['fotos']); $i++) { 
+				$photo = array('FotoComunidade' => 
+							array('comunidade_id' => $this->request->data['FotoComunidade']['comunidade_id'],
+									'foto' => $this->request->data['FotoComunidade']['fotos'][$i]));
+				$this->FotoComunidade->create();			
+				if (!$this->FotoComunidade->save($photo)) {
+					//debug($this->request->data['FotoComunidade']['fotos']);
+					$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+				}
 			}
+			$this->Session->setFlash(__('Fotos salvas com sucesso.'), 'default', array('class' => '	alert alert-success'));
+			return $this->redirect(array('action' => 'index', $id));
 		}
-		$comunidades = $this->FotoComunidade->Comunidade->find('list');
-		$this->set(compact('comunidades'));
+
 	}
 
 /**
@@ -82,23 +111,21 @@ class FotoComunidadesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null, $idComunidade = null) {
 		if (!$this->FotoComunidade->exists($id)) {
-			throw new NotFoundException(__('Invalid foto comunidade'));
+			throw new NotFoundException(__('Foto inválida'));
 		}
+
+		$this->request->data['FotoComunidade']['comunidade_id'] = $idComunidade;
+
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->FotoComunidade->save($this->request->data)) {
-				$this->Session->setFlash(__('The foto comunidade has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Foto salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index', $idComunidade));
 			} else {
-				$this->Session->setFlash(__('The foto comunidade could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 			}
-		} else {
-			$options = array('conditions' => array('FotoComunidade.' . $this->FotoComunidade->primaryKey => $id));
-			$this->request->data = $this->FotoComunidade->find('first', $options);
 		}
-		$comunidades = $this->FotoComunidade->Comunidade->find('list');
-		$this->set(compact('comunidades'));
 	}
 
 /**
@@ -108,17 +135,17 @@ class FotoComunidadesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $idComunidade = null) {
 		$this->FotoComunidade->id = $id;
 		if (!$this->FotoComunidade->exists()) {
-			throw new NotFoundException(__('Invalid foto comunidade'));
+			throw new NotFoundException(__('Foto inválida'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->FotoComunidade->delete()) {
-			$this->Session->setFlash(__('The foto comunidade has been deleted.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Foto exluída com sucesso.'), 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The foto comunidade could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index', $idComunidade));
 	}
 }
