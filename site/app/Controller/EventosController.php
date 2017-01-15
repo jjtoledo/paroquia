@@ -36,9 +36,34 @@ class EventosController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->Evento->recursive = 0;
-		$this->set('eventos', $this->Paginator->paginate());
+	public function index($id = null) {
+		$options = array(
+			'conditions' => array(
+				'Evento.tipo' => 1,
+				'Evento.comunidade_id' => $id
+			)
+		);
+		$this->set('festa_pad', $this->Evento->find('all', $options));
+
+		$options = array(
+			'conditions' => array(
+				'Evento.tipo' => 2,
+				'Evento.comunidade_id' => $id
+			)
+		);
+		$this->set('encontros', $this->Evento->find('all', $options));
+
+		$options = array(
+			'conditions' => array(
+				'Evento.tipo' => 3,
+				'Evento.comunidade_id' => $id
+			)
+		);
+		$this->set('outros', $this->Evento->find('all', $options));
+
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $id));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
 	}
 
 /**
@@ -48,12 +73,18 @@ class EventosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function view($id = null, $idcomunidade = null) {
 		if (!$this->Evento->exists($id)) {
-			throw new NotFoundException(__('Invalid evento'));
+			throw new NotFoundException(__('Evento inválido'));
 		}
 		$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
 		$this->set('evento', $this->Evento->find('first', $options));
+
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $idcomunidade));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
+
+		$this->set('id', $id);	
 	}
 
 /**
@@ -61,18 +92,23 @@ class EventosController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id = null, $tipo = null) {
+		$this->request->data['Evento']['comunidade_id'] = $id;
+		$this->request->data['Evento']['tipo'] = $tipo;
+
 		if ($this->request->is('post')) {
 			$this->Evento->create();
 			if ($this->Evento->save($this->request->data)) {
-				$this->Session->setFlash(__('The evento has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index', $id));
 			} else {
-				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$comunidades = $this->Evento->Comunidade->find('list');
-		$this->set(compact('comunidades'));
+		
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $id));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
 	}
 
 /**
@@ -82,23 +118,31 @@ class EventosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null, $idcomunidade = null) {
 		if (!$this->Evento->exists($id)) {
-			throw new NotFoundException(__('Invalid evento'));
+			throw new NotFoundException(__('Invalid Evento'));
 		}
+
+		$this->request->data['Evento']['comunidade_id'] = $idcomunidade;
+
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Evento->save($this->request->data)) {
-				$this->Session->setFlash(__('The evento has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index', $idcomunidade));
 			} else {
-				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
 			$this->request->data = $this->Evento->find('first', $options);
 		}
-		$comunidades = $this->Evento->Comunidade->find('list');
-		$this->set(compact('comunidades'));
+		
+		$this->loadModel('Comunidade');
+		$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $idcomunidade));
+		$this->set('comunidade', $this->Comunidade->find('first', $options));
+
+		$this->set('id', $id);
+		$this->set('evento', $this->Evento->findById($id));
 	}
 
 /**
@@ -108,17 +152,17 @@ class EventosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $idcomunidade = null) {
 		$this->Evento->id = $id;
 		if (!$this->Evento->exists()) {
-			throw new NotFoundException(__('Invalid evento'));
+			throw new NotFoundException(__('Evento inválido'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Evento->delete()) {
-			$this->Session->setFlash(__('The evento has been deleted.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Evento excluído com sucesso.'), 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The evento could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index', $idcomunidade));
 	}
 }

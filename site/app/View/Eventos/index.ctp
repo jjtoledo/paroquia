@@ -1,4 +1,4 @@
-<div class="eventos index">
+<div class="container eventos index">
 
 	<div class="row">
 		<div class="col-md-12">
@@ -15,12 +15,13 @@
 		<div class="col-md-3">
 			<div class="actions">
 				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo __('Actions'); ?></div>
+					<div class="panel-heading"><?php echo __('Ações'); ?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('New Evento'), array('action' => 'add'), array('escape' => false)); ?></li>
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List'.__('Comunidades'), array('controller' => 'comunidades', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New'.__('Comunidade'), array('controller' => 'comunidades', 'action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-search"></span>&nbsp&nbsp;Detalhes Comunidade'), array('controller' => 'comunidades', 'action' => 'view', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>													
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar festa padroeiro'), array('action' => 'add', $comunidade['Comunidade']['id'], 1), array('escape' => false)); ?></li>
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar encontro'), array('action' => 'add', $comunidade['Comunidade']['id'], 2), array('escape' => false)); ?></li>
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar outro'), array('action' => 'add', $comunidade['Comunidade']['id'], 3), array('escape' => false)); ?></li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -28,52 +29,77 @@
 		</div><!-- end col md 3 -->
 
 		<div class="col-md-9">
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
-				<thead>
-					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('tipo'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('texto'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('comunidade_id'); ?></th>
-						<th class="actions"></th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($eventos as $evento): ?>
-					<tr>
-						<td nowrap><?php echo h($evento['Evento']['id']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($evento['Evento']['tipo']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($evento['Evento']['texto']); ?>&nbsp;</td>
-								<td>
-			<?php echo $this->Html->link($evento['Comunidade']['id'], array('controller' => 'comunidades', 'action' => 'view', $evento['Comunidade']['id'])); ?>
-		</td>
-						<td class="actions">
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $evento['Evento']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $evento['Evento']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $evento['Evento']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
+			<?php if (!empty($festa_pad)): ?>
+				<h3>Festas do Padroeiro</h3>
+				<table cellpadding="0" cellspacing="0" class="table table-striped">
+					<thead>
+						<tr>
+							<th nowrap><?php echo $this->Paginator->sort('nome'); ?></th>
+							<th class="actions"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php foreach ($festa_pad as $evento): ?>
+						<tr>
+							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
+							<td class="actions">
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
+								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			<?php endif; ?>
 
-			<p>
-				<small><?php echo $this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')));?></small>
-			</p>
+			<?php if (!empty($encontros)): ?>
+				<h3>Encontros em geral</h3>
+				<table cellpadding="0" cellspacing="0" class="table table-striped">
+					<thead>
+						<tr>
+							<th nowrap><?php echo $this->Paginator->sort('nome'); ?></th>
+							<th class="actions"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php foreach ($encontros as $evento): ?>
+						<tr>
+							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
+							<td class="actions">
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
+								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			<?php endif; ?>
 
-			<?php
-			$params = $this->Paginator->params();
-			if ($params['pageCount'] > 1) {
-			?>
-			<ul class="pagination pagination-sm">
-				<?php
-					echo $this->Paginator->prev('&larr; Previous', array('class' => 'prev','tag' => 'li','escape' => false), '<a onclick="return false;">&larr; Previous</a>', array('class' => 'prev disabled','tag' => 'li','escape' => false));
-					echo $this->Paginator->numbers(array('separator' => '','tag' => 'li','currentClass' => 'active','currentTag' => 'a'));
-					echo $this->Paginator->next('Next &rarr;', array('class' => 'next','tag' => 'li','escape' => false), '<a onclick="return false;">Next &rarr;</a>', array('class' => 'next disabled','tag' => 'li','escape' => false));
-				?>
-			</ul>
-			<?php } ?>
-
+			<?php if (!empty($outros)): ?>
+				<h3>Outros eventos</h3>
+				<table cellpadding="0" cellspacing="0" class="table table-striped">
+					<thead>
+						<tr>
+							<th nowrap><?php echo $this->Paginator->sort('nome'); ?></th>
+							<th class="actions"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php foreach ($outros as $evento): ?>
+						<tr>
+							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
+							<td class="actions">
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
+								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
+								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			<?php endif; ?>
 		</div> <!-- end col md 9 -->
 	</div><!-- end row -->
 
