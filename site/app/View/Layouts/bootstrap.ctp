@@ -39,7 +39,13 @@
   <body>
 
     <div class="container-fluid">
-      <?php echo $this->Element('navigation'); ?>
+      <?php 
+        if ($this->params['controller'] == 'homes' || $this->params['controller'] == 'pages') {
+          echo $this->Element('nav_site'); 
+        } else {
+          echo $this->Element('navigation');           
+        }
+      ?>
       <br><br><br>
 
 			<?php echo $this->Session->flash(); ?>

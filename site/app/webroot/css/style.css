@@ -9,3 +9,42 @@
 .big {
 	font-size: 1.5em;
 }
+
+.logo {
+	width: 150px;
+	padding: 5px;
+}
+
+.navbar-brand {
+	height: auto;
+}
+
+.navbar-nav {
+	padding-top: 55px;
+	padding-left: 50px;
+	font-size: 1.3em;	
+}
+
+.navbar-nav > li > a {
+	color: #f8f8f8 !important;
+}
+
+.navbar-nav > li.active > a {
+	background-color: #DAA82D !important;
+	border-top: 2px solid #f8f8f8;
+	padding-top: 13px;
+}
+
+.nav_site {
+	background-color: #DAA82D;
+}
+
+.navbar-toggle {
+	margin-top: 25px;
+}
+
+@media (max-width: 767px) {
+	.logo {
+		width: 80px;
+	}
+}
