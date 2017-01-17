@@ -11,7 +11,7 @@
 }
 
 .logo {
-	width: 182px;
+	width: 183px;
 }
 
 .navbar-brand {
@@ -40,7 +40,7 @@
     background-color: #DAA82D;
 }*/
 
-.navbar-default {
+.navbar-default2 {
     background-color: #fff;
     border-color: #DAA82D;
 }
@@ -73,6 +73,10 @@
 
 .espacoTopo {
 	padding-top: 20px;
+}
+
+.espacoTopo2 {
+	padding-top: 10px;
 }
 
 .container2 {
