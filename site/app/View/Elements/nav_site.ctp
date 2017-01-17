@@ -20,9 +20,9 @@
         <li class="active"> <?php echo $this->Html->link('Início', array('action' => 'index')) ?></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            A Paróquia <span class="caret" style="color: white"></span>
+            A Paróquia <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu white">
+          <ul class="dropdown-menu">
             <li><?php echo $this->Html->link('Comunidades', array('action' => '#')) ?></li>
             <li><?php echo $this->Html->link('Eventos', array('action' => '#')) ?></li>
             <li><?php echo $this->Html->link('Padres e Diácono', array('action' => '#')) ?></li>

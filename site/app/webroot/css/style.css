@@ -19,14 +19,23 @@
 }
 
 .navbar-nav {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 1.3em;
 	background-color: #DAA82D;	
 }
 
 .navbar-nav > li > a {
-	color: #f8f8f8 !important;
+	color: #f8f8f8;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #f8f8f8;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #f8f8f8;
+    background-color: #e7e7e7;
 }
 
 .navbar-nav > li.active > a {
@@ -47,24 +56,19 @@
 
 .nav_site {
 	height: 200px;
-	font-size: 14px;
+	font-size: 12px;
+	font-variant: bold;
 	background: url(../img/santuario4.png);
 }
 
 .nav_site2 {
 	width: 100%;
-	font-size: 14px;
+	font-size: 12px;
 	background-color: #DAA82D;
 }
 
 .navbar-toggle {
 	margin-top: 25px;
-}
-
-@media (max-width: 767px) {
-	.logo {
-		width: 80px;
-	}
 }
 
 .espacoTopo {
@@ -78,4 +82,54 @@
 .container2 {
     margin-right: auto;
     margin-left: auto;
+}
+
+@media (max-width: 767px) {
+	.logo {
+		width: 110px;
+	}
+	.nav_site {
+		height: 120px;
+		font-size: 14px;
+		background: url(../img/santuario5.png);
+	}
+	.navbar-nav > li.active > a {
+		background-color: #DAA82D !important;
+	}
+	.espacoTopo {
+		padding-top: 0px;
+	}
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #DAA82D;
+    background-color: #f8f8f8;
+}
+
+.navbar-nav > li > a:focus > a {
+	color: #DAA82D !important;
+	background-color: #f8f8f8 !important;
+}
+
+.navbar-nav > li > a:hover {
+	color: #DAA82D !important;
+	background-color: #f8f8f8 !important;
+}
+
+.caret > a:focus{
+	color: #DAA82D;
+}
+
+.dropdown-menu {
+	background-color: #DAA82D;
+}
+
+.dropdown-menu > li > a {
+	color: #f8f8f8;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #DAA82D;
+    text-decoration: none;
+    background-color: #f8f8f8;
 }
