@@ -1,5 +1,5 @@
 <div class="navbar navbar-default navbar-fixed-top nav_site">
-  <div class="container">
+  <div class="container2">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
@@ -7,14 +7,17 @@
         <span class="icon-bar"></span>
       </button> 
       <?php echo $this->Html->link(
-                            $this->Html->image('logo-santuario.png', array('class' => 'logo')), 
+                            $this->Html->image('logo2.png', array('class' => 'logo')), 
                             array('controller' => 'homes', 'action' => 'index'), 
                             array('escape' => false)) 
       ?>
+      <div class="espacoLeft"></div>
     </div>
+    
     <div class="collapse navbar-collapse">
+      <div class="espacoTopo"></div>
       <ul class="nav navbar-nav">
-        <li class="active"><?php echo $this->Html->link('Início', array('action' => 'index')) ?></li>
+        <li class="active"> <?php echo $this->Html->link('Início', array('action' => 'index')) ?></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             A Paróquia <span class="caret" style="color: white"></span>
