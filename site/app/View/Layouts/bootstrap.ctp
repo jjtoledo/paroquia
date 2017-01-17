@@ -41,12 +41,13 @@
     <div class="container-fluid">
       <?php 
         if ($this->params['controller'] == 'homes' || $this->params['controller'] == 'pages') {
-          echo $this->Element('nav_site'); 
+          echo $this->Element('nav_site');
+          echo $this->Element('nav_large'); 
         } else {
           echo $this->Element('navigation');           
         }
       ?>
-      <br><br><br>
+      <div class="margin"></div>
 
 			<?php echo $this->Session->flash(); ?>
 
@@ -56,3 +57,6 @@
 
   </body>
 </html>
+
+<?php
+  echo $this->Html->script('script.js');

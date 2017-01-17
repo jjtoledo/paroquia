@@ -16,11 +16,11 @@
 
 .navbar-brand {
 	height: auto;
+	color: #f8f8f8 !important;
 }
 
 .navbar-nav {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 10px;
 	font-size: 1.3em;
 	background-color: #DAA82D;	
 }
@@ -40,8 +40,8 @@
 
 .navbar-nav > li.active > a {
 	background-color: #DAA82D !important;
-	border-top: 2px solid #f8f8f8;
-	padding-top: 13px;
+	border-top: 3px solid #f8f8f8;
+	padding-top: 12px;
 }
 
 /*.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -54,10 +54,13 @@
     border-color: #DAA82D;
 }
 
-.nav_site {
-	height: 200px;
+.nav_scroll {
 	font-size: 12px;
 	font-variant: bold;
+}
+
+.nav_site {
+	height: 200px;	
 	background: url(../img/santuario4.png);
 }
 
@@ -65,6 +68,11 @@
 	width: 100%;
 	font-size: 12px;
 	background-color: #DAA82D;
+}
+
+.nav_large {
+	background-color: #DAA82D;
+	display: none;
 }
 
 .navbar-toggle {
@@ -77,6 +85,10 @@
 
 .espacoTopo2 {
 	padding-top: 10px;
+}
+
+.margin {
+	margin-top: 220px;
 }
 
 .container2 {
