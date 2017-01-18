@@ -60,3 +60,4 @@
 
 <?php
   echo $this->Html->script('script.js');
+  echo $this->Html->script('jquery.scrollUp.min');

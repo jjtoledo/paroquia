@@ -8,3 +8,8 @@ $(window).scroll(function() {
         $('.nav_scroll').show('slow');
     }
 });
+
+//script voltar ao topo
+$(function () {
+  $.scrollUp();
+}); 

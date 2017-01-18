@@ -18,6 +18,10 @@
 	width: 80px;
 }
 
+/* ----------------------------------------
+    NavBar
+---------------------------------------- */
+
 .navbar-brand {
 	height: auto;
 }
@@ -56,10 +60,10 @@
 	padding-top: 12px;
 }
 
-/*.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #DAA82D;
-}*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #f8f8f8;
+    background-color: transparent;
+}
 
 .navbar-default2 {
     background-color: #fff;
@@ -91,40 +95,6 @@
 	margin-top: 25px;
 }
 
-.espacoTopo {
-	padding-top: 10px;
-}
-
-.espacoTopo2 {
-	padding-top: 10px;
-}
-
-.margin {
-	margin-top: 220px;
-}
-
-.container2 {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@media (max-width: 767px) {
-	.logo {
-		width: 110px;
-	}
-	.nav_site {
-		height: 120px;
-		font-size: 14px;
-		background: url(../img/santuario5.png);
-	}
-	.navbar-nav > li.active > a {
-		background-color: #DAA82D !important;
-	}
-	.espacoTopo {
-		padding-top: 0px;
-	}
-}
-
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #DAA82D;
     background-color: #f8f8f8;
@@ -144,6 +114,14 @@
 	color: #DAA82D;
 }
 
+/* ----------------------------------------
+    Fim NavBar
+---------------------------------------- */
+
+/* ----------------------------------------
+    Dropdown-menu
+---------------------------------------- */
+
 .dropdown-menu {
 	background-color: #DAA82D;
 }
@@ -157,3 +135,54 @@
     text-decoration: none;
     background-color: #f8f8f8;
 }
+
+/* ----------------------------------------
+    Fim dropdown-menu
+---------------------------------------- */
+
+/* ----------------------------------------
+    scrollUp
+---------------------------------------- */
+
+/* Image style */
+#scrollUp {
+    background-image: url(../img/top2.png) ;
+    bottom: 20px;
+    right: 20px;
+    width: 38px;    /* Width of image */
+    height: 38px;   /* Height of image */
+}
+
+/* ----------------------------------------
+    Fim scrollUp
+---------------------------------------- */
+
+.espacoTopo {
+	padding-top: 10px;
+}
+
+.espacoTopo2 {
+	padding-top: 10px;
+}
+
+.margin {
+	margin-top: 220px;
+}
+
+@media (max-width: 767px) {
+	.logo {
+		width: 110px;
+	}
+	.nav_site {
+		height: 120px;
+		font-size: 14px;
+		background: url(../img/santuario5.png);
+	}
+	.navbar-nav > li.active > a {
+		background-color: #DAA82D !important;
+	}
+	.espacoTopo {
+		padding-top: 0px;
+	}
+}
+
