@@ -6,9 +6,9 @@
       <span class="icon-bar"></span>
     </button> 
     <?php echo $this->Html->link(
-                          'Paróquia<br> São João Batista', 
+                          $this->Html->image('logo_semEscrita_branca.png', array('class' => 'logo-min')),
                           array('controller' => 'homes', 'action' => 'index'), 
-                          array('escape' => false, 'class' => 'navbar-brand'));
+                          array('escape' => false, 'class' => 'navbar-brand min'));
     ?>
   </div>
   
