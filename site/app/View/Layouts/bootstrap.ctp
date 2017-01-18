@@ -18,6 +18,7 @@
 
     echo $this->Html->css('bootstrap.css');
     echo $this->Html->css('style.css');
+    //echo $this->Html->css('style2.css');
 	?>
 
   	<!-- Latest compiled and minified JavaScript -->
@@ -42,6 +43,7 @@
       <?php 
         if ($this->params['controller'] == 'homes' || $this->params['controller'] == 'pages') {
           echo $this->Element('nav_site');
+          //echo $this->Element('nav_site2');
           echo $this->Element('nav_large'); 
         } else {
           echo $this->Element('navigation');           
