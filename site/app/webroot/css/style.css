@@ -25,6 +25,11 @@
 	background-color: #DAA82D;	
 }
 
+.navbar-nav.center {
+	padding: 0px;
+	margin-left: -10%;
+}
+
 .navbar-nav > li > a {
 	color: #f8f8f8;
 }
