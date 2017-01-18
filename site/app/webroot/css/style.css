@@ -169,6 +169,10 @@
 	margin-top: 220px;
 }
 
+/* ----------------------------------------
+    CSS para celulares
+---------------------------------------- */
+
 @media (max-width: 767px) {
 	.logo {
 		width: 110px;
@@ -179,10 +183,23 @@
 		background: url(../img/santuario5.png);
 	}
 	.navbar-nav > li.active > a {
-		background-color: #DAA82D !important;
+		background-color: #DAA82D;
 	}
 	.espacoTopo {
 		padding-top: 0px;
 	}
+	.dropdown-menu > li > a {
+		color: #f8f8f8 !important;
+	}
+
+	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	    color: #DAA82D !important;
+	    text-decoration: none;
+	    background-color: #f8f8f8 !important;
+	}
 }
+
+/* ----------------------------------------
+    Fim CSS para celulares
+---------------------------------------- */
 
