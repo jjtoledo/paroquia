@@ -15,7 +15,7 @@
 }
 
 .logo-min {
-	width: 80px;
+	width: 60px;
 }
 
 /* ----------------------------------------
@@ -31,7 +31,7 @@
 }
 
 .navbar-nav {
-	padding: 25px;
+	padding: 15px;
 	font-size: 1.3em;
 	background-color: #DAA82D;	
 }
@@ -78,7 +78,7 @@
 .nav_site {
 	height: 200px;	
 	font-size: 14px;
-	background: url(../img/santuario4.png);
+	background: url(../img/santuario2.png);
 }
 
 .nav_site2 {
@@ -90,6 +90,10 @@
 .nav_large {
 	background-color: #DAA82D;
 	display: none;
+}
+
+.nav_admin {
+	background-color: #222;
 }
 
 .navbar-toggle {
@@ -173,6 +177,10 @@
 
 .margin {
 	margin-top: 220px;
+}
+
+.margin_admin {
+	margin-top: 100px;
 }
 
 /* ----------------------------------------

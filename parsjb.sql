@@ -121,4 +121,5 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 --updates
-ALTER TABLE eventos add COLUMN nome varchar(200) AFTER tipo
+ALTER TABLE eventos add COLUMN nome varchar(200) AFTER tipo;
+ALTER TABLE eventos add COLUMN data date AFTER tipo;

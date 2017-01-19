@@ -124,7 +124,7 @@ class EventosController extends AppController {
 		}
 
 		$this->request->data['Evento']['comunidade_id'] = $idcomunidade;
-
+		
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Evento->save($this->request->data)) {
 				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
@@ -135,6 +135,9 @@ class EventosController extends AppController {
 		} else {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
 			$this->request->data = $this->Evento->find('first', $options);
+			
+			$data = $this->request->data['Evento']['data'];
+			$this->request->data['Evento']['data'] = date("d/m/Y", strtotime($data));
 		}
 		
 		$this->loadModel('Comunidade');

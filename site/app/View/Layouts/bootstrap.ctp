@@ -18,6 +18,8 @@
 
     echo $this->Html->css('bootstrap.css');
     echo $this->Html->css('style.css');
+    echo $this->Html->css('carousel.css');
+    echo $this->Html->css('lightbox.css');
     //echo $this->Html->css('style2.css');
 	?>
 
@@ -45,11 +47,12 @@
           echo $this->Element('nav_site');
           //echo $this->Element('nav_site2');
           echo $this->Element('nav_large'); 
+          echo '<div class="margin"></div>';
         } else {
-          echo $this->Element('navigation');           
+          echo $this->Element('navigation');
+          echo '<div class="margin_admin"></div>';           
         }
-      ?>
-      <div class="margin"></div>
+      ?>      
 
 			<?php echo $this->Session->flash(); ?>
 
@@ -62,4 +65,7 @@
 
 <?php
   echo $this->Html->script('script.js');
+  echo $this->Html->script('carousel.js');
+  echo $this->Html->script('lightbox.js');
+  echo $this->Html->script('mascara.js');
   echo $this->Html->script('jquery.scrollUp.min');
