@@ -47,7 +47,7 @@
 					<?php echo $this->Tinymce->input('Comunidade.hora_celeb', $options = array('label' => 'Horários de Celebração'), $tinyoptions = array(), $preset = null) ?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->submit(__('Salvar'), array('class' => 'btn btn-default')); ?>
+					<?php echo $this->Form->submit(__('Salvar'), array('class' => 'btn btn-primary')); ?>
 				</div>
 
 			<?php echo $this->Form->end() ?>

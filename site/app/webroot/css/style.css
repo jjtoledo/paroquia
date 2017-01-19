@@ -6,6 +6,11 @@
 	margin-bottom: 5px;
 }
 
+.img_view2 {
+	margin-bottom: 5px;
+	height: 200px;
+}
+
 .big {
 	font-size: 1.5em;
 }
@@ -183,8 +188,32 @@
 	margin-top: 100px;
 }
 
+.container-fluid{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 /* ----------------------------------------
     Fim Outros
+---------------------------------------- */
+
+/* ----------------------------------------
+    Footer
+---------------------------------------- */
+
+#foot {
+  background-color: #640E0F;
+  padding: 40px 0 10px 0;
+}
+
+#footerRow {
+  color: #f8f8f8;
+  border-top: solid 2px;
+  padding-top: 15px;
+}
+
+/* ----------------------------------------
+    Fim Footer
 ---------------------------------------- */
 
 /* ----------------------------------------

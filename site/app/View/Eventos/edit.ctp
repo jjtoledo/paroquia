@@ -91,7 +91,7 @@ function isValidDate(dateString) {
 					<?php echo $this->Tinymce->input('Evento.texto', $options = array('label' => 'Descrição'), $tinyoptions = array(), $preset = null) ?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->submit(__('Salvar'), array('class' => 'btn btn-default', 'id' => 'save')); ?>
+					<?php echo $this->Form->submit(__('Salvar'), array('class' => 'btn btn-primary', 'id' => 'save')); ?>
 				</div>
 
 			<?php echo $this->Form->end() ?>

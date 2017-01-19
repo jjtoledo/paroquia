@@ -10,3 +10,5 @@
 		</div>
 	</div>
 </div>
+
+<?php echo $this->Element('footer'); ?>

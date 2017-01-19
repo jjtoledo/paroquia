@@ -37,6 +37,13 @@
 							</td>
 					</tr>
 					<tr>
+							<th><?php echo __('Data do Evento'); ?></th>
+							<td>
+								<?php echo date("d/m/Y", strtotime($evento['Evento']['data'])); ?>
+								&nbsp;
+							</td>
+					</tr>
+					<tr>
 							<th><?php echo __('Descrição'); ?></th>
 							<td>
 								<?php echo ($evento['Evento']['texto']); ?>

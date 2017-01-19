@@ -29,31 +29,32 @@
 		<div class="col-md-9">
 			<?php
 				echo '<div class="row">';
-				if (count($fotoEventos > 0)) {
-					for ($i=0; $i < count($fotoEventos); $i++) { 
-						echo '<div class="col-sm-6 col-md-4">';
-						echo '<div class="thumbnail">';
-						echo $this->Html->image($fotoEventos[$i]['FotoEvento']['foto'], array('class' => ' foto'));
-						echo '<div class="caption foto">';
-						echo $this->Form->end(); ?>
-						<?php echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir</span>', array('action' => 'delete', $fotoEventos[$i]['FotoEvento']['id'], $fotoEventos[$i]['FotoEvento']['evento_id']), array('escape' => false), __('Tem certeza que deseja excluir?'));
-						echo '&nbsp;&nbsp;<span class="btn btn-info edit" id="edit'.$fotoEventos[$i]['FotoEvento']['id'].'" value="'.$fotoEventos[$i]['FotoEvento']['id'].'">Descrição</span>';
-						echo '<span style="display:none" class="btn btn-default cancel" id="cancel'.$fotoEventos[$i]['FotoEvento']['id'].'" value="'.$fotoEventos[$i]['FotoEvento']['id'].'">Cancelar</span>';
-						echo '<div style="margin-top: 10px" hidden="true" id="'.$fotoEventos[$i]['FotoEvento']['id'].'">';
-					    echo $this->Form->create('FotoEvento', array('type' => 'post', 'class' => 'search-form', 'url' => 'edit/'.$fotoEventos[$i]['FotoEvento']['id'].'/'.$fotoEventos[$i]['FotoEvento']['evento_id']));
-					    echo $this->Form->input('id', array('id' => 'FotoId'.$fotoEventos[$i]['FotoEvento']['id']));	
-					    echo $this->Form->input('descricao', array('type' => 'textarea', 'label' => false, 'class' => 'form-control', 'placeholder' => 'Adicione a descrição', 'default' => $fotoEventos[$i]['FotoEvento']['descricao']));	
-					    ?>
-					    <div class="submit" style="margin-top: 10px">
-					    	<input type="submit" value="Salvar" class="btn btn-success">&nbsp;
-					    </div>
-				    </div>
-				    <?php
-						echo '</div>';
-						echo '</div>';
-						echo '</div>';
+					if (count($fotoEventos > 0)) {
+						for ($i=0; $i < count($fotoEventos); $i++) { 
+							echo '<div class="col-sm-6 col-md-4">';
+								echo '<div class="thumbnail">';
+									echo $this->Html->image($fotoEventos[$i]['FotoEvento']['foto'], array('class' => 'img-responsive img_view2'));
+									echo '<div class="caption foto">';
+										echo $this->Form->end(); ?>
+								
+										<?php echo $this->Form->postLink('<span class="btn btn-danger" role="button">Excluir</span>', array('action' => 'delete', $fotoEventos[$i]['FotoEvento']['id'], $fotoEventos[$i]['FotoEvento']['evento_id']), array('escape' => false), __('Tem certeza que deseja excluir?'));
+										echo '&nbsp;&nbsp;<span class="btn btn-info edit" id="edit'.$fotoEventos[$i]['FotoEvento']['id'].'" value="'.$fotoEventos[$i]['FotoEvento']['id'].'">Descrição</span>';
+										echo '<span style="display:none" class="btn btn-default cancel" id="cancel'.$fotoEventos[$i]['FotoEvento']['id'].'" value="'.$fotoEventos[$i]['FotoEvento']['id'].'">Cancelar</span>';
+
+										echo '<div style="margin-top: 10px" hidden="true" id="'.$fotoEventos[$i]['FotoEvento']['id'].'">';
+										    echo $this->Form->create('FotoEvento', array('type' => 'post', 'class' => 'search-form', 'url' => 'edit/'.$fotoEventos[$i]['FotoEvento']['id'].'/'.$fotoEventos[$i]['FotoEvento']['evento_id']));
+										    echo $this->Form->input('id', array('id' => 'FotoId'.$fotoEventos[$i]['FotoEvento']['id']));	
+										    echo $this->Form->input('descricao', array('type' => 'textarea', 'label' => false, 'class' => 'form-control', 'placeholder' => 'Adicione a descrição', 'default' => $fotoEventos[$i]['FotoEvento']['descricao']));	
+										    ?>
+										    <div class="submit" style="margin-top: 10px">
+										    	<input type="submit" value="Salvar" class="btn btn-success">&nbsp;
+										    </div>
+									    </div>
+						    		<?php echo '</div>';
+								echo '</div>';
+							echo '</div>';
+						}
 					}
-				}
 				echo '</div>';
 			?>
 		</div> <!-- end col md 9 -->
