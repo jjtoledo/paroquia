@@ -60,8 +60,6 @@
 
     </div><!-- /.container -->
 
-    <?php echo $this->Element('footer'); ?>
-
   </body>
 </html>
 

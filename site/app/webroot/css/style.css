@@ -24,7 +24,7 @@
 }
 
 /* ----------------------------------------
-    NavBar
+    NavBar Site
 ---------------------------------------- */
 
 .navbar-brand {
@@ -97,10 +97,6 @@
 	display: none;
 }
 
-.nav_admin {
-	background-color: #222;
-}
-
 .navbar-toggle {
 	margin-top: 25px;
 }
@@ -125,7 +121,30 @@
 }
 
 /* ----------------------------------------
-    Fim NavBar
+    Fim NavBar Site
+---------------------------------------- */
+
+/* ----------------------------------------
+    NavBar Admin
+---------------------------------------- */
+
+.nav_admin {
+	background-color: #337AB7;
+}
+
+.navbar-nav.navbar-right  {
+	padding: 15px;
+	font-size: 1.3em;
+	background-color: #337AB7;
+}
+
+.navbar-nav.navbar-right > li > a:hover {
+    color: #337AB7 !important;
+    background-color: #f8f8f8 !important;
+}
+
+/* ----------------------------------------
+    Fim NavBar Admin
 ---------------------------------------- */
 
 /* ----------------------------------------
