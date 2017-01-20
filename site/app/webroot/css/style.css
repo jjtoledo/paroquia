@@ -1,3 +1,39 @@
+/* ----------------------------------------
+    Entypo (ícones)
+---------------------------------------- */
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* entypo */
+[class*="entypo-"]:before {
+  display: inline-block;
+  width: 12px;
+  height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  font-family: 'entypo', sans-serif;
+}
+
+span[class*="entypo-"] {
+  display: inline;
+  position: relative;
+  font-size: 1.6em;
+  right: 5px;
+}
+
+.entypo-calendar{
+  color: #721204;
+}
+
+.icon {
+  color: #721204;
+  font-size: 20px;
+  left: 5px;
+}
+
+/* ----------------------------------------
+    Fim Entypo
+---------------------------------------- */
+
 .col-md-3.foto_view {
 	padding: 0;
 }
@@ -16,7 +52,7 @@
 }
 
 .logo {
-	width: 183px;
+	width: 155px;
 }
 
 .logo-min {
@@ -81,7 +117,7 @@
 }
 
 .nav_site {
-	height: 200px;	
+	height: 170px;	
 	font-size: 14px;
 	background: url(../img/santuario2.png);
 }
@@ -214,12 +250,20 @@
 
 .hr {
 	border-top: 2px solid #DAA82D;
-	margin-top: 15px;
-	margin-bottom: 30px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.hr2 {
+  border-top: 2px solid #DAA82D;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .h3 {
 	color: #721204;
+  display: inline;
+  padding-left: 5px;
 }
 
 .cinza {
@@ -251,43 +295,6 @@
     Fim Footer
 ---------------------------------------- */
 
-/* ----------------------------------------
-    CSS para celulares
----------------------------------------- */
-
-@media (max-width: 767px) {
-	.logo {
-		width: 110px;
-	}
-	.nav_site {
-		height: 120px;
-		font-size: 14px;
-		background: url(../img/santuario5.png);
-	}
-	.navbar-nav > li.active > a {
-		background-color: #DAA82D;
-		border-top: 0px solid #f8f8f8;
-	}
-	.espacoTopo {
-		padding-top: 0px;
-	}
-	.dropdown-menu > li > a {
-		color: #f8f8f8 !important;
-	}
-
-	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-	    color: #DAA82D !important;
-	    text-decoration: none;
-	    background-color: #f8f8f8 !important;
-	}
-	.margin {
-		margin-top: 150px;
-	}
-}
-
-/* ----------------------------------------
-    Fim CSS para celulares
----------------------------------------- */
 
 /* ----------------------------------------
 	Início Css para cards
@@ -335,8 +342,16 @@
   color: #721204;
 }
 
+/* ----------------------------------------
+	Fim Css para cards
+---------------------------------------- */
+
+/* ----------------------------------------
+    CSS para screen específica
+---------------------------------------- */
+
 @media screen and (max-width: 1400px) {
-	.noticia {
+  .noticia {
     height: 250px;
     padding-bottom: 20px;
   }
@@ -357,7 +372,7 @@
   }
 
   .noticia.agenda {
-    height: 220px;
+    height: 300px;
     width: 100%;
     margin-left: 0;
   }
@@ -372,13 +387,21 @@
 }
 
 @media screen and (max-width: 992px){
+
+  span[class*="entypo-"] {
+    display: inline;
+    position: relative;
+    font-size: 1.6em;
+    right: 15px;
+  }
+
 	.menor {
-    font-size: 28px;
+    font-size: 24px;
     margin-top: 20px;
   }
 
   .menor_detalhe {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 10px;
   }
 
@@ -397,20 +420,48 @@
   }
 
   .divNoticia {
-  	padding-right: 15%;
-  	padding-left: 15%;
+  	padding-right: 20%;
+  	padding-left: 20%;
   }
 }
 
 @media screen and (max-width: 768px){
-	.divNoticia.center {
+	.logo {
+		width: 109px;
+	}
+	.nav_site {
+		height: 120px;
+		font-size: 14px;
+		background: url(../img/santuario5.png);
+	}
+	.navbar-nav > li.active > a {
+		background-color: #DAA82D;
+		border-top: 0px solid #f8f8f8;
+	}
+	.espacoTopo {
+		padding-top: 0px;
+	}
+	.dropdown-menu > li > a {
+		color: #f8f8f8 !important;
+	}
+
+	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	    color: #DAA82D !important;
+	    text-decoration: none;
+	    background-color: #f8f8f8 !important;
+	}
+	.margin {
+		margin-top: 150px;
+	}
+
+  .divNoticia.center {
     text-align: center;
     left: 0;
   }
 
   .divNoticia {
-  	padding-right: 15px;
-  	padding-left: 15px;
+  	padding-right: 15%;
+  	padding-left: 15%;
   }
 
   .noticia {
@@ -419,17 +470,17 @@
   }
 
   .noticia.agenda {
-  	height: 500px;
+  	height: 450px;
   }
 
   .menor {
     margin-top: 30px;
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .menor_detalhe {
     margin-top: 10px;
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -440,7 +491,22 @@
   }
 
   .noticia.agenda {
-  	height: 350px;
+  	height: 320px;
+  }
+
+  .divNoticia {
+    padding-right: 15%;
+    padding-left: 15% ;
+  }
+
+  .menor {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .menor_detalhe {
+    margin-top: 5px;
+    font-size: 16px;
   }
 }
 
@@ -459,6 +525,7 @@
   	height: 300px;
   }
 }
+
 /* ----------------------------------------
-	Fim Css para cards
+    Fim CSS para screen específica
 ---------------------------------------- */
