@@ -39,7 +39,7 @@
 
   </head>
 
-  <body>
+  <body style="background-color: #ddd">
 
     <div class="container-fluid">
       <?php 

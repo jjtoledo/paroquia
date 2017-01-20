@@ -212,6 +212,22 @@
 	padding-right: 0px;
 }
 
+.hr {
+	border-top: 2px solid #DAA82D;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.h3 {
+	color: #721204;
+}
+
+.cinza {
+	font-size: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #222;
+}
 /* ----------------------------------------
     Fim Outros
 ---------------------------------------- */
@@ -273,3 +289,176 @@
     Fim CSS para celulares
 ---------------------------------------- */
 
+/* ----------------------------------------
+	Início Css para cards
+---------------------------------------- */
+
+.divNoticia {
+  margin-bottom: 20px;
+}
+
+.divNoticia.p {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.noticia {
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 1px 1px 5px #888888;
+  height: 300px;
+  transition: all 0.5s ease 0s;
+}
+
+.noticia:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  transition-duration: 500ms;
+}
+
+.noticia.agenda{
+  padding-bottom: 0px;
+  height: 350px;
+}
+
+.menor {
+  color: #721204; 
+  margin-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.menor_detalhe {
+  font-size: 18px;
+  color: #721204;
+}
+
+@media screen and (max-width: 1400px) {
+	.noticia {
+    height: 250px;
+    padding-bottom: 20px;
+  }
+
+  .menor {
+    font-size: 17px;
+  }
+
+  .menor_detalhe {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+	.noticia {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .noticia.agenda {
+    height: 220px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .menor {
+    font-size: 16px;
+  }
+
+  .menor_detalhe {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 992px){
+	.menor {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .menor_detalhe {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+	.noticia {
+    width: 100%;
+    margin-left: 0;
+  } 
+
+  .noticia.agenda {
+    height: 400px;
+  } 
+
+	.divNoticia.center {
+    text-align: center;
+    left: 25%;
+  }
+
+  .divNoticia {
+  	padding-right: 15%;
+  	padding-left: 15%;
+  }
+}
+
+@media screen and (max-width: 768px){
+	.divNoticia.center {
+    text-align: center;
+    left: 0;
+  }
+
+  .divNoticia {
+  	padding-right: 15px;
+  	padding-left: 15px;
+  }
+
+  .noticia {
+    width: 70%;
+    margin-left: 15%;    
+  }
+
+  .noticia.agenda {
+  	height: 500px;
+  }
+
+  .menor {
+    margin-top: 30px;
+    font-size: 28px;
+  }
+
+  .menor_detalhe {
+    margin-top: 10px;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 480px){
+	.noticia {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .noticia.agenda {
+  	height: 350px;
+  }
+}
+
+@media screen and (max-width: 360px){
+	.menor {
+		margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .menor_detalhe {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  .noticia.agenda {
+  	height: 300px;
+  }
+}
+/* ----------------------------------------
+	Fim Css para cards
+---------------------------------------- */
