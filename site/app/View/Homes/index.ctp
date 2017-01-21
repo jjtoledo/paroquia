@@ -6,22 +6,43 @@
 			<?php if (!empty($eventos)){
 				echo '<br><br><div style="padding: 15px"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Próximos eventos</h3>');
 				echo '<hr class="hr"></div>';
-				foreach ($eventos as $e) {
-					$i = 0;
-					echo '<div class="col-md-4 col-sm-12 divNoticia">';
-			    echo '<div class="noticia agenda">';
-					echo $this->Html->link(
-							 	$this->Html->image($fotos_ev[$i]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')),
-						 		array('action' => 'eventos', $e['Evento']['id']),
-						 		array('escape' => false)
-							);
-					echo '<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>';
-					echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($e['Evento']['data'])).'</p>';
-					echo '</div>';
-					echo '</div>';
-					$i++;
+
+				$count = 0;
+
+				if(count($eventos) < 6) {
+					for ($i=0; $i < count($eventos); $i++) { 
+	      				echo '<div class="col-md-4 col-sm-12 divNoticia">';
+			    			echo '<div class="noticia agenda">';
+								echo '<a class="noticia_foto" href="eventos/' . $eventos[$count]['Evento']['id'] . '" target="_blank" escape="false">';
+								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
+									echo '<h3 class="menor"><b>'.$eventos[$count]['Evento']['nome'].'</b></h3>';
+									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';
+								echo '</a>';
+							echo '</div>';
+						echo '</div>';
+						
+						$count++;
+					}
 				}
+				else {
+	      			for ($i=0; $i < 6; $i++) { 
+	      				echo '<div class="col-md-4 col-sm-12 divNoticia">';
+			    			echo '<div class="noticia agenda">';
+								echo '<a class="noticia_foto" href="eventos/' . $eventos[$count]['Evento']['id'] . '" target="_blank" escape="false">';
+								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
+									echo '<h3 class="menor"><b>'.$eventos[$count]['Evento']['nome'].'</b></h3>';
+									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';
+								echo '</a>';
+							echo '</div>';
+						echo '</div>';
+						
+						$count++;
+					}
+	      		}
+					
 			} ?>
+
+			<?php echo $this->Html->link('Ver todos eventos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)); ?> </li>
 		</div>
 
 		<div class="col-md-3">
