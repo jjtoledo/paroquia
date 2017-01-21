@@ -42,7 +42,7 @@
 					
 			} ?>
 
-			<?php echo $this->Html->link('Ver todos eventos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)); ?> </li>
+			<?php echo $this->Html->link('Ver todos eventos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)); ?> 
 		</div>
 
 		<div class="col-md-3">

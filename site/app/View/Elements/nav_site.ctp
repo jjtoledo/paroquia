@@ -18,14 +18,14 @@
       <div class="text-center">
         <div style="display: inline-block">
           <ul class="nav navbar-nav center">
-            <li class="active"> <?php echo $this->Html->link('Início', array('action' => 'index')) ?></li>
+            <li> <?php echo $this->Html->link('Início', array('action' => 'index')) ?></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 A Paróquia <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <li><?php echo $this->Html->link('Comunidades', array('action' => '#')) ?></li>
-                <li><?php echo $this->Html->link('Eventos', array('action' => '#')) ?></li>
+                <li><?php echo $this->Html->link('Eventos', array('action' => 'eventos')) ?></li>
                 <li><?php echo $this->Html->link('Padres e Diácono', array('action' => '#')) ?></li>
                 <li><?php echo $this->Html->link('Sacramentos', array('action' => '#')) ?></li>
                 <li><?php echo $this->Html->link('Pastorais e Movimentos', array('action' => '#')) ?></li>
