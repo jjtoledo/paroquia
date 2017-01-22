@@ -33,6 +33,8 @@
 					    	}
 				  		} ?>
 	        	</div>
+	        	<a class="left carousel-control" href="#carouselABC" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        		<a class="right carousel-control" href="#carouselABC" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 	      	</div>
 	    </div> 
 	</div>

@@ -214,6 +214,10 @@ span[class*="entypo-"] {
     background-color: #f8f8f8;
 }
 
+ul.nav li.dropdown:hover ul.dropdown-menu { 
+    display: block; 
+}
+
 /* ----------------------------------------
     Fim dropdown-menu
 ---------------------------------------- */
@@ -288,8 +292,8 @@ span[class*="entypo-"] {
 .btnTodosEv {
   color: #f8f8f8;
   background-color: #DAA82D;
-  float: right;
-  margin-right: 5%;
+  margin-top: 3%;
+  margin-bottom: 2%;
 }
 
 .btnTodosEv:hover {

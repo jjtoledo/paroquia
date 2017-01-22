@@ -54,7 +54,7 @@ class HomesController extends AppController {
         $this->loadModel('Evento');
         $options = array(
             'order' => 'data DESC',
-            'limit' => 6
+            //'limit' => 6
         );
         $eventos = $this->Evento->find('all', $options);
         $this->set(compact('eventos'));
