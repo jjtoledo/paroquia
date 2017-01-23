@@ -38,7 +38,7 @@
 				<?php foreach ($sacramentos as $sacramento): ?>
 					<tr>
 						<td nowrap><?php echo h($sacramento['Sacramento']['nome']); ?>&nbsp;</td>
-						<td class="actions">
+						<td class="actions2">
 							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $sacramento['Sacramento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $sacramento['Sacramento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 							<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $sacramento['Sacramento']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $sacramento['Sacramento']['nome'])); ?>

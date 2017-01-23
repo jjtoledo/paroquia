@@ -1,10 +1,12 @@
+<div class="margin"></div>
+
 <?php echo $this->Element('slideshow') ?>
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-9">
 			<?php if (!empty($eventos)){
-				echo '<br><br><div class="col-md-12" style="padding: 15px"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Próximos eventos</h3>');
+				echo '<br><br><div class="col-md-12" style="padding: 15px"><a class="linkTitulos" href="homes/eventos"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Próximos eventos</h3>'). '</a>';
 				echo '<hr class="hr"></div>';
 
 				$count = 0;
@@ -55,11 +57,7 @@
 				echo '<p class="cinza"><span class="glyphicon glyphicon-earphone"></span> (31) 3837-1766</p>';
 				echo '<p class="cinza"><span class="glyphicon glyphicon-map-marker"></span> Praça Monsenhor Gerardo Magela Pereira, 12 - Centro - Barão de Cocais, MG - CEP: 35970-000</p>';
 
-				echo '<br><div class="col-md-12" style="padding: 15px"><span class="entypo entypo-book-open icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Jornal <i>O Precursor</i></h3>');
-				echo '<hr class="hr2"></div>';
-
-				echo '<br><br><div class="col-md-12" style="padding: 15px"><span class="glyphicon glyphicon-link icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Links Externos</h3>');
-				echo '<hr class="hr2"></div>';
+				echo $this->Element('linksRight');
 			?>
 		</div>
 	</div>

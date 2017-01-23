@@ -20,7 +20,7 @@
 								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Adicionar Eventos'), array('controller' => 'eventos', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false)); ?>  </li>
 								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-grain"></span>&nbsp;&nbsp;Adicionar Pastorais e Movimentos'), array('controller' => 'pastorals', 'action' => 'index', $comunidade['Comunidade']['id']), array('escape' => false)); ?>  </li>
 								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>&nbsp&nbsp;Editar Comunidade'), array('action' => 'edit', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>
-								<li><?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Excluir Comunidade'), array('action' => 'delete', $comunidade['Comunidade']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $comunidade['Comunidade']['nome'])); ?> </li>
+								<li><?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Excluir Comunidade'), array('action' => 'delete', $comunidade['Comunidade']['id']), array('escape' => false), __('Podem existir fotos, eventos e/ou pastorais adicionadas para esta comunidade. Tem certeza que deseja excluir: %s?', $comunidade['Comunidade']['nome'])); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->

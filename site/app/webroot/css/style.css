@@ -218,6 +218,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu {
     display: block; 
 }
 
+
 /* ----------------------------------------
     Fim dropdown-menu
 ---------------------------------------- */
@@ -243,6 +244,34 @@ ul.nav li.dropdown:hover ul.dropdown-menu {
     Outros
 ---------------------------------------- */
 
+body {
+  font-family: Bebas Neue !important;
+}
+
+.hr {
+  border-top: 2px solid #DAA82D;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.hr2 {
+  border-top: 2px solid #DAA82D;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.h3 {
+  color: #721204;
+  display: inline;
+  padding-left: 5px;
+}
+
+.h3jornal {
+  color: #721204;
+  display: inline;
+  padding-left: 10px;
+}
+
 .espacoTopo {
 	padding-top: 10px;
 }
@@ -259,27 +288,13 @@ ul.nav li.dropdown:hover ul.dropdown-menu {
 	margin-top: 100px;
 }
 
+.margin_semSlide {
+  margin-top: 170px;
+}
+
 .container-fluid{
 	padding-left: 0px;
 	padding-right: 0px;
-}
-
-.hr {
-	border-top: 2px solid #DAA82D;
-	margin-top: 5px;
-	margin-bottom: 20px;
-}
-
-.hr2 {
-  border-top: 2px solid #DAA82D;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-.h3 {
-	color: #721204;
-  display: inline;
-  padding-left: 5px;
 }
 
 .cinza {
@@ -294,12 +309,23 @@ ul.nav li.dropdown:hover ul.dropdown-menu {
   background-color: #DAA82D;
   margin-top: 3%;
   margin-bottom: 2%;
+  font-size: 20px;
+  float: right;
 }
 
 .btnTodosEv:hover {
   color: #DAA82D;
   background-color: #f8f8f8;
   border-color: #DAA82D;
+}
+
+.linkTitulos {
+  text-decoration: none !important;
+}
+
+.actions2 {
+  float: right;
+  margin-right: 200px;
 }
 
 

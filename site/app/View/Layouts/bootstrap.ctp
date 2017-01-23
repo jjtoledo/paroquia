@@ -47,7 +47,6 @@
           echo $this->Element('nav_site');
           //echo $this->Element('nav_site2');
           echo $this->Element('nav_large'); 
-          echo '<div class="margin"></div>';
         } else {
           echo $this->Element('navigation');
           echo '<div class="margin_admin"></div>';           

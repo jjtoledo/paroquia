@@ -38,7 +38,7 @@
 				<?php foreach ($pastorals as $pastoral): ?>
 					<tr>
 						<td nowrap><?php echo h($pastoral['Pastoral']['nome']); ?>&nbsp;</td>
-						<td class="actions">
+						<td class="actions2">
 							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $pastoral['Pastoral']['id'], $comunidade['Comunidade']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $pastoral['Pastoral']['id'], $comunidade['Comunidade']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 							<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $pastoral['Pastoral']['id'], $comunidade['Comunidade']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $pastoral['Pastoral']['nome'])); ?>

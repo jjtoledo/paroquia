@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Paróquia'); ?></h1>
+				<h1><?php echo __('Paróquia São João Batista'); ?></h1>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -39,10 +39,10 @@
 				<?php foreach ($comunidades as $comunidade): ?>
 					<tr>
 						<td nowrap><?php echo h($comunidade['Comunidade']['nome']); ?>&nbsp;</td>
-						<td class="actions">
+						<td class="actions2">
 							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $comunidade['Comunidade']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 							<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $comunidade['Comunidade']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
-							<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $comunidade['Comunidade']['id']), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $comunidade['Comunidade']['nome'])); ?>
+							<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $comunidade['Comunidade']['id']), array('escape' => false), __('Podem existir fotos, eventos e/ou pastorais adicionadas para esta comunidade. Tem certeza que deseja excluir: %s?', $comunidade['Comunidade']['nome'])); ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>

@@ -106,6 +106,8 @@ class PastoralsController extends AppController {
 			throw new NotFoundException(__('Invalid Pastoral'));
 		}
 
+		$this->set('pastoral', $this->Pastoral->findById($id));
+
 		$this->request->data['Pastoral']['comunidade_id'] = $idCity;
 
 		if ($this->request->is(array('post', 'put'))) {

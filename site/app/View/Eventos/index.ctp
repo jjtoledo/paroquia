@@ -21,7 +21,7 @@
 								<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-search"></span>&nbsp&nbsp;Detalhes Comunidade'), array('controller' => 'comunidades', 'action' => 'view', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>													
 								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar festa padroeiro'), array('action' => 'add', $comunidade['Comunidade']['id'], 1), array('escape' => false)); ?></li>
 								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar encontro'), array('action' => 'add', $comunidade['Comunidade']['id'], 2), array('escape' => false)); ?></li>
-								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar outro'), array('action' => 'add', $comunidade['Comunidade']['id'], 3), array('escape' => false)); ?></li>
+								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Adicionar outros eventos'), array('action' => 'add', $comunidade['Comunidade']['id'], 3), array('escape' => false)); ?></li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -42,11 +42,11 @@
 					<?php foreach ($festa_pad as $evento): ?>
 						<tr>
 							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
-							<td class="actions">
+							<td class="actions2">
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-camera" title="Fotos"></span>', array('controller' => 'foto_eventos', 'action' => 'index', $evento['Evento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
-								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
+								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Podem existir fotos adicionadas para este evento. Tem certeza que deseja excluir: %s?', $evento['Evento']['nome'])); ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>
@@ -67,11 +67,11 @@
 					<?php foreach ($encontros as $evento): ?>
 						<tr>
 							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
-							<td class="actions">
+							<td class="actions2">
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-camera" title="Fotos"></span>', array('controller' => 'foto_eventos', 'action' => 'index', $evento['Evento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
-								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
+								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Podem existir fotos adicionadas para este evento. Tem certeza que deseja excluir: %s?', $evento['Evento']['nome'])); ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>
@@ -92,11 +92,11 @@
 					<?php foreach ($outros as $evento): ?>
 						<tr>
 							<td nowrap><?php echo h($evento['Evento']['nome']); ?>&nbsp;</td>
-							<td class="actions">
+							<td class="actions2">
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-camera" title="Fotos"></span>', array('controller' => 'foto_eventos', 'action' => 'index', $evento['Evento']['id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-search" title="Detalhes"></span>', array('action' => 'view', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
 								<?php echo $this->Html->link('<span class="big glyphicon glyphicon-edit" title="Editar"></span>', array('action' => 'edit', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false)); ?>&nbsp;&nbsp;
-								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Are you sure you want to delete # %s?', $evento['Evento']['id'])); ?>
+								<?php echo $this->Form->postLink('<span class="big glyphicon glyphicon-remove" title="Excluir"></span>', array('action' => 'delete', $evento['Evento']['id'], $evento['Evento']['comunidade_id']), array('escape' => false), __('Podem existir fotos adicionadas para este evento. Tem certeza que deseja excluir: %s?', $evento['Evento']['nome'])); ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>

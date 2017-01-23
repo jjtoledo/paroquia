@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Editar Comunidade'); ?></h1>
+				<h1><?php echo __('Editar Comunidade: ' . $comunidade['Comunidade']['nome']); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 							<ul class="nav nav-pills nav-stacked">
 								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;'.__('Detalhes Comunidade'), array('controller' => 'comunidades', 'action' => 'view', $comunidade['Comunidade']['id']), array('escape' => false)); ?> </li>
 								<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;'.__('Listar Comunidades'), array('action' => 'index'), array('escape' => false)); ?></li>
-								<li><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;'.__('Excluir'), array('action' => 'delete', $this->Form->value('Comunidade.id')), array('escape' => false), __('Tem certeza que deseja excluir: %s?', $this->Form->value('Comunidade.nome'))); ?></li>
+								<li><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;'.__('Excluir'), array('action' => 'delete', $this->Form->value('Comunidade.id')), array('escape' => false), __('Podem existir fotos, eventos e/ou pastorais adicionadas para esta comunidade. Tem certeza que deseja excluir: %s?', $this->Form->value('Comunidade.nome'))); ?></li>
 							</ul>
 						</div>
 					</div>

@@ -29,13 +29,13 @@ class Evento extends AppModel {
 		'FotoEvento' => array(
 			'className' => 'FotoEvento',
 			'foreignKey' => 'evento_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
+			'exclusive' => true,
 			'finderQuery' => '',
 			'counterQuery' => ''
 		)
