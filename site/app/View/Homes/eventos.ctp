@@ -44,7 +44,7 @@
 
 				if($tem1 == true){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div>';
+					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
 				}
 
 
@@ -81,7 +81,7 @@
 
 				if($tem2 == true){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div>';
+					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
 				}
 					
 				foreach ($eventos as $e) {
@@ -117,7 +117,7 @@
 
 				if($tem3 == true){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div>';
+					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
 				}
 			} ?>
 

@@ -44,7 +44,7 @@
 					
 			} ?>
 
-			<?php echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos eventos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div>'; ?> 
+			<?php echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos eventos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>'; ?> 
 		</div>
 
 		<div class="col-md-3 col-sm-12">

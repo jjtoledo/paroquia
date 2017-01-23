@@ -29,7 +29,7 @@ class HomesController extends AppController {
 
         $this->loadModel('Evento');
         $options = array(
-            'order' => 'data DESC',
+            'order' => 'data ASC',
             'limit' => 6
         );
         $eventos = $this->Evento->find('all', $options);
