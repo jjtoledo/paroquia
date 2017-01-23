@@ -31,8 +31,8 @@
                 <li><?php echo $this->Html->link('Pastorais e Movimentos', array('action' => 'pastoraisemov')) ?></li>
               </ul>
             </li>
-            <li><?php echo $this->Html->link('Fale Conosco', array('action' => 'faleConosco')) ?></li>
             <li><?php echo $this->Html->link('Agendar Visita', array('action' => 'AgendarVisita')) ?></li>
+            <li><?php echo $this->Html->link('Fale Conosco', array('action' => 'faleConosco')) ?></li>
           </ul>
         </div>  
       </div>      
