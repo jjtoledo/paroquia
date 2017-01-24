@@ -265,6 +265,12 @@ body {
   padding-left: 5px;
 }
 
+.h2 {
+  color: #721204;
+  display: inline;
+  padding-left: 5px;
+}
+
 .h3jornal {
   color: #721204;
   display: inline;
@@ -375,7 +381,8 @@ body {
 .arqRodape {
   position: relative;
   left: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: -15px;
 }
 
 .jornal {
@@ -435,6 +442,20 @@ p.txtDizimo {
 
 .linkDizimo {
   float: right;
+  margin-right: 15px;
+  color: #f8f8f8;
+  background-color: #721204;
+  font-size: 14px;
+}
+
+.linkDizimo:hover {
+  color: #721204;
+  background-color: #f8f8f8;
+  border-color: #721204;
+}
+
+.marginTop {
+  margin-top: 50px;
 }
 
 /* ----------------------------------------
@@ -448,7 +469,7 @@ p.txtDizimo {
 
 .divNoticia {
   margin-bottom: 20px;
-  margin-left: 40px;
+  margin-left: 53px;
   margin-right: 0px;
   width: 28%;
 }
@@ -498,6 +519,21 @@ p.txtDizimo {
 /* ----------------------------------------
 	Fim Css para cards
 ---------------------------------------- */
+
+/* ----------------------------------------
+  Início Css txtEvento
+---------------------------------------- */
+
+.txtEvento {
+  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px; 
+}
+
+/* ----------------------------------------
+    Fim Css txtEvento
+---------------------------------------- */
+
 
 /* ----------------------------------------
   Iício Css para searchbox

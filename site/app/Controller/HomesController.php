@@ -130,18 +130,9 @@ class HomesController extends AppController {
 
     public function evento($id = null) {
         $this->loadModel('Evento');
-        $this->loadModel('FotoEvento');
 
         $evento = $this->Evento->findById($id);
         $this->set(compact('evento'));
-
-        $options = array(
-            'conditions' => array(
-                'FotoEvento.evento_id' => $evento['Evento']['id']
-            )
-        );
-        $fotos_ev = $this->FotoEvento->find('all', $options);
-        $this->set(compact('fotos_ev'));
 
         $this->loadModel('Pdf');
 
@@ -151,5 +142,59 @@ class HomesController extends AppController {
         );
         $pdf = $this->Pdf->find('all', $options);
         $this->set(compact('pdf'));
+    }
+
+    public function pdfs() {
+        $this->loadModel('Pdf');
+
+        $options = array(
+            'order' => 'id DESC'
+        );
+        
+        $pdfs = $this->Pdf->find('all', $options);
+        $this->set(compact('pdfs'));
+    }
+
+    public function padres() {
+        $this->loadModel('Padre');
+        
+        $padres = $this->Padre->find('all');
+        $this->set(compact('padres'));
+    }
+
+    public function comunidades() {
+        $this->loadModel('Comunidade');
+        
+        $comunidades = $this->Comunidade->find('all');
+        $this->set(compact('comunidades'));
+    }
+
+    public function comunidade($id = null) {
+        $this->loadModel('Comunidade');
+        
+        $comunidade = $this->Comunidade->findById($id);
+        $this->set(compact('comunidade'));
+    }
+
+    public function sacramentos() {
+        $this->loadModel('Sacramento');
+        
+        $sacramentos = $this->Sacramento->find('all');
+        $this->set(compact('sacramentos'));
+    }
+
+    public function pastorals() {
+        $this->loadModel('Pastoral');
+        
+        $pastorals = $this->Pastoral->find('all');
+        $this->set(compact('pastorals'));
+    }
+
+    public function fale_conosco() {
+
+    }
+
+    public function visitas() {
+        
     }
 }

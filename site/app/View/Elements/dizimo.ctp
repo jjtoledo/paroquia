@@ -1,9 +1,18 @@
 <?php
-	echo '<br><br><div class="col-sm-12" style="padding: 15px"><span class="glyphicon glyphicon-heart icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Dízimo</h3>');
+	echo '<br><br><div class="col-sm-12 marginTop"><span class="glyphicon glyphicon-heart icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Dízimo</h3>');
 	echo '<hr class="hr2"></div>';
 
-	echo $this->Html->image('dizimo-1.png', array('class' => 'col-md-12 col-sm-12 img img-responsive linksExternos'));
+	echo '<div class="col-sm-12">';
 
-	echo '<p class="col-md-12 col-sm-12 txtDizimo" align="justify">Dízimo é a libertação experimentada pelo dizimista em relação a toda ganância e valorização excessiva do dinheiro. Afinal não é fácil para ninguém vencer o apego aos bens, o preconceito do mundo e "abrir mão" de uma parte considerável dos seus rendimentos.</p>';
+		echo $this->Html->image('dizimo-1.png', array('class' => 'col-md-12 col-sm-4 img img-responsive fotoDizimo'));
+
+		echo '<br><br><div class="col-sm-12">';
+		echo '</div>';
+
+		echo '<p class="col-md-12 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 
+
+		echo '<a class="linkDizimo btn btn-default" href="#">Continuar lendo >></a>'; 
+
+	echo '</div>';
 
 ?>

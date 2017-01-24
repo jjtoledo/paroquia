@@ -59,17 +59,19 @@
 				echo '<br><br><div class="col-sm-12" style="padding: 15px">';
 				echo '<hr class="hrDizimo"></div>';
 
-				echo '<div class="col-md-6 teste">';
+				echo '<div class="col-md-6">';
+					echo '<div class="col-md-8 col-md-offset-2">';
 
-					echo $this->Html->image('dizimo-1.png', array('class' => 'col-md-8 col-sm-4 img img-responsive fotoDizimo'));
+						echo $this->Html->image('dizimo-1.png', array('class' => 'col-md-12 col-sm-4 img img-responsive fotoDizimo'));
 
-					echo '<br><br><div class="col-sm-12">';
+						echo '<br><br><div class="col-sm-12">';
+						echo '</div>';
+
+						echo '<p class="col-md-12 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 
+
+						echo '<a class="linkDizimo btn btn-default" href="#">Continuar lendo >></a>'; 
+
 					echo '</div>';
-
-					echo '<p class="col-md-8 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 
-
-					echo '<a class="col-md-8 col-sm-4 linkDizimo" href="#">Continuar lendo >></a>'; 
-
 				echo '</div>';
 
 			?>
