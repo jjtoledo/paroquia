@@ -259,12 +259,6 @@ body {
   margin-bottom: 10px;
 }
 
-.hrDizimo {
-  border-top: 2px solid #DAA82D;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
 .h3 {
   color: #721204;
   display: inline;
@@ -378,6 +372,12 @@ body {
   margin-bottom: 20px;
 }
 
+.arqRodape {
+  position: relative;
+  left: 300px;
+  margin-bottom: 20px;
+}
+
 .jornal {
   margin-bottom: 10px;
 }
@@ -419,17 +419,22 @@ p.txtDizimo {
   font-size: 16px;
 }
 
+.hrDizimo {
+  border-top: 2px solid #DAA82D;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
 .fotoDizimo {
   margin-bottom: 10px;
 }
 
-.fotoArq {
-  margin-bottom: 10px;
-  margin-top: 10%;
-}
-
 .teste {
   left: 80px;
+}
+
+.linkDizimo {
+  float: right;
 }
 
 /* ----------------------------------------
@@ -656,6 +661,18 @@ input.search-text::-webkit-search-cancel-button {
     outline: none;
     cursor:auto;
     padding-right: 10px;
+  }
+
+  /*ajustar rodapé*/
+  #footerRow {
+    color: #f8f8f8;
+    border-top: solid 2px;
+    margin-top: 100px;
+  }
+
+  .arqRodape {
+    left: 100px;
+    margin-bottom: 20px;
   }
 }
 

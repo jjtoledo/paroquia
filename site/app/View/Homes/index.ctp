@@ -56,23 +56,22 @@
 
 			<?php echo '<div class="col-md-12 col-sm-12 text-center">' . $this->Html->link('Ver todos eventos', array('action' => 'eventos'), array('class' => 'btnTodosEvHome btn btn-default', 'title' => 'Ver todos', 'escape' => false)) . '</div><br><br>'; 
 
-			echo '<br><br><div class="col-sm-12" style="padding: 15px">';
-			echo '<hr class="hrDizimo"></div>';
+				echo '<br><br><div class="col-sm-12" style="padding: 15px">';
+				echo '<hr class="hrDizimo"></div>';
 
-			echo '<div class="col-md-6 teste">';
+				echo '<div class="col-md-6 teste">';
 
-				echo $this->Html->image('dizimo.jpg', array('class' => 'col-md-8 col-sm-12 img img-responsive fotoDizimo'));
+					echo $this->Html->image('dizimo-1.png', array('class' => 'col-md-8 col-sm-4 img img-responsive fotoDizimo'));
 
-				echo '<br><br><div class="col-sm-12">';
+					echo '<br><br><div class="col-sm-12">';
+					echo '</div>';
+
+					echo '<p class="col-md-8 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 
+
+					echo '<a class="col-md-8 col-sm-4 linkDizimo" href="#">Continuar lendo >></a>'; 
+
 				echo '</div>';
 
-				echo '<p class="col-md-8 col-sm-12 txtDizimoHome" align="justify">"Dízimo é a libertação experimentada pelo dizimista em relação a toda ganância e valorização excessiva do dinheiro. Afinal não é fácil para ninguém vencer o apego aos bens, o preconceito do mundo e "abrir mão" de uma parte considerável dos seus rendimentos."</p>';  
-
-			echo '</div>';
-
-			echo '<div class="col-md-6 teste">';
-				echo $this->Html->image('arquidiocese.png', array('class' => 'col-md-8 col-sm-12 img img-responsive fotoArq'));
-			echo '</div>';
 			?>
 		</div>
 
@@ -80,7 +79,7 @@
 			<?php
 				echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><span class="glyphicon glyphicon-time icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Atendimento</h3>');
 				echo '<hr class="hr2"></div>';
-				echo '<p class="cinza"><b>Secretaria Paroquial:</b></p>';
+				echo '<p class="cinza"><b>Escritório Paroquial:</b></p>';
 				echo '<p class="cinza">Segunda de 13hs às 18hs.</p>';
 				echo '<p class="cinza">Terça a Sexta de 08h às 11h e de 13h às 18h.</p>';
 				echo '<p class="cinza"><span class="glyphicon glyphicon-earphone"></span> (31) 3837-1766</p>';
