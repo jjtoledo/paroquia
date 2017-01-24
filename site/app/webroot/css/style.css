@@ -353,7 +353,24 @@ body {
 
 
 /* ----------------------------------------
-	Início Css para cards
+	Início Css para links externos
+---------------------------------------- */
+
+.linksExternos {
+  margin-bottom: 20px;
+}
+
+.jornal {
+  margin-bottom: 70px;
+}
+
+/* ----------------------------------------
+    Fim links externos
+---------------------------------------- */
+
+
+/* ----------------------------------------
+  Início Css para cards
 ---------------------------------------- */
 
 .divNoticia {
@@ -407,6 +424,57 @@ body {
 
 /* ----------------------------------------
 	Fim Css para cards
+---------------------------------------- */
+
+/* ----------------------------------------
+  Iício Css para searchbox
+---------------------------------------- */
+
+input.search-text {
+  color: #222;
+  position:relative;
+  z-index:5;
+  transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s;
+  height: 35px;
+  width: 0;
+  margin: 0 10px 0 -10px;
+  padding: 5px 0 10px 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-size: 0.8em;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  /*background: url(search.png) no-repeat left 9px center transparent;*/
+  background: url(https://dl.dropboxusercontent.com/u/6624374/opensource-projects/codepen/search.svg) no-repeat left 9px center transparent;
+  background-size:24px;
+}
+input.search-text:focus {
+  z-index:3; 
+  width: 270px;
+  border: 1px solid #fff;  
+  background-color: #fff;
+  outline: none;
+  cursor:auto;
+  padding-right: 10px;
+}
+
+input.search-submit {
+  position: relative;
+  z-index: 4;
+  border: 0;
+  outline: 0;
+  border-radius: 30px;
+  cursor: pointer; 
+  background: none;
+}
+
+input.search-text::-webkit-search-cancel-button {
+  cursor:pointer;
+}
+
+/* ----------------------------------------
+    Fim Css para searchbox
 ---------------------------------------- */
 
 /* ----------------------------------------

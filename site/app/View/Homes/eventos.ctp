@@ -29,11 +29,13 @@
 
 						echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
-								echo '<a class="noticia_foto" href="eventos/' . $e['Evento']['id'] . '" target="_blank" escape="false">';
-								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
-									echo '<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>';
+								echo $this->Html->link(
+								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')).' '.
+									__('<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>'),
+								 	array('action' => 'evento', $e['Evento']['id']),
+								 	array('escape' => false, 'class' => 'noticia_foto')
+								);
 									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';
-								echo '</a>';
 							echo '</div>';
 						echo '</div>';
 
@@ -42,9 +44,9 @@
 					$count++;
 				}
 
-				if($tem1 == true){
+				if($tem1 == true && !isset($tipo)){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
+					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos', 1), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
 				}
 
 
@@ -67,11 +69,13 @@
 
 						echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
-								echo '<a class="noticia_foto" href="eventos/' . $e['Evento']['id'] . '" target="_blank" escape="false">';
-								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
-									echo '<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>';
+								echo $this->Html->link(
+								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')).' '.
+									__('<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>'),
+								 	array('action' => 'evento', $e['Evento']['id']),
+								 	array('escape' => false, 'class' => 'noticia_foto')
+								);
 									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';
-								echo '</a>';
 							echo '</div>';
 						echo '</div>';
 					}
@@ -79,9 +83,9 @@
 					$count++;
 				}
 
-				if($tem2 == true){
+				if($tem2 == true && !isset($tipo)){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
+					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos', 2), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
 				}
 					
 				foreach ($eventos as $e) {
@@ -103,11 +107,13 @@
 
 						echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
-								echo '<a class="noticia_foto" href="eventos/' . $e['Evento']['id'] . '" target="_blank" escape="false">';
-								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
-									echo '<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>';
+								echo $this->Html->link(
+								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')).' '.
+									__('<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>'),
+								 	array('action' => 'evento', $e['Evento']['id']),
+								 	array('escape' => false, 'class' => 'noticia_foto')
+								);
 									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';
-								echo '</a>';
 							echo '</div>';
 						echo '</div>';
 					}
@@ -115,9 +121,9 @@
 					$count++;
 				}
 
-				if($tem3 == true){
+				if($tem3 == true && !isset($tipo)){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos'), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
+					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos', 3), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
 				}
 			} ?>
 

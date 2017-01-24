@@ -2,6 +2,16 @@
 
 <?php echo $this->Element('slideshow') ?>
 
+<?php
+	if (isset($results_com)) {
+		echo debug($results_com);
+	} 
+
+	if (isset($results_ev)) {
+		echo debug($results_ev);
+	}
+?>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-9">
@@ -15,7 +25,7 @@
 					for ($i=0; $i < count($eventos); $i++) { 
 	      				echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
-								echo '<a class="noticia_foto" href="homes/eventos/' . $eventos[$count]['Evento']['id'] . '" escape="false">';
+								echo '<a class="noticia_foto" href="homes/evento/' . $eventos[$count]['Evento']['id'] . '" escape="false">';
 								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
 									echo '<h3 class="text-center menor"><b>'.$eventos[$count]['Evento']['nome'].'</b></h3>';
 									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';
@@ -30,7 +40,7 @@
 	      			for ($i=0; $i < 6; $i++) { 
 	      				echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
-								echo '<a class="noticia_foto" href="homes/eventos/' . $eventos[$count]['Evento']['id'] . '" escape="false">';
+								echo '<a class="noticia_foto" href="homes/evento/' . $eventos[$count]['Evento']['id'] . '" escape="false">';
 								 	echo $this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%'));
 									echo '<h3 class="text-center menor"><b>'.$eventos[$count]['Evento']['nome'].'</b></h3>';
 									//echo '<p class="text-center menor_detalhe"><span class="entypo entypo-calendar"></span>&nbsp;'. date("d/m/Y", strtotime($eventos[$count]['Evento']['data'])).'</p>';

@@ -33,6 +33,12 @@
             </li>
             <li><?php echo $this->Html->link('Agendar Visita', array('action' => 'AgendarVisita')) ?></li>
             <li><?php echo $this->Html->link('Fale Conosco', array('action' => 'faleConosco')) ?></li>
+            <li>
+              <?php echo $this->Form->Create('Search', array('type' => 'get', 'class' => 'search-form')) ?>
+                <input type="submit" value="" class="search-submit"> 
+                <input type="search" name="search" class="search-text" placeholder="Pesquisar..." autocomplete="off">
+              <?php echo $this->Form->end() ?>
+            </li>
           </ul>
         </div>  
       </div>      
