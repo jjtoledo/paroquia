@@ -131,7 +131,7 @@ span[class*="entypo-"] {
 .nav_site {
 	height: 170px;	
 	font-size: 14px;
-	background: url(../img/santuario2.png);
+	background: url(../img/santuario2-1.png);
 }
 
 .nav_site2 {
@@ -214,10 +214,9 @@ span[class*="entypo-"] {
     background-color: #f8f8f8;
 }
 
-ul.nav li.dropdown:hover ul.dropdown-menu { 
+/*ul.nav li.dropdown:hover ul.dropdown-menu { 
     display: block; 
-}
-
+}*/
 
 /* ----------------------------------------
     Fim dropdown-menu
@@ -258,6 +257,12 @@ body {
   border-top: 2px solid #DAA82D;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+.hrDizimo {
+  border-top: 2px solid #DAA82D;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .h3 {
@@ -304,6 +309,20 @@ body {
 	color: #222;
 }
 
+.btnTodosEvHome {
+  color: #f8f8f8;
+  background-color: #DAA82D;
+  margin-top: 2%;
+  font-size: 20px;
+  margin-bottom: 3%;
+}
+
+.btnTodosEvHome:hover {
+  color: #DAA82D;
+  background-color: #f8f8f8;
+  border-color: #DAA82D;
+}
+
 .btnTodosEv {
   color: #f8f8f8;
   background-color: #DAA82D;
@@ -326,7 +345,6 @@ body {
   float: right;
   margin-right: 200px;
 }
-
 
 /* ----------------------------------------
     Fim Outros
@@ -361,11 +379,61 @@ body {
 }
 
 .jornal {
-  margin-bottom: 70px;
+  margin-bottom: 10px;
+}
+
+.btnTodosPdf {
+  color: #f8f8f8;
+  background-color: #0098AF;
+  border-color: #0098AF;
+  font-size: 12px;
+  float: right;
+}
+
+.btnTodosPdf:hover {
+  color: #0098AF;
+  background-color: #f8f8f8;
+  border-color: #0098AF;
+}
+
+.espacoPdf {
+  margin-bottom: 40px;
 }
 
 /* ----------------------------------------
     Fim links externos
+---------------------------------------- */
+
+/* ----------------------------------------
+  Início Css para dizimo e arquidiocese
+---------------------------------------- */
+
+p.txtDizimoHome {
+  color: #222;
+  font-size: 16px;
+  font-style: italic;
+}
+
+p.txtDizimo {
+  color: #222;
+  font-size: 16px;
+}
+
+.fotoDizimo {
+  margin-bottom: 10px;
+}
+
+.fotoArq {
+  margin-bottom: 10px;
+  margin-top: 10%;
+}
+
+.teste {
+  left: 80px;
+}
+
+/* ----------------------------------------
+    Fim dizimo e arquidiocese
 ---------------------------------------- */
 
 
@@ -431,13 +499,13 @@ body {
 ---------------------------------------- */
 
 input.search-text {
-  color: #222;
+  color: #fff;
   position:relative;
   z-index:5;
   transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s;
   height: 35px;
   width: 0;
-  margin: 0 10px 0 -10px;
+  margin: 7px 10px 0 -20px;
   padding: 5px 0 10px 40px;
   box-sizing: border-box;
   font-size: 16px;
@@ -445,15 +513,16 @@ input.search-text {
   cursor: pointer;
   border-radius: 5px;
   border: 2px solid transparent;
-  /*background: url(search.png) no-repeat left 9px center transparent;*/
-  background: url(https://dl.dropboxusercontent.com/u/6624374/opensource-projects/codepen/search.svg) no-repeat left 9px center transparent;
+  /*background: url(https://dl.dropboxusercontent.com/u/6624374/opensource-projects/codepen/search.svg) no-repeat left 9px center transparent;*/
+  background: url(../img/search.png) no-repeat left 9px center transparent;
   background-size:24px;
 }
+
 input.search-text:focus {
   z-index:3; 
   width: 270px;
-  border: 1px solid #fff;  
-  background-color: #fff;
+  border: 1px solid #721204;  
+  background-color: #721204;
   outline: none;
   cursor:auto;
   padding-right: 10px;
@@ -470,7 +539,7 @@ input.search-submit {
 }
 
 input.search-text::-webkit-search-cancel-button {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 /* ----------------------------------------
@@ -482,6 +551,11 @@ input.search-text::-webkit-search-cancel-button {
 ---------------------------------------- */
 
 @media screen and (max-width: 1400px) {
+
+  .navbar-nav.center {
+    padding: 0px;
+    margin-left: 0%;
+  }
 
   .divNoticia {
     width: 33%;
@@ -524,13 +598,18 @@ input.search-text::-webkit-search-cancel-button {
   }
 }
 
-@media screen and (max-width: 992px){
-
+@media screen and (max-width: 1100px){
+ 
   span[class*="entypo-"] {
     display: inline;
     position: relative;
     font-size: 1.6em;
     right: 15px;
+  }
+
+  .navbar-nav.center {
+    padding: 0px;
+    margin-left: 0%;
   }
 
 	.menor {
@@ -561,24 +640,52 @@ input.search-text::-webkit-search-cancel-button {
     width: 33%;
     margin-left: 0px;
   }
+
+  .btnTodosEvHome {
+    color: #f8f8f8;
+    background-color: #DAA82D;
+    margin-top: 2%;
+    font-size: 20px;
+  }
+
+  input.search-text:focus {
+    z-index:3; 
+    width: 150px;
+    border: 1px solid #721204;  
+    background-color: #721204;
+    outline: none;
+    cursor:auto;
+    padding-right: 10px;
+  }
 }
 
 @media screen and (max-width: 768px){
+
 	.logo {
 		width: 109px;
 	}
+
+  .navbar-nav.center {
+    padding: 10px;
+    margin-left: -10%;
+  }
+
 	.nav_site {
 		height: 120px;
 		font-size: 14px;
 		background: url(../img/santuario5.png);
 	}
+
 	.navbar-nav > li.active > a {
+    width: 100%;
 		background-color: #DAA82D;
 		border-top: 0px solid #f8f8f8;
 	}
+
 	.espacoTopo {
 		padding-top: 0px;
 	}
+
 	.dropdown-menu > li > a {
 		color: #f8f8f8 !important;
 	}
@@ -588,6 +695,7 @@ input.search-text::-webkit-search-cancel-button {
 	    text-decoration: none;
 	    background-color: #f8f8f8 !important;
 	}
+
 	.margin {
 		margin-top: 150px;
 	}
@@ -622,9 +730,40 @@ input.search-text::-webkit-search-cancel-button {
     margin-top: 10px;
     font-size: 18px;
   }
+
+  input.search-text {
+    color: #fff;
+    position: relative;
+    z-index: 5;
+    transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s;
+    height: 35px;
+    width: 0;
+    margin: 2px 1px 0 -15px;
+    padding: 5px 0 10px 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    /*background: url(https://dl.dropboxusercontent.com/u/6624374/opensource-projects/codepen/search.svg) no-repeat left 9px center transparent;*/
+    background: url(../img/search.png) no-repeat left 9px center transparent;
+    background-size:24px;
+  }
+
+  input.search-text:focus {
+    z-index: 3; 
+    width: 200px;
+    border: 1px solid #721204;  
+    background-color: #721204;
+    outline: none;
+    cursor: auto;
+    padding-right: 0;
+  }
 }
 
 @media screen and (max-width: 480px){
+
 	.noticia {
     width: 100%;
     margin-left: 0%;

@@ -13,7 +13,7 @@
 
 					if($e['Evento']['tipo'] == 1) {
 
-						echo '<br><br><div class="col-md-12" style="padding: 15px"><a class="linkTitulos" href="#"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Festa dos Padroeiros</h3>'). '</a>';
+						echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><a class="linkTitulos" href="eventos/1"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Festa dos Padroeiros</h3>'). '</a>';
 						echo '<hr class="hr"></div>';
 						$tem1 = true;
 						break;
@@ -46,7 +46,7 @@
 
 				if($tem1 == true && !isset($tipo)){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos', 1), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
+					echo '<div class="col-md-12 col-sm-12 text-center">' . $this->Html->link('Ver todos', array('action' => 'eventos', 1), array('class' => 'btnTodosEv btn btn-default', 'title' => 'Ver todos', 'escape' => false)) . '</div><br><br>';
 				}
 
 
@@ -54,7 +54,7 @@
 
 					if($e['Evento']['tipo'] == 2) {
 
-						echo '<br><br><div class="col-md-12" style="padding: 15px"><a class="linkTitulos" href="#"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Encontros</h3>'). '</a>';
+						echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><a class="linkTitulos" href="eventos/2"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Encontros</h3>'). '</a>';
 						echo '<hr class="hr"></div>';
 						$tem2 = true;
 						break;
@@ -85,14 +85,14 @@
 
 				if($tem2 == true && !isset($tipo)){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos', 2), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
+					echo '<div class="col-md-12 col-sm-12 text-center">' . $this->Html->link('Ver todos', array('action' => 'eventos', 2), array('class' => 'btnTodosEv btn btn-default', 'title' => 'Ver todos', 'escape' => false)) . '</div><br><br>';
 				}
 					
 				foreach ($eventos as $e) {
 
 					if($e['Evento']['tipo'] == 3) {
 
-						echo '<br><br><div class="col-md-12" style="padding: 15px"><a class="linkTitulos" href="#"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Outros eventos</h3>'). '</a>';
+						echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><a class="linkTitulos" href="eventos/3"><span class="glyphicon glyphicon-calendar icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Outros eventos</h3>'). '</a>';
 						echo '<hr class="hr"></div>';
 						$tem3 = true;
 						break;
@@ -123,7 +123,7 @@
 
 				if($tem3 == true && !isset($tipo)){
 
-					echo '<div class="col-md-12 text-center">' . $this->Html->link('Ver todos >>', array('action' => 'eventos', 3), array('class' => 'btnTodosEv btn btn-default', 'escape' => false)) . '</div><br><br>';
+					echo '<div class="col-md-12 col-sm-12 text-center">' . $this->Html->link('Ver todos', array('action' => 'eventos', 3), array('class' => 'btnTodosEv btn btn-default', 'title' => 'Ver todos', 'escape' => false)) . '</div><br><br>';
 				}
 			} ?>
 
@@ -131,7 +131,10 @@
 
 		<div class="col-md-3">
 			<?php echo $this->Element('linksRight') ?>
+			<?php echo $this->Element('dizimo') ?>
 		</div>
+
+		
 	</div>
 </div>
 

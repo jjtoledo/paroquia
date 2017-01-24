@@ -36,7 +36,7 @@
             <li>
               <?php echo $this->Form->Create('Search', array('type' => 'get', 'class' => 'search-form')) ?>
                 <input type="submit" value="" class="search-submit"> 
-                <input type="search" name="search" class="search-text" placeholder="Pesquisar..." autocomplete="off">
+                <input type="search" name="search" class="search-text" placeholder="Pesquisar..." title="Clique para pesquisar" autocomplete="off">
               <?php echo $this->Form->end() ?>
             </li>
           </ul>
