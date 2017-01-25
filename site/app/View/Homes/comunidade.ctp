@@ -10,8 +10,10 @@
 				echo '<hr class="hr2"></div>';
 
 				echo '<div class="col-md-12 col-sm-12" style="padding: 0 15px">';
-				echo $this->Html->image($comunidade['Comunidade']['foto_padroeiro'], array('class' => 'img img-responsive'));
-				echo '<br><p style="font-size: 22px">'.$comunidade['Comunidade']['nome_padroeiro'].'</p>';
+					echo '<div class="thumbnail com">';
+						echo $this->Html->image($comunidade['Comunidade']['foto_padroeiro'], array('class' => 'img img-responsive img_com'));
+					echo '</div>';
+					echo '<br><p class="text-center" style="font-size: 22px">'.$comunidade['Comunidade']['nome_padroeiro'].'</p>';
 				echo '</div>';
 
 				echo '<div class="col-md-12 col-sm-12" style="padding: 15px; margin-top: 50px"><span class="glyphicon glyphicon-time icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Celebrações</h3>');

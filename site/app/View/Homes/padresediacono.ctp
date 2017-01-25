@@ -8,7 +8,11 @@
 				foreach ($padres as $p) {
 					echo '<div class="col-md-4">';
 						echo '<div class="col-md-10 col-md-offset-1">';
-							echo $this->Html->image($p['Padre']['foto'], array('width' => '100%'));
+
+							echo '<div class="thumbnail com">';
+								echo $this->Html->image($p['Padre']['foto'], array('class' => 'img img-responsive img_padres'));
+							echo '</div>';
+
 							echo '<p class="text-center" style="font-size: 24px; padding-top: 15px">'.$p['Padre']['nome'].'</p>';
 							echo '<p style="font-size: 20px; padding-top: 15px">'.$p['Padre']['texto'].'</p>';
 						echo '</div>';

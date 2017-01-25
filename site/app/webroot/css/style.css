@@ -43,17 +43,36 @@ span[class*="entypo-"] {
 }
 
 .img_view {
-	margin-bottom: 5px;
 }
 
 .img_view2 {
-	margin-bottom: 5px;
+  width: 100%; 
 	height: 200px;
 }
 
+.fotoSacramentoPrincipal {
+  margin-right: 5px;
+  margin-bottom: -10px;
+}
+
 .img_sacramento {
-  margin-bottom: 5px;
+  width: 100%; 
   height: 280px;
+}
+
+.img_evento {
+  width: 100%; 
+  height: 200px;
+}
+
+.img_com {
+  width: 100%;  
+  height: 280px;
+}
+
+.img_padres {
+  width: 100%; 
+  height: 300px;
 }
 
 .big {
@@ -349,6 +368,10 @@ body {
 .actions2 {
   float: right;
   margin-right: 200px;
+}
+
+.com {
+  margin-bottom: -5px;
 }
 
 /* ----------------------------------------

@@ -6,8 +6,11 @@
 				echo '<hr class="hr"></div>';
 
 				echo '<div class="col-md-4 col-sm-12 fotoEventoPrincipal">';
-					echo $this->Html->image($evento['FotoEvento']['0']['foto'], array('class' => 'img img-responsive'));
+					echo '<div class="thumbnail">';
+						echo $this->Html->image($evento['FotoEvento']['0']['foto'], array('class' => 'img img-responsive img_evento'));
+					echo '</div>';		
 				echo '</div>';
+				
 				echo '<p><b>Data do evento: '.date("d/m/Y", strtotime($evento['Evento']['data'])).'</b></p>';
 				echo '<div class="txtEvento">'.$evento['Evento']['texto'].'</div>';
 
