@@ -1,6 +1,6 @@
 <div class="margin"></div>
 
-<?php echo $this->Element('slideshow') ?>
+<?php echo $this->Element('slideshowCom', array('id' => $comunidade['Comunidade']['id'])) ?>
 
 <div class="container-fluid">
 	<div class="row">

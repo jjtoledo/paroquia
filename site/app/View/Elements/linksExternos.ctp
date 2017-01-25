@@ -1,7 +1,7 @@
 <?php
 	echo $this->Html->link(
 		$this->Html->image('radio.png', array('class' => 'col-md-12 col-sm-12 img img-responsive linksExternos', 'title' => 'Programa A Igreja nos ensina')),
-		'#', 
+		'http://www.morrograndefm.com.br/', 
 		array('target' => '_blank', 'escape' => false)
 	);
 
