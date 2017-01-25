@@ -60,6 +60,13 @@ class ComunidadesController extends AppController {
  * @return void
  */
 	public function add() {
+		$tipo = array(
+			1 => 'Urbana',
+			2 => 'Rural'
+		);
+
+		$this->set(compact('tipo'));
+
 		if ($this->request->is('post')) {
 			$this->Comunidade->create();
 			if ($this->Comunidade->save($this->request->data)) {
@@ -95,6 +102,13 @@ class ComunidadesController extends AppController {
 		} else {
 			$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $id));
 			$this->request->data = $this->Comunidade->find('first', $options);
+
+			$tipo = array(
+				1 => 'Urbana',
+				2 => 'Rural'
+			);
+
+			$this->set(compact('tipo'));
 		}
 	}
 

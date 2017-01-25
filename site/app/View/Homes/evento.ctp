@@ -5,10 +5,25 @@
 				echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos">'.__('<h2 class="h2">'.$evento['Evento']['nome'].'</h2>'). '</div>';
 				echo '<hr class="hr"></div>';
 
-				echo '<div class="col-md-4 col-sm-12">';
+				echo '<div class="col-md-4 col-sm-12 fotoEventoPrincipal">';
 					echo $this->Html->image($evento['FotoEvento']['0']['foto'], array('class' => 'img img-responsive'));
 				echo '</div>';
+				echo '<p><b>Data do evento: '.date("d/m/Y", strtotime($evento['Evento']['data'])).'</b></p>';
 				echo '<div class="txtEvento">'.$evento['Evento']['texto'].'</div>';
+
+				echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos"><span class="glyphicon glyphicon-picture icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Fotos do evento</h3>'). '</div>';
+				echo '<hr class="hr"></div>';
+				foreach ($evento['FotoEvento'] as $foto) {
+					echo '<div class="col-xs-12 col-sm-6 col-md-3">';
+						echo '<div class="thumbnail">';
+							echo $this->Html->link(
+									 $this->Html->image($foto['foto'], array('class' => 'img img-responsive img_view2')),
+									 '../img/'.$foto['foto'],
+									 array('escapeTitle' => false, 'title' => $foto['descricao'], 'data-lightbox'=> 'roadtrip', 'class' => 'class_url')
+								);
+						echo '</div>';
+					echo '</div>';
+				}
 			?>
 		</div>
 

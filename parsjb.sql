@@ -123,6 +123,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 --updates
 ALTER TABLE eventos add COLUMN nome varchar(200) AFTER tipo;
 ALTER TABLE eventos add COLUMN data date AFTER tipo;
+ALTER TABLE comunidades add COLUMN tipo int AFTER id;
 
 CREATE TABLE IF NOT EXISTS `parsjb`.`pdfs` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,

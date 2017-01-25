@@ -52,14 +52,7 @@ class HomesController extends AppController {
         $this->loadModel('Pastoral');
         $this->loadModel('Sacramento');
         $this->loadModel('Comunidade');
-        $this->loadModel('Pdf');
-
-        $options = array(
-            'order' => 'id DESC',
-            'limit' => 1
-        );
-        $pdf = $this->Pdf->find('all', $options);
-        $this->set(compact('pdf'));
+        $this->common();
 
         if(isset($this->params['url']['search'])) {  
             $search = "%" . $this->params['url']['search'] . "%";
@@ -118,14 +111,7 @@ class HomesController extends AppController {
         }
         $this->set(compact('fotos_ev')); 
 
-        $this->loadModel('Pdf');
-
-        $options = array(
-            'order' => 'id DESC',
-            'limit' => 1
-        );
-        $pdf = $this->Pdf->find('all', $options);
-        $this->set(compact('pdf'));    
+        $this->common();   
     }
 
     public function evento($id = null) {
@@ -134,14 +120,7 @@ class HomesController extends AppController {
         $evento = $this->Evento->findById($id);
         $this->set(compact('evento'));
 
-        $this->loadModel('Pdf');
-
-        $options = array(
-            'order' => 'id DESC',
-            'limit' => 1
-        );
-        $pdf = $this->Pdf->find('all', $options);
-        $this->set(compact('pdf'));
+        $this->common();
     }
 
     public function pdfs() {
@@ -155,11 +134,13 @@ class HomesController extends AppController {
         $this->set(compact('pdfs'));
     }
 
-    public function padres() {
+    public function padresediacono() {
         $this->loadModel('Padre');
         
         $padres = $this->Padre->find('all');
         $this->set(compact('padres'));
+
+        $this->common();
     }
 
     public function comunidades() {
@@ -167,6 +148,8 @@ class HomesController extends AppController {
         
         $comunidades = $this->Comunidade->find('all');
         $this->set(compact('comunidades'));
+
+        $this->common();
     }
 
     public function comunidade($id = null) {
@@ -174,6 +157,12 @@ class HomesController extends AppController {
         
         $comunidade = $this->Comunidade->findById($id);
         $this->set(compact('comunidade'));
+
+        $this->loadModel('FotoComunidade');
+        $fotos_com = $this->FotoComunidade->find('all');
+        $this->set(compact('fotos_com'));
+
+        $this->common();
     }
 
     public function sacramentos() {
@@ -181,20 +170,35 @@ class HomesController extends AppController {
         
         $sacramentos = $this->Sacramento->find('all');
         $this->set(compact('sacramentos'));
+
+        $this->common();
     }
 
-    public function pastorals() {
+    public function pastoraisemov() {
         $this->loadModel('Pastoral');
         
         $pastorals = $this->Pastoral->find('all');
         $this->set(compact('pastorals'));
+
+        $this->common();
     }
 
     public function fale_conosco() {
-
+        $this->common();
     }
 
     public function visitas() {
-        
+        $this->common();
+    }
+
+    public function common() {
+        $this->loadModel('Pdf');
+
+        $options = array(
+            'order' => 'id DESC',
+            'limit' => 1
+        );
+        $pdf = $this->Pdf->find('all', $options);
+        $this->set(compact('pdf'));
     }
 }

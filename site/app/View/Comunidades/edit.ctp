@@ -35,6 +35,9 @@
 					<?php echo $this->Form->input('nome', array('class' => 'form-control', 'placeholder' => 'Nome'));?>
 				</div>
 				<div class="form-group">
+					<?php echo $this->Form->input('tipo', array('options' => $tipo, 'class' => 'form-control'));?>
+				</div>
+				<div class="form-group">
 					<?php echo $this->Tinymce->input('Comunidade.historico', $options = array('label' => 'Histórico'), $tinyoptions = array(), $preset = null) ?>
 				</div>
 				<div class="form-group">
