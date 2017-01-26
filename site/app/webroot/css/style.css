@@ -80,7 +80,12 @@ span[class*="entypo-"] {
 }
 
 .logo {
-	width: 155px;
+	width: 200px;
+  height: 200px;
+}
+
+.logo-media {
+  width: 135px;
 }
 
 .logo-min {
@@ -89,6 +94,22 @@ span[class*="entypo-"] {
 
 .class_img {
   border-bottom: 1px solid #ccc;
+}
+
+.opacity {
+  transition-duration: 500ms;
+}
+
+.opacity:hover {
+  filter: alpha(opacity:0.7); 
+  KHTMLOpacity: 0.7; 
+  MozOpacity: 0.7; 
+  -khtml-opacity:.70; 
+  -ms-filter:"alpha(opacity=70)"; 
+  -moz-opacity:.70; 
+  filter:alpha(opacity=70); 
+  opacity:.70;
+  transition-duration: 500ms;
 }
 
 /* ----------------------------------------
@@ -101,6 +122,10 @@ span[class*="entypo-"] {
 
 .navbar-brand {
 	height: auto;
+}
+
+.navbar-brand.media {
+  padding: 0;
 }
 
 .navbar-brand.min {
@@ -147,15 +172,25 @@ span[class*="entypo-"] {
     border-color: #DAA82D;
 }
 
+.navbar-nav.media-top {
+  margin-top: 30px;
+}
+
+.no-padding {
+    padding: 10px 10px 0 10px;
+}
+
 .nav_scroll {
 	font-size: 12px;
 	font-variant: bold;
 }
 
 .nav_site {
-	height: 170px;	
+	height: 200px;	
 	font-size: 14px;
-	background: url(../img/santuario2-1.png);
+	background: url(../img/santuario.png);
+  background-position-x: 150px;
+  background-position-y: -435px;
 }
 
 .nav_site2 {
@@ -167,6 +202,12 @@ span[class*="entypo-"] {
 .nav_large {
 	background-color: #DAA82D;
 	display: none;
+}
+
+.nav_site3 {
+  height: 150px;
+  font-size: 14px;
+  background-color: #DAA82D;
 }
 
 .navbar-toggle {
@@ -310,7 +351,7 @@ body {
 }
 
 .margin {
-	margin-top: 220px;
+	margin-top: 200px;
 }
 
 .margin_admin {
@@ -318,7 +359,7 @@ body {
 }
 
 .margin_semSlide {
-  margin-top: 160px;
+  margin-top: 150px;
 }
 
 .container-fluid{
@@ -376,6 +417,18 @@ body {
 
 /* ----------------------------------------
     Fim Outros
+---------------------------------------- */
+
+/* ----------------------------------------
+    Form Contato
+---------------------------------------- */
+
+.panel-title {
+  font-size: 22px;
+}
+
+/* ----------------------------------------
+    Fim Contato
 ---------------------------------------- */
 
 /* ----------------------------------------
@@ -799,7 +852,20 @@ input.search-text::-webkit-search-cancel-button {
   }
 }
 
+@media screen and (max-width: 900px){
+  .saoJoao {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px){
+  .nav_site3 {
+    display: none;
+  }
+
+  .nav_large {
+    display: block;
+  }
 
 	.logo {
 		width: 109px;

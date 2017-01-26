@@ -48,31 +48,10 @@ class HomesController extends AppController {
         }
         $this->set(compact('fotos_ev'));
 
-        $this->loadModel('Padre');
-        $this->loadModel('Pastoral');
-        $this->loadModel('Sacramento');
-        $this->loadModel('Comunidade');
-        $this->common();
+        $this->common();        
 
         if(isset($this->params['url']['search'])) {  
-            $search = "%" . $this->params['url']['search'] . "%";
-            $options = array(
-                'conditions' => array(
-                    'Comunidade.nome LIKE' => $search
-                )
-            );
-
-            $results_com = $this->Comunidade->find('all', $options);
-            $this->set('results_com', $results_com);
-
-            $options = array(
-                'conditions' => array(
-                    'Evento.nome LIKE' => $search
-                )
-            );
-
-            $results_ev = $this->Evento->find('all', $options);
-            $this->set('results_ev', $results_ev);  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
         }
     }
 
@@ -112,6 +91,10 @@ class HomesController extends AppController {
         $this->set(compact('fotos_ev')); 
 
         $this->common();   
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function evento($id = null) {
@@ -121,6 +104,10 @@ class HomesController extends AppController {
         $this->set(compact('evento'));
 
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function pdfs() {
@@ -132,6 +119,10 @@ class HomesController extends AppController {
         
         $pdfs = $this->Pdf->find('all', $options);
         $this->set(compact('pdfs'));
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function padresediacono() {
@@ -141,6 +132,10 @@ class HomesController extends AppController {
         $this->set(compact('padres'));
 
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function comunidades() {
@@ -150,6 +145,10 @@ class HomesController extends AppController {
         $this->set(compact('comunidades'));
 
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function comunidade($id = null) {
@@ -163,6 +162,10 @@ class HomesController extends AppController {
         $this->set(compact('fotos_com'));
 
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function sacramentos() {
@@ -172,6 +175,10 @@ class HomesController extends AppController {
         $this->set(compact('sacramentos'));
 
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function pastoraisemov() {
@@ -181,13 +188,63 @@ class HomesController extends AppController {
         $this->set(compact('pastorals'));
 
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function fale_conosco() {
         $this->common();
+
+        if ($this->request->is('post')) {
+            $Email = new CakeEmail();
+            $Email->config('smtp');
+            $Email->replyTo(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
+                ->sender(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
+                ->to('contato@portalmediopiracicaba.com')
+                ->subject($this->data['Contato']['assunto'])
+                ->message($this->data['Contato']['mensagem']);
+            
+            if ($Email->send()) {
+                $this->Session->setFlash(__('E-mail enviado com sucesso! Em breve entraremos em contato.'), 'default', array('class' => 'contato alert alert-success'));
+            } else {
+                $this->Session->setFlash(__('E-mail não enviado, tente novamente mais tarde...'), 'default', array('class' => 'contato alert alert-danger'));
+            }           
+            $this->redirect(array('action' => 'fale_conosco'));
+        }
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 
     public function visitas() {
+        $this->common();
+
+        if ($this->request->is('post')) {
+            $Email = new CakeEmail();
+            $Email->config('smtp');
+            $Email->replyTo(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
+                ->sender(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
+                ->to('contato@portalmediopiracicaba.com')
+                ->subject('Agendamento de visita')
+                ->message($this->data['Contato']['endereco'] . ' - ' .$this->data['Contato']['mensagem']);
+            
+            if ($Email->send()) {
+                $this->Session->setFlash(__('Agendamento de visita enviado com sucesso! Em breve entraremos em contato.'), 'default', array('class' => 'contato alert alert-success'));
+            } else {
+                $this->Session->setFlash(__('E-mail não enviado, tente novamente mais tarde...'), 'default', array('class' => 'contato alert alert-danger'));
+            }           
+            $this->redirect(array('action' => 'visitas'));
+        }
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
+    }
+
+    public function dizimo() {
         $this->common();
     }
 
@@ -200,5 +257,75 @@ class HomesController extends AppController {
         );
         $pdf = $this->Pdf->find('all', $options);
         $this->set(compact('pdf'));
+    }
+
+    public function buscar($busca = null) {
+        $this->common();
+
+        $this->loadModel('Pdf');
+        $this->loadModel('Padre');
+        $this->loadModel('Evento');
+        $this->loadModel('Pastoral');
+        $this->loadModel('Comunidade');
+        $this->loadModel('Sacramento');
+
+        $search = "%" . $busca . "%";
+        $options = array(
+            'conditions' => array(
+                'Comunidade.nome LIKE' => $search
+            )
+        );
+
+        $results_com = $this->Comunidade->find('all', $options);
+        $this->set('results_com', $results_com);
+
+        $options = array(
+            'conditions' => array(
+                'Evento.nome LIKE' => $search
+            )
+        );
+
+        $results_ev = $this->Evento->find('all', $options);
+        $this->set('results_ev', $results_ev);
+
+        $options = array(
+            'conditions' => array(
+                'Pdf.pdf LIKE' => $search
+            )
+        );
+
+        $results_pdf = $this->Pdf->find('all', $options);
+        $this->set('results_pdf', $results_pdf);
+
+        $options = array(
+            'conditions' => array(
+                'Padre.nome LIKE' => $search
+            )
+        );
+
+        $results_padre = $this->Padre->find('all', $options);
+        $this->set('results_padre', $results_padre);
+
+        $options = array(
+            'conditions' => array(
+                'Pastoral.nome LIKE' => $search
+            )
+        );
+
+        $results_past = $this->Pastoral->find('all', $options);
+        $this->set('results_past', $results_past);
+
+        $options = array(
+            'conditions' => array(
+                'Sacramento.nome LIKE' => $search
+            )
+        );
+
+        $results_sac = $this->Sacramento->find('all', $options);
+        $this->set('results_sac', $results_sac);
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+        }
     }
 }

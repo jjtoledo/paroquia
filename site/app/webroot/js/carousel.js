@@ -1,5 +1,5 @@
 (function(){
-  $('#carouselABC').carousel({ interval: 3000 });
+  $('#carouselABC').carousel({ interval: false });
 }());
 
 (function(){
