@@ -1,3 +1,4 @@
+
 /* ----------------------------------------
     Entypo (ícones)
 ---------------------------------------- */
@@ -39,7 +40,7 @@ span[class*="entypo-"] {
 ---------------------------------------- */
 
 .col-md-3.foto_view {
-	padding: 0;
+  padding: 0;
 }
 
 .img_view {
@@ -47,7 +48,7 @@ span[class*="entypo-"] {
 
 .img_view2 {
   width: 100%; 
-	height: 200px;
+  height: 200px;
 }
 
 .fotoSacramentoPrincipal {
@@ -76,11 +77,11 @@ span[class*="entypo-"] {
 }
 
 .big {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .logo {
-	width: 200px;
+  width: 200px;
   height: 200px;
 }
 
@@ -89,7 +90,7 @@ span[class*="entypo-"] {
 }
 
 .logo-min {
-	width: 60px;
+  width: 60px;
 }
 
 .class_img {
@@ -121,7 +122,7 @@ span[class*="entypo-"] {
 ---------------------------------------- */
 
 .navbar-brand {
-	height: auto;
+  height: auto;
 }
 
 .navbar-brand.media {
@@ -129,22 +130,22 @@ span[class*="entypo-"] {
 }
 
 .navbar-brand.min {
-	padding: 5px;
+  padding: 5px;
 }
 
 .navbar-nav {
-	padding: 15px;
-	font-size: 1.3em;
-	background-color: #DAA82D;	
+  padding: 15px;
+  font-size: 1.3em;
+  background-color: #DAA82D;  
 }
 
 .navbar-nav.center {
-	padding: 0px;
-	margin-left: -10%;
+  padding: 0px;
+  margin-left: -10%;
 }
 
 .navbar-nav > li > a {
-	color: #f8f8f8;
+  color: #f8f8f8;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -157,9 +158,9 @@ span[class*="entypo-"] {
 }
 
 .navbar-nav > li.active > a {
-	background-color: #DAA82D !important;
-	border-top: 3px solid #f8f8f8;
-	padding-top: 12px;
+  background-color: #DAA82D !important;
+  border-top: 3px solid #f8f8f8;
+  padding-top: 12px;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -181,27 +182,27 @@ span[class*="entypo-"] {
 }
 
 .nav_scroll {
-	font-size: 12px;
-	font-variant: bold;
+  font-size: 12px;
+  font-variant: bold;
 }
 
 .nav_site {
-	height: 200px;	
-	font-size: 14px;
-	background: url(../img/santuario.png);
+  height: 200px;  
+  font-size: 14px;
+  background: url(../img/santuario.png);
   background-position-x: 150px;
   background-position-y: -435px;
 }
 
 .nav_site2 {
-	width: 100%;
-	font-size: 12px;
-	background-color: #DAA82D;
+  width: 100%;
+  font-size: 12px;
+  background-color: #DAA82D;
 }
 
 .nav_large {
-	background-color: #DAA82D;
-	display: none;
+  background-color: #DAA82D;
+  display: none;
 }
 
 .nav_site3 {
@@ -211,7 +212,7 @@ span[class*="entypo-"] {
 }
 
 .navbar-toggle {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -220,17 +221,17 @@ span[class*="entypo-"] {
 }
 
 .navbar-nav > li > a:focus > a {
-	color: #DAA82D !important;
-	background-color: #f8f8f8 !important;
+  color: #DAA82D !important;
+  background-color: #f8f8f8 !important;
 }
 
 .navbar-nav > li > a:hover {
-	color: #DAA82D !important;
-	background-color: #f8f8f8 !important;
+  color: #DAA82D !important;
+  background-color: #f8f8f8 !important;
 }
 
 .caret > a:focus{
-	color: #DAA82D;
+  color: #DAA82D;
 }
 
 /* ----------------------------------------
@@ -242,13 +243,13 @@ span[class*="entypo-"] {
 ---------------------------------------- */
 
 .nav_admin {
-	background-color: #337AB7;
+  background-color: #337AB7;
 }
 
 .navbar-nav.navbar-right  {
-	padding: 15px;
-	font-size: 1.3em;
-	background-color: #337AB7;
+  padding: 15px;
+  font-size: 1.3em;
+  background-color: #337AB7;
 }
 
 .navbar-nav.navbar-right > li > a:hover {
@@ -265,12 +266,12 @@ span[class*="entypo-"] {
 ---------------------------------------- */
 
 .dropdown-menu {
-	background-color: #DAA82D;
+  background-color: #DAA82D;
 }
 
 .dropdown-menu > li > a {
-	color: #f8f8f8;
-	font-size: 16px;
+  color: #f8f8f8;
+  font-size: 16px;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
@@ -343,19 +344,19 @@ body {
 }
 
 .espacoTopo {
-	padding-top: 10px;
+  padding-top: 10px;
 }
 
 .espacoTopo2 {
-	padding-top: 10px;
+  padding-top: 10px;
 }
 
 .margin {
-	margin-top: 200px;
+  margin-top: 200px;
 }
 
 .margin_admin {
-	margin-top: 100px;
+  margin-top: 100px;
 }
 
 .margin_semSlide {
@@ -363,15 +364,15 @@ body {
 }
 
 .container-fluid{
-	padding-left: 0px;
-	padding-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .cinza {
-	font-size: 20px;
-	padding-left: 15px;
-	padding-right: 15px;
-	color: #222;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #222;
 }
 
 .btnTodosEvHome {
@@ -452,7 +453,7 @@ body {
 
 
 /* ----------------------------------------
-	Início Css para links externos
+  Início Css para links externos
 ---------------------------------------- */
 
 .linksExternos {
@@ -598,7 +599,7 @@ p.txtDizimo {
 }
 
 /* ----------------------------------------
-	Fim Css para cards
+  Fim Css para cards
 ---------------------------------------- */
 
 /* ----------------------------------------
@@ -759,7 +760,7 @@ input.search-text::-webkit-search-cancel-button {
 
 @media screen and (max-width: 1200px){
 
-	.noticia {
+  .noticia {
     width: 80%;
     margin-left: 10%;
   }
@@ -793,7 +794,7 @@ input.search-text::-webkit-search-cancel-button {
     margin-left: 0%;
   }
 
-	.menor {
+  .menor {
     font-size: 16px;
     margin-top: 20px;
   }
@@ -803,7 +804,7 @@ input.search-text::-webkit-search-cancel-button {
     margin-top: 10px;
   }
 
-	.noticia {
+  .noticia {
     width: 100%;
     margin-left: 0;
   } 
@@ -812,7 +813,7 @@ input.search-text::-webkit-search-cancel-button {
     height: 350px;
   } 
 
-	.divNoticia.center {
+  .divNoticia.center {
     text-align: center;
     left: 25%;
   }
@@ -867,44 +868,44 @@ input.search-text::-webkit-search-cancel-button {
     display: block;
   }
 
-	.logo {
-		width: 109px;
-	}
+  .logo {
+    width: 109px;
+  }
 
   .navbar-nav.center {
     padding: 10px;
     margin-left: -10%;
   }
 
-	.nav_site {
-		height: 120px;
-		font-size: 14px;
-		background: url(../img/santuario5.png);
-	}
+  .nav_site {
+    height: 120px;
+    font-size: 14px;
+    background: url(../img/santuario5.png);
+  }
 
-	.navbar-nav > li.active > a {
+  .navbar-nav > li.active > a {
     width: 100%;
-		background-color: #DAA82D;
-		border-top: 0px solid #f8f8f8;
-	}
+    background-color: #DAA82D;
+    border-top: 0px solid #f8f8f8;
+  }
 
-	.espacoTopo {
-		padding-top: 0px;
-	}
+  .espacoTopo {
+    padding-top: 0px;
+  }
 
-	.dropdown-menu > li > a {
-		color: #f8f8f8 !important;
-	}
+  .dropdown-menu > li > a {
+    color: #f8f8f8 !important;
+  }
 
-	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-	    color: #DAA82D !important;
-	    text-decoration: none;
-	    background-color: #f8f8f8 !important;
-	}
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+      color: #DAA82D !important;
+      text-decoration: none;
+      background-color: #f8f8f8 !important;
+  }
 
-	.margin {
-		margin-top: 150px;
-	}
+  .margin {
+    margin-top: 150px;
+  }
 
   .divNoticia.center {
     text-align: center;
@@ -912,8 +913,8 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .divNoticia {
-  	padding-right: 15%;
-  	padding-left: 15%;
+    padding-right: 15%;
+    padding-left: 15%;
     width: 100%;
     margin-left: 0px;
   }
@@ -924,7 +925,7 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .noticia.agenda {
-  	height: 450px;
+    height: 450px;
   }
 
   .menor {
@@ -970,13 +971,13 @@ input.search-text::-webkit-search-cancel-button {
 
 @media screen and (max-width: 480px){
 
-	.noticia {
+  .noticia {
     width: 100%;
     margin-left: 0%;
   }
 
   .noticia.agenda {
-  	height: 320px;
+    height: 320px;
   }
 
   .divNoticia {
@@ -1006,8 +1007,8 @@ input.search-text::-webkit-search-cancel-button {
     margin-left: 0px;
   }
 
-	.menor {
-		margin-top: 15px;
+  .menor {
+    margin-top: 15px;
     font-size: 18px;
   }
 
@@ -1017,7 +1018,7 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .noticia.agenda {
-  	height: 300px;
+    height: 300px;
   }
 }
 

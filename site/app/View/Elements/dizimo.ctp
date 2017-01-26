@@ -4,14 +4,15 @@
 
 	echo '<div class="col-sm-12">';
 
-		echo $this->Html->image('dizimo-1.png', array('class' => 'col-md-12 col-sm-4 img img-responsive fotoDizimo'));
+		echo $this->Html->link(
+						$this->Html->image('dizimo-1.png', array('class' => 'col-md-12 col-sm-4 img img-responsive fotoDizimo opacity')),
+						array('action' => 'dizimo'),
+						array('escape' => false, 'title' => 'Clique para ler mais'));
 
 		echo '<br><br><div class="col-sm-12">';
 		echo '</div>';
 
-		echo '<p class="col-md-12 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 
-
-		echo '<a class="linkDizimo btn btn-default" href="#">Continuar lendo >></a>'; 
+		echo '<p class="col-md-12 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>';  
 
 	echo '</div>';
 

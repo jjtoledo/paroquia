@@ -44,9 +44,12 @@
     <div class="container-fluid">
       <?php 
         if ($this->params['controller'] == 'homes' || $this->params['controller'] == 'pages') {
-          echo $this->Element('nav_site3');
+          //echo $this->Element('nav_site');
           //echo $this->Element('nav_site2');
-          echo $this->Element('nav_large'); 
+          echo $this->Element('nav_site3');
+
+          echo $this->Element('nav_large');
+           
         } else {
           echo $this->Element('navigation');
           echo '<div class="margin_admin"></div>';           

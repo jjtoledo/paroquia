@@ -5,7 +5,7 @@
 	</div>
   
 	<div class="row">
-	    <div class="col-md-12">
+	    <div class="col-md-12"> <!--add margin para nav_site-->
 	      	<div class="carousel carousel-showmanymoveone slide" id="carouselABC">
 	        	<div class="carousel-inner">
         			<?php         			

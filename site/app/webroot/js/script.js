@@ -17,7 +17,7 @@ $(function () {
 }); 
 
 //imprimir 
-var popup;  
+/*var popup;  
 function closePrint () {     
     if ( popup ) {
         popup.close();     
@@ -27,4 +27,4 @@ popup = window.open( $('#img_imprimir').attr('src') );
 popup.onbeforeunload = closePrint; 
 popup.onafterprint = closePrint; 
 popup.focus(); // Required for IE 
-popup.print();
+popup.print();*/
