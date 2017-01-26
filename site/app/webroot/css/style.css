@@ -44,6 +44,7 @@ span[class*="entypo-"] {
 }
 
 .img_view {
+  margin-bottom: 5px;
 }
 
 .img_view2 {
@@ -89,12 +90,17 @@ span[class*="entypo-"] {
   width: 135px;
 }
 
+
 .logo-min {
   width: 60px;
 }
 
 .class_img {
   border-bottom: 1px solid #ccc;
+}
+
+.saojoao {
+  margin-top: -200px;
 }
 
 .opacity {
@@ -134,9 +140,27 @@ span[class*="entypo-"] {
 }
 
 .navbar-nav {
+  padding: 0;
+  font-size: 1.3em;
+  background-color: #721204; 
+  margin-left: 20%;
+}
+
+.paroquia {
+  font-size: 40px;
+  color: #f8f8f8;
+  margin-top: 20px;
+  text-align: center;
+  margin-right: 150px;
+  /*margin-left: 12%; se não centralizar*/
+  margin-bottom: 25px;
+}
+
+.navbar-nav.large {
   padding: 15px;
   font-size: 1.3em;
-  background-color: #DAA82D;  
+  background-color: #DAA82D; 
+  margin-left: 0; 
 }
 
 .navbar-nav.center {
@@ -174,11 +198,13 @@ span[class*="entypo-"] {
 }
 
 .navbar-nav.media-top {
-  margin-top: 30px;
+  margin-top: -20px;
 }
 
 .no-padding {
     padding: 10px 10px 0 10px;
+    margin-top: -102px;
+    background-color: #DAA82D; 
 }
 
 .nav_scroll {
@@ -215,6 +241,8 @@ span[class*="entypo-"] {
   margin-top: 25px;
 }
 
+/*nav_large*/
+
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #DAA82D;
     background-color: #f8f8f8;
@@ -232,6 +260,28 @@ span[class*="entypo-"] {
 
 .caret > a:focus{
   color: #DAA82D;
+}
+
+
+/*nav_site3*/
+
+.navbar-default .navbar-nav.media-top > .open > a, .navbar-default .navbar-nav.media-top > .open > a:hover, .navbar-default .navbar-nav.media-top > .open > a:focus {
+    color: #721204;
+    background-color: #f8f8f8;
+}
+
+.navbar-nav.media-top > li > a:focus > a {
+  color: #721204 !important;
+  background-color: #f8f8f8 !important;
+}
+
+.navbar-nav.media-top > li > a:hover {
+  color: #721204 !important;
+  background-color: #f8f8f8 !important;
+}
+
+.caret > a:focus{
+  color: #721204;
 }
 
 /* ----------------------------------------
@@ -265,6 +315,7 @@ span[class*="entypo-"] {
     Dropdown-menu
 ---------------------------------------- */
 
+/*nav_large*/
 .dropdown-menu {
   background-color: #DAA82D;
 }
@@ -276,6 +327,23 @@ span[class*="entypo-"] {
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color: #DAA82D;
+    text-decoration: none;
+    background-color: #f8f8f8;
+}
+
+
+/*nav_site3*/
+.dropdown-menu.navbarRed {
+  background-color: #721204;
+}
+
+.dropdown-menu.navbarRed > li > a {
+  color: #f8f8f8;
+  font-size: 16px;
+}
+
+.dropdown-menu.navbarRed > li > a:hover, .dropdown-menu.navbarRed > li > a:focus {
+    color: #721204;
     text-decoration: none;
     background-color: #f8f8f8;
 }
@@ -341,6 +409,18 @@ body {
   color: #721204;
   display: inline;
   padding-left: 10px;
+}
+
+p {
+  background-color: #dddddd !important;
+}
+
+.pFooter {
+  background-color: #721204 !important;
+}
+
+.pNavbar {
+  background-color: #DAA82D !important;
 }
 
 .espacoTopo {
@@ -620,11 +700,6 @@ p.txtDizimo {
     Fim Css txtEvento
 ---------------------------------------- */
 
-
-/* ----------------------------------------
-  Iício Css para searchbox
----------------------------------------- */
-
 /* ----------------------------------------
   Iício Css para menuComunidades
 ---------------------------------------- */
@@ -680,10 +755,14 @@ div#cidades.container {
     Fim Css menuComunidades
 ---------------------------------------- */
 
+/* ----------------------------------------
+    Início Css para searchbox
+---------------------------------------- */
+
 input.search-text {
-  color: #fff;
-  position:relative;
-  z-index:5;
+  color: #222;
+  position: relative;
+  z-index: 5;
   transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s;
   height: 35px;
   width: 0;
@@ -695,18 +774,17 @@ input.search-text {
   cursor: pointer;
   border-radius: 5px;
   border: 2px solid transparent;
-  /*background: url(https://dl.dropboxusercontent.com/u/6624374/opensource-projects/codepen/search.svg) no-repeat left 9px center transparent;*/
   background: url(../img/search.png) no-repeat left 9px center transparent;
-  background-size:24px;
+  background-size: 24px;
 }
 
 input.search-text:focus {
   z-index:3; 
-  width: 270px;
-  border: 1px solid #721204;  
-  background-color: #721204;
+  width: 250px;
+  border: 1px solid #cccccc;  
+  background-color: #cccccc;
   outline: none;
-  cursor:auto;
+  cursor: auto;
   padding-right: 10px;
 }
 
@@ -718,6 +796,7 @@ input.search-submit {
   border-radius: 30px;
   cursor: pointer; 
   background: none;
+  margin-left: 5px;
 }
 
 input.search-text::-webkit-search-cancel-button {

@@ -8,6 +8,6 @@
 		<?php echo $this->Html->image('arquidiocese1.png', array('class' => 'col-md-3 col-sm-5 img img-responsive arqRodape')); ?>
 	</div>
 	<div id="footerRow" class="col-md-10 col-md-offset-1">
- 		<p>Copyright © 2017 Todos os direitos reservados</p>
+ 		<p class="pFooter">Copyright © 2017 Todos os direitos reservados</p>
 	</div> 
 </div>

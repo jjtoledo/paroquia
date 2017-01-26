@@ -2,14 +2,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<?php
-				echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><span class="glyphicon glyphicon-time icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Atendimento</h3>');
-				echo '<hr class="hr2"></div>';
-				echo '<p class="cinza"><b>Escritório Paroquial:</b></p>';
-				echo '<p class="cinza">Segunda de 13hs às 18hs.</p>';
-				echo '<p class="cinza">Terça a Sexta de 08h às 11h e de 13h às 18h.</p>';
-				echo '<p class="cinza"><span class="glyphicon glyphicon-earphone"></span> (31) 3837-1766</p>';
-				echo '<p class="cinza"><span class="glyphicon glyphicon-envelope"></span> santuario_sjb@hotmail.com</p>';
-				echo '<p class="cinza"><span class="glyphicon glyphicon-map-marker"></span> Praça Monsenhor Gerardo Magela Pereira, 12 - Centro - Barão de Cocais, MG - CEP: 35970-000</p>';
+				echo $this->Element('atendimento');
 			?>
 		</div>
 
@@ -17,7 +10,7 @@
 			<div class="col-md-12" style="margin-top: 60px">
 				<div class="panel panel-warning">
 				  <div class="panel-heading" style="padding: 20px">
-				    <h3 class="panel-title text-center">Agende uma visita</h3>
+				    <h3 class="panel-title text-center">Agende sua visita/conversa com os padres ou diácono.<br> Preencha o formulário abaixo:</h3>
 				  </div>
 				  <div class="panel-body" style="padding: 30px">			
 			  		<?php echo $this->Form->create('Contato', array('role' => 'form')); ?>

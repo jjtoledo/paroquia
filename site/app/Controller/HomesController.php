@@ -270,62 +270,70 @@ class HomesController extends AppController {
         $this->loadModel('Sacramento');
 
         $search = "%" . $busca . "%";
-        $options = array(
-            'conditions' => array(
-                'Comunidade.nome LIKE' => $search
-            )
-        );
 
-        $results_com = $this->Comunidade->find('all', $options);
-        $this->set('results_com', $results_com);
+        if($search == "%%") {
 
-        $options = array(
-            'conditions' => array(
-                'Evento.nome LIKE' => $search
-            )
-        );
+            $this->redirect(array('action' => 'index'));
+            
+        } else {
 
-        $results_ev = $this->Evento->find('all', $options);
-        $this->set('results_ev', $results_ev);
+            $options = array(
+                'conditions' => array(
+                    'Comunidade.nome LIKE' => $search
+                )
+            );
 
-        $options = array(
-            'conditions' => array(
-                'Pdf.pdf LIKE' => $search
-            )
-        );
+            $results_com = $this->Comunidade->find('all', $options);
+            $this->set('results_com', $results_com);
 
-        $results_pdf = $this->Pdf->find('all', $options);
-        $this->set('results_pdf', $results_pdf);
+            $options = array(
+                'conditions' => array(
+                    'Evento.nome LIKE' => $search
+                )
+            );
 
-        $options = array(
-            'conditions' => array(
-                'Padre.nome LIKE' => $search
-            )
-        );
+            $results_ev = $this->Evento->find('all', $options);
+            $this->set('results_ev', $results_ev);
 
-        $results_padre = $this->Padre->find('all', $options);
-        $this->set('results_padre', $results_padre);
+            $options = array(
+                'conditions' => array(
+                    'Pdf.pdf LIKE' => $search
+                )
+            );
 
-        $options = array(
-            'conditions' => array(
-                'Pastoral.nome LIKE' => $search
-            )
-        );
+            $results_pdf = $this->Pdf->find('all', $options);
+            $this->set('results_pdf', $results_pdf);
 
-        $results_past = $this->Pastoral->find('all', $options);
-        $this->set('results_past', $results_past);
+            $options = array(
+                'conditions' => array(
+                    'Padre.nome LIKE' => $search
+                )
+            );
 
-        $options = array(
-            'conditions' => array(
-                'Sacramento.nome LIKE' => $search
-            )
-        );
+            $results_padre = $this->Padre->find('all', $options);
+            $this->set('results_padre', $results_padre);
 
-        $results_sac = $this->Sacramento->find('all', $options);
-        $this->set('results_sac', $results_sac);
+            $options = array(
+                'conditions' => array(
+                    'Pastoral.nome LIKE' => $search
+                )
+            );
 
-        if(isset($this->params['url']['search'])) {  
-            $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+            $results_past = $this->Pastoral->find('all', $options);
+            $this->set('results_past', $results_past);
+
+            $options = array(
+                'conditions' => array(
+                    'Sacramento.nome LIKE' => $search
+                )
+            );
+
+            $results_sac = $this->Sacramento->find('all', $options);
+            $this->set('results_sac', $results_sac);
+
+            if(isset($this->params['url']['search'])) {  
+                $this->redirect(array('action' => 'buscar', $this->params['url']['search']));
+            }
         }
     }
 }
