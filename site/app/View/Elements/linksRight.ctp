@@ -8,8 +8,5 @@
 				);
 	echo '<div class="col-md-12 col-sm-12 espacoPdf">' . $this->Html->link('Ver todos', array('action' => 'pdfs'), array('class' => 'btnTodosPdf btn btn-default', 'title' => 'Ver todos', 'escape' => false)) . '</div>';
 
-	echo '<div class="col-sm-12" style="padding: 15px"><span class="glyphicon glyphicon-link icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Links Externos</h3>');
-	echo '<hr class="hr2"></div>';
-
-	echo $this->Element('linksExternos');
+	echo $this->Element('radio');
 ?>
