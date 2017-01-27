@@ -2,8 +2,10 @@
 	<div class="row">
 		<div class="col-md-9">			
 			<?php
-				echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos"><span class="glyphicon glyphicon-search icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Resultados da busca</h3>'). '</div>';
-				echo '<hr class="hr"></div>';
+				echo '<div class="row">';
+					echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos"><span class="glyphicon glyphicon-search icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Resultados da busca</h3>'). '</div>';
+					echo '<hr class="hr"></div>';
+				echo '</div>';
 
 				if ((!empty($results_com)) || (!empty($results_ev)) || (!empty($results_pdf)) || (!empty($results_padre)) || (!empty($results_past)) || (!empty($results_sac))) {
 

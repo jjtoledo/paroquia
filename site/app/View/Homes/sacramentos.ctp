@@ -3,11 +3,11 @@
 		<div class="col-md-9">
 			<?php
 				foreach ($sacramentos as $s) {
-					echo '<div class="row">';
+					echo '<div class="row sacramentosMargin">';
 						echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos">'.__('<h3 class="h3">'.$s['Sacramento']['nome'].'</h3>'). '</div>';
 						echo '<hr class="hr"></div>';
 
-						echo '<div class="col-md-4 col-sm-12 fotoSacramentoPrincipal">';
+						echo '<div class="col-md-4 col-sm-4 col-xs-5 fotoSacramentoPrincipal">';
 							echo '<div class="thumbnail">';
 								echo $this->Html->image($s['Sacramento']['foto'], array('class' => 'img img-responsive img_sacramento'));
 							echo '</div>';

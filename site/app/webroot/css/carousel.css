@@ -29,14 +29,14 @@
 
 @media all and (max-width: 1200px) {
   .img-carousel {
-    height: 210px;
+    height: 300px;
     width: 100%;
   }
 }
 
 @media all and (max-width: 768px) {
   .img-carousel {
-    height: 350px;
+    height: 420px;
     width: 100%;
   }
 }

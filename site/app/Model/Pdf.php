@@ -11,8 +11,11 @@ class Pdf extends AppModel {
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	public function beforeSave($options = array()) {
+		$meses = array('Jan' => 'Janeiro', 'Feb' => 'Fevereiro', 'Mar' => 'Março', 'Apr' => 'Abril', 'Mai' => 'Maio', 'Jun' => 'Junho', 'Jul' => 'Julho', 'Aug' => 'Agosto', 'Sep' => 'Setembro', 'Oct' => 'Outubro', 'Nov' => 'Novembro', 'Dec' => 'Dezembro');
+		$mes = date('M');
 		//debug($this->data);
 		if(!empty($this->data['Pdf']['pdf']['name'])) {
+			$this->data['Pdf']['pdf']['name'] = 'Jornal O Precursor - '.$meses[$mes].' '.Date('Y').'.pdf';
 	        $this->data['Pdf']['pdf'] = $this->upload($this->data['Pdf']['pdf']);
 	    } else {
 	        unset($this->data['Pdf']['pdf']);
@@ -35,22 +38,17 @@ class Pdf extends AppModel {
 
 	public function checa_nome($pdf, $dir) {
 	    $imagem_info = pathinfo($dir.$pdf['name']);
-	    $imagem_nome = $this->trata_nome($imagem_info['filename']).'.'.$imagem_info['extension'];
+	    $imagem_nome = $imagem_info['filename'].'.'.$imagem_info['extension'];
 	    //debug($imagem_nome);
 	    $conta = 2;
 	    while (file_exists($dir.$imagem_nome)) {
-	        $imagem_nome  = $this->trata_nome($imagem_info['filename']).'-'.$conta;
+	        $imagem_nome  = $imagem_info['filename'].'-'.$conta;
 	        $imagem_nome .= '.'.$imagem_info['extension'];
 	        $conta++;
 	        //debug($imagem_nome);
 	    }
 	    $pdf['name'] = $imagem_nome;
 	    return $pdf;
-	}
-
-	public function trata_nome($imagem_nome) {
-	    $imagem_nome = strtolower(Inflector::slug($imagem_nome,'-'));
-	    return $imagem_nome;
 	}
 
 	public function move_arquivos($pdf, $dir) {

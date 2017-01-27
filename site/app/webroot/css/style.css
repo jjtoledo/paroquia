@@ -38,6 +38,9 @@ span[class*="entypo-"] {
 /* ----------------------------------------
     Imagens e logo
 ---------------------------------------- */
+.thumbnail {
+  background-color: #ddd;
+}
 
 .col-md-3.foto_view {
   padding: 0;
@@ -47,9 +50,8 @@ span[class*="entypo-"] {
   margin-bottom: 5px;
 }
 
-.img_view2 {
-  width: 100%; 
-  height: 200px;
+.img_view2 { 
+  height: 250px;
 }
 
 .fotoSacramentoPrincipal {
@@ -57,14 +59,17 @@ span[class*="entypo-"] {
   margin-bottom: -10px;
 }
 
+.class_img {
+  width: 100%;
+  height: 70%;
+}
+
 .img_sacramento {
-  width: 100%; 
   height: 280px;
 }
 
 .img_evento {
-  width: 100%; 
-  height: 200px;
+  height: 350px;
 }
 
 .img_com {
@@ -73,8 +78,7 @@ span[class*="entypo-"] {
 }
 
 .img_padres {
-  width: 100%; 
-  height: 300px;
+  height: 400px;
 }
 
 .big {
@@ -143,7 +147,6 @@ span[class*="entypo-"] {
   padding: 0;
   font-size: 1.3em;
   background-color: #721204; 
-  margin-left: 20%;
 }
 
 .paroquia {
@@ -165,7 +168,6 @@ span[class*="entypo-"] {
 
 .navbar-nav.center {
   padding: 0px;
-  margin-left: -10%;
 }
 
 .navbar-nav > li > a {
@@ -203,7 +205,6 @@ span[class*="entypo-"] {
 
 .no-padding {
     padding: 10px 10px 0 10px;
-    margin-top: -102px;
     background-color: #DAA82D; 
 }
 
@@ -376,6 +377,11 @@ span[class*="entypo-"] {
 /* ----------------------------------------
     Outros
 ---------------------------------------- */
+
+.marginMenuCom {
+  margin-right: 15px; 
+  margin-left: 15px;
+}
 
 body {
   font-family: Bebas Neue !important;
@@ -657,7 +663,7 @@ p.txtDizimo {
 
 .noticia.agenda{
   padding-bottom: 0px;
-  height: 250px;
+  height: 350px;
 }
 
 .noticia_foto:hover {
@@ -670,7 +676,7 @@ p.txtDizimo {
   padding-left: 10px;
   font-size: 24px;
   margin-bottom: 10px;
-  margin-top: 12px;
+  margin-top: 20px;
 }
 
 .menor_detalhe {
@@ -811,6 +817,20 @@ input.search-text::-webkit-search-cancel-button {
     CSS para screen específica
 ---------------------------------------- */
 
+@media screen and (max-width: 1600px) {
+  .noticia.agenda {
+    height: 290px;
+  }
+
+  .img_evento {
+    height: 270px;
+  }
+
+  .img_view2 {
+    height: 200px; 
+  }
+}
+
 @media screen and (max-width: 1400px) {
 
   .navbar-nav.center {
@@ -829,11 +849,31 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .menor {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .menor_detalhe {
     font-size: 15px;
+  }
+
+  .img_evento {
+    height: 230px;
+  }
+
+  .img_view2 {
+    height: 170px; 
+  }
+
+  .img_com {
+    height: 230px;
+  }
+
+  .img_padres {
+    height: 300px;
+  }
+
+  .img_sacramento {
+    height: 220px;
   }
 }
 
@@ -845,17 +885,41 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .noticia.agenda {
-    height: 300px;
+    height: 250px;
     width: 100%;
     margin-left: 0;
   }
 
   .menor {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .menor_detalhe {
     font-size: 14px;
+  }
+
+  .cinza {
+    font-size: 18px;
+  }
+
+  .img_com {
+    height: 180px;
+  }
+
+  .img_evento {
+    height: 200px;
+  }
+
+  .img_view2 {
+    height: 140px; 
+  }
+
+  .img_padres {
+    height: 270px;
+  }
+
+  .img_sacramento {
+    height: 200px;
   }
 }
 
@@ -874,7 +938,7 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .menor {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 20px;
   }
 
@@ -889,7 +953,7 @@ input.search-text::-webkit-search-cancel-button {
   } 
 
   .noticia.agenda {
-    height: 350px;
+    height: 280px;
   } 
 
   .divNoticia.center {
@@ -912,8 +976,7 @@ input.search-text::-webkit-search-cancel-button {
   input.search-text:focus {
     z-index:3; 
     width: 150px;
-    border: 1px solid #721204;  
-    background-color: #721204;
+    border: 1px solid #721204;
     outline: none;
     cursor:auto;
     padding-right: 10px;
@@ -930,6 +993,18 @@ input.search-text::-webkit-search-cancel-button {
     left: 100px;
     margin-bottom: 20px;
   }
+
+  .linksExternos.fixo {
+    height: 100px;
+  }
+
+  .img_com {
+    height: 300px;
+  }
+
+  .nome_com {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 900px){
@@ -938,7 +1013,16 @@ input.search-text::-webkit-search-cancel-button {
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 769px){
+  .margin_semSlide {
+    margin-top: 60px;
+  }
+
+  .btnTodosEv {
+    float: initial;
+    margin-bottom: -30px;
+  }
+
   .nav_site3 {
     display: none;
   }
@@ -949,6 +1033,15 @@ input.search-text::-webkit-search-cancel-button {
 
   .logo {
     width: 109px;
+  }
+
+  .img_com {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+
+  .img_evento {
+    height: 190px;
   }
 
   .navbar-nav.center {
@@ -1004,7 +1097,15 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .noticia.agenda {
-    height: 450px;
+    height: 430px;
+  }
+
+  .class_img {
+    height: 78%;
+  }
+
+  .linksExternos.fixo {
+    height: 150px;
   }
 
   .menor {
@@ -1015,6 +1116,21 @@ input.search-text::-webkit-search-cancel-button {
   .menor_detalhe {
     margin-top: 10px;
     font-size: 18px;
+  }
+
+  .marginTop {
+    margin-top: 200px;
+  }
+
+  .arqRodape {
+    width: 27%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    left: 36%;
+  }
+
+  #footerRow {
+    margin-top: 50px;
   }
 
   input.search-text {
@@ -1039,17 +1155,43 @@ input.search-text::-webkit-search-cancel-button {
 
   input.search-text:focus {
     z-index: 3; 
-    width: 200px;
+    width: 95%;
     border: 1px solid #721204;  
     background-color: #721204;
     outline: none;
     cursor: auto;
     padding-right: 0;
   }
+
+  .pdfDizimo {
+    padding-left: 40%;
+    padding-right: 40%;
+  }
+  .espacoRadio {
+    margin-top: -20px;
+  }
+
+  .arqRodape {
+    width: 40%;
+    left: 31%;
+  }
+
+  div#cidades.container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .marginMenuCom {
+    margin-right: 25%; 
+    margin-left: 25%;
+  }
+
+  .pastorais {
+    margin-bottom: -40px;
+  }
 }
 
 @media screen and (max-width: 480px){
-
   .noticia {
     width: 100%;
     margin-left: 0%;
@@ -1075,13 +1217,54 @@ input.search-text::-webkit-search-cancel-button {
     margin-top: 5px;
     font-size: 16px;
   }
+
+  .linksExternos.fixo {
+    height: 100px;
+  }
+
+  .marginMenuCom {
+    margin-right: 15%; 
+    margin-left: 15%;
+  }
+
+  .img_com {
+    padding: 0;
+  }
+
+  .img_evento {
+    height: 140px;
+  }
+
+  .img_view2 {
+    height: 110px;
+  }
+
+  .img_padres {
+    height: 240px;
+  }
+
+  .img_sacramento {
+    height: 120px;
+  }
+
+  .imgDizimoHome {
+    padding: 0;
+  }
+
+  .fotoDizimo {
+    padding: 0;
+  }
+
+  .txtDizimoHome {
+    padding: 0;
+  } 
 }
 
 @media screen and (max-width: 360px){
 
   .divNoticia {
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 15px;
+    padding-left: 15px;
     width: 100%;
     margin-left: 0px;
   }
@@ -1097,7 +1280,57 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .noticia.agenda {
-    height: 300px;
+    height: 300px;    
+  }
+
+  .imgDizimoHome {
+    padding: 0;
+  }
+
+  .fotoDizimo {
+    padding: 0;
+  }
+
+  .txtDizimoHome {
+    padding: 0;
+  }
+
+  .linksExternos.fixo {
+    height: 80px;
+  }
+
+  .arqRodape {
+    width: 55%;
+    left: 23%;
+  }
+
+  .marginMenuCom {
+    margin-right: 15px; 
+    margin-left: 15px;
+  }
+
+  .img_com {
+    height: 230px;
+  }
+
+  .img_evento {
+    height: 100px;
+  }
+
+  .img_view2 {
+    height: 80px;
+  }
+
+  .img_padres {
+    height: 150px;
+  }
+
+  .img_sacramento {
+    height: 90px;
+  }
+
+  .sacramentosMargin {
+    margin-bottom: -30px;
   }
 }
 

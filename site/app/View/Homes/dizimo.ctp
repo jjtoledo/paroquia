@@ -1,14 +1,13 @@
 <div class="container-fluid margin_semSlide">
 	<div class="row">
-		<div class="col-md-12" id="myDialog"></div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-sm-3 pdfDizimo">
 			<?php echo '<br><br>'.$this->Html->link(
-										$this->Html->image('fichaDizimo.png', array('class' => 'img img-responsive', 'id' => 'img_imprimir')),
-										array(),
-										array('escape' => false, 'id' => 'btn_imprimir')) ?>
+										$this->Html->image('fichaDizimo.png', array('class' => 'img img-responsive')),
+										array('action' => '../files/fichaDizimo.pdf'),
+										array('escape' => false, 'target' => '_blank')) ?>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6 col-sm-9">
 			<?php
 				echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos">'.__('<h3 class="h3">Dízimo: Por que e para quê?</h3>'). '</div>';
 				echo '<hr class="hr"></div>';

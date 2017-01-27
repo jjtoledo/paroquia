@@ -30,7 +30,7 @@
 						echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
 								echo $this->Html->link(
-								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')).' '.
+								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img')).' '.
 									__('<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>'),
 								 	array('action' => 'evento', $e['Evento']['id']),
 								 	array('escape' => false, 'class' => 'noticia_foto')
@@ -70,7 +70,7 @@
 						echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
 								echo $this->Html->link(
-								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')).' '.
+								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img')).' '.
 									__('<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>'),
 								 	array('action' => 'evento', $e['Evento']['id']),
 								 	array('escape' => false, 'class' => 'noticia_foto')
@@ -108,7 +108,7 @@
 						echo '<div class="col-md-4 col-sm-12 divNoticia">';
 			    			echo '<div class="noticia agenda">';
 								echo $this->Html->link(
-								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img', 'width' => '100%', 'height' => '70%')).' '.
+								 	$this->Html->image($fotos_ev[$count]['FotoEvento']['foto'], array('class' => 'class_img')).' '.
 									__('<h3 class="text-center menor"><b>'.$e['Evento']['nome'].'</b></h3>'),
 								 	array('action' => 'evento', $e['Evento']['id']),
 								 	array('escape' => false, 'class' => 'noticia_foto')
