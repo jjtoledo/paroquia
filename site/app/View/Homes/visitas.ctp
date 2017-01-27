@@ -19,13 +19,19 @@
 								<?php echo $this->Form->input('nome', array('class' => 'form-control', 'label' => 'Nome *', 'placeholder' => 'Informe seu nome', 'required' => 'true'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
-								<?php echo $this->Form->input('email', array('class' => 'form-control', 'label' => 'Email *', 'placeholder' => 'Informe seu email para futuro contato', 'required' => 'true'));?>
+								<?php echo $this->Form->input('email', array('class' => 'form-control', 'label' => 'Email *', 'placeholder' => 'Informe seu email', 'required' => 'true'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
-								<?php echo $this->Form->input('endereco', array('class' => 'form-control', 'label' => 'Endereço *', 'placeholder' => 'Rua, Número e Bairro'));?>
+								<?php echo $this->Form->input('telefone', array('class' => 'form-control', 'label' => 'Telefone *', 'placeholder' => 'Informe seu telefone para futuro contato (incluir DDD)', 'required' => 'true'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
-								<?php echo $this->Form->input('mensagem', array('class' => 'form-control', 'label' => 'Mensagem *', 'type' => 'textarea', 'placeholder' => 'Informe as datas e horários preferenciais'));?>
+								<?php echo $this->Form->input('endereco', array('class' => 'form-control', 'label' => 'Endereço *', 'placeholder' => 'Rua, Número e Bairro', 'required' => 'true'));?>
+							</div>
+							<div class="form-group col-md-10 col-md-offset-1">
+								<?php echo $this->Form->input('tipo', array('options' => $tipo, 'class' => 'form-control', 'label' => 'O que você deseja: *'));?>
+							</div>
+							<div class="form-group col-md-10 col-md-offset-1">
+								<?php echo $this->Form->input('lugar', array('options' => $lugar, 'class' => 'form-control', 'label' => 'Onde deseja ser atendido: *'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
 								<?php echo $this->Form->button(__('Enviar <span class="glyphicon glyphicon-send"></span>'), array('type' => 'submit', 'escape' => false, 'class' => 'btn btn-warning')); ?>

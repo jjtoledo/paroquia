@@ -1,5 +1,5 @@
 $(window).scroll(function() {
-	if ($( document ).width() > 768) {
+	if ($( document ).width() > 769) {
         if($(this).scrollTop() > 70)  /*height in pixels when the navbar becomes non opaque*/ 
         {        
             $('.nav_large').show('slow');

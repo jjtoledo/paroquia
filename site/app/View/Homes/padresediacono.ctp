@@ -14,12 +14,13 @@
 									echo $this->Html->image($p['Padre']['foto'], array('class' => 'img img-responsive img_padres'));
 								echo '</div>';
 
-								echo '<p class="text-center" style="font-size: 24px; padding-top: 15px">'.$p['Padre']['nome'].'</p>';
+								echo '<p class="text-center pPadre" style="font-size: 24px; padding-top: 15px">'.$p['Padre']['nome'].'</p>';
 								echo '<p style="font-size: 20px; padding-top: 15px">'.$p['Padre']['texto'].'</p>';
 							echo '</div>';
 						echo '</div>';
-					echo '</div>';
-				}
+					}
+				echo '</div>';
+				
 			?>
 		</div>
 

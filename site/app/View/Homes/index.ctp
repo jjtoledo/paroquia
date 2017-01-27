@@ -51,7 +51,7 @@
 					echo '<hr class="hrDizimo"></div>';
 
 					echo '<div class="col-md-6">';
-						echo '<div class="col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3 imgDizimoHome">';
+						echo '<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-6 col-xs-offset-3 imgDizimoHome">';
 
 							echo $this->Html->link(
 											$this->Html->image('dizimo-1.png', array('class' => 'col-md-12 col-sm-4 img img-responsive fotoDizimo opacity')),
@@ -61,7 +61,7 @@
 							echo '<br><br><div class="col-sm-12">';
 							echo '</div>';
 
-							echo '<p class="col-md-12 col-sm-4 txtDizimoHome" align="justify">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 					
+							echo '<p class="col-md-12 col-sm-4 txtDizimoHome text-center">Cada um(a) dê de acordo com o seu coração, “conforme as suas próprias possibilidades” (Catecismo da Igreja Católica, §2043).</p>'; 					
 
 						echo '</div>';
 					echo '</div>';

@@ -390,7 +390,7 @@ body {
 .hr {
   border-top: 2px solid #DAA82D;
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .hr2 {
@@ -429,12 +429,28 @@ p {
   background-color: #DAA82D !important;
 }
 
+.pRadio {
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
 .espacoTopo {
   padding-top: 10px;
 }
 
 .espacoTopo2 {
   padding-top: 10px;
+}
+
+.espacoRadio {
+  margin-top: -30px;
+}
+
+.paddingRadio {
+  margin-bottom: 50px;
 }
 
 .margin {
@@ -501,6 +517,12 @@ p {
 .com {
   margin-bottom: -5px;
 }
+
+.txtSac {
+  font-size: 20px; 
+  background-color: #f8f8f8 !important;
+}
+
 
 /* ----------------------------------------
     Fim Outros
@@ -575,6 +597,10 @@ p {
   margin-bottom: 40px;
 }
 
+.margin_radio {
+  margin-bottom: 60px;
+}
+
 /* ----------------------------------------
     Fim links externos
 ---------------------------------------- */
@@ -626,6 +652,10 @@ p.txtDizimo {
   margin-top: 50px;
 }
 
+.espacoDizimo {
+  margin-top: 45px;
+}
+
 /* ----------------------------------------
     Fim dizimo e arquidiocese
 ---------------------------------------- */
@@ -637,7 +667,7 @@ p.txtDizimo {
 
 .divNoticia {
   margin-bottom: 20px;
-  margin-left: 53px;
+  margin-left: 48px;
   margin-right: 0px;
   width: 28%;
 }
@@ -674,7 +704,7 @@ p.txtDizimo {
   color: #424242; 
   padding-right: 10px;
   padding-left: 10px;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
   margin-top: 20px;
 }
@@ -713,8 +743,7 @@ p.txtDizimo {
 div#cidades.container {
   position: relative;
   z-index: 1;
-  margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   background-color: #fff;
   box-shadow: 1px 1px 5px #888888; 
   padding: 30px 10px 5px 10px;
@@ -839,8 +868,7 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .divNoticia {
-    width: 33%;
-    margin-left: 0px;
+    width: 27%;
   }
 
   .noticia {
@@ -849,7 +877,7 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .menor {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .menor_detalhe {
@@ -875,9 +903,25 @@ input.search-text::-webkit-search-cancel-button {
   .img_sacramento {
     height: 220px;
   }
+
+  .margin_radio {
+    margin-bottom: 50px;
+  }
+
+  .arqRodape {
+    margin-top: 3px;
+  }
+
 }
 
 @media screen and (max-width: 1200px){
+
+  .divNoticia {
+    margin-bottom: 20px;
+    margin-left: 35px;
+    margin-right: 0px;
+    width: 28%;
+  }
 
   .noticia {
     width: 80%;
@@ -891,7 +935,7 @@ input.search-text::-webkit-search-cancel-button {
   }
 
   .menor {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .menor_detalhe {
@@ -920,6 +964,14 @@ input.search-text::-webkit-search-cancel-button {
 
   .img_sacramento {
     height: 200px;
+  }
+
+  .arqRodape {
+    margin-top: 3px;
+  }
+
+  p.pPadre {
+    font-size: 22px !important;
   }
 }
 
@@ -992,6 +1044,7 @@ input.search-text::-webkit-search-cancel-button {
   .arqRodape {
     left: 100px;
     margin-bottom: 20px;
+    margin-top: -10px;
   }
 
   .linksExternos.fixo {
@@ -1005,6 +1058,10 @@ input.search-text::-webkit-search-cancel-button {
   .nome_com {
     margin-top: 30px;
   }
+
+  .espacoRadio {
+    margin-top: 4px;
+  }
 }
 
 @media screen and (max-width: 900px){
@@ -1014,6 +1071,7 @@ input.search-text::-webkit-search-cancel-button {
 }
 
 @media screen and (max-width: 769px){
+
   .margin_semSlide {
     margin-top: 60px;
   }
@@ -1087,8 +1145,8 @@ input.search-text::-webkit-search-cancel-button {
   .divNoticia {
     padding-right: 15%;
     padding-left: 15%;
-    width: 100%;
-    margin-left: 0px;
+    width: 80%;
+    margin-left: 70px;
   }
 
   .noticia {
@@ -1120,13 +1178,6 @@ input.search-text::-webkit-search-cancel-button {
 
   .marginTop {
     margin-top: 200px;
-  }
-
-  .arqRodape {
-    width: 27%;
-    margin-top: 20px;
-    margin-bottom: 0;
-    left: 36%;
   }
 
   #footerRow {
@@ -1167,13 +1218,14 @@ input.search-text::-webkit-search-cancel-button {
     padding-left: 40%;
     padding-right: 40%;
   }
+
   .espacoRadio {
     margin-top: -20px;
   }
 
   .arqRodape {
-    width: 40%;
-    left: 31%;
+    width: 30%;
+    left: 35%;
   }
 
   div#cidades.container {
@@ -1189,9 +1241,14 @@ input.search-text::-webkit-search-cancel-button {
   .pastorais {
     margin-bottom: -40px;
   }
+
+  .txtDizimoHome {
+    margin-top: -40px;
+  }
 }
 
 @media screen and (max-width: 480px){
+
   .noticia {
     width: 100%;
     margin-left: 0%;
@@ -1258,6 +1315,15 @@ input.search-text::-webkit-search-cancel-button {
   .txtDizimoHome {
     padding: 0;
   } 
+
+  .arqRodape {
+    width: 38%;
+    left: 31%;
+  }
+
+  #footerRow{
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 360px){
@@ -1331,6 +1397,10 @@ input.search-text::-webkit-search-cancel-button {
 
   .sacramentosMargin {
     margin-bottom: -30px;
+  }
+
+  p.pPadre {
+    font-size: 20px !important;
   }
 }
 

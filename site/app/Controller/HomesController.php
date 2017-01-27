@@ -221,6 +221,21 @@ class HomesController extends AppController {
     }
 
     public function visitas() {
+        
+        $tipo = array(
+            1 => 'Confissão',
+            2 => 'Bênção',
+            3 => 'Unção dos enfermos',
+            4 => 'Direção Espiritual'
+        );
+        $this->set(compact('tipo'));
+
+        $lugar = array(
+            1 => 'Em casa',
+            2 => 'No escritório'
+        );
+        $this->set(compact('lugar'));
+
         $this->common();
 
         if ($this->request->is('post')) {
@@ -230,7 +245,9 @@ class HomesController extends AppController {
                 ->sender(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
                 ->to('contato@portalmediopiracicaba.com')
                 ->subject('Agendamento de visita')
-                ->message($this->data['Contato']['endereco'] . ' - ' .$this->data['Contato']['mensagem']);
+                ->message('Nome: ' .  $this->data['Contato']['nome'] . '<br>Telefone: ' .  $this->data['Contato']['telefone'] .  
+                    '<br>Endereço: ' . $this->data['Contato']['endereco'] . '<br>O que deseja: ' . $this->data['Contato']['tipo'] .
+                    '<br>Onde deseja ser atendido: ' . $this->data['Contato']['lugar']);
             
             if ($Email->send()) {
                 $this->Session->setFlash(__('Agendamento de visita enviado com sucesso! Em breve entraremos em contato.'), 'default', array('class' => 'contato alert alert-success'));
@@ -247,6 +264,10 @@ class HomesController extends AppController {
 
     public function dizimo() {
         $this->common();
+
+        if(isset($this->params['url']['search'])) {  
+            $this->redirect(array('action' => 'buscar', $this->params['url']['search'])); //mudei aki
+        }
     }
 
     public function common() {

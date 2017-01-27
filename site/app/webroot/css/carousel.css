@@ -29,6 +29,13 @@
 
 @media all and (max-width: 1200px) {
   .img-carousel {
+    height: 240px;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 990px) {
+  .img-carousel {
     height: 300px;
     width: 100%;
   }
