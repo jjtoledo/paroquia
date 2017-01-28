@@ -16,12 +16,14 @@ $(function () {
   $.scrollUp();
 });
 
-$('.search-form').submit(function(e) {
-    if ($.trim($(".search-text").val()) === "") {
+$('.form-nav').on("submit", function(e) {    
+    if ($("#search-nav").val() == "") {
         e.preventDefault();
-        return false;
-    } else {
-        
-        return true;        
-    }
+    } 
+});
+
+$('.form-large').on("submit", function(e) {    
+    if ($("#search-large").val() == "") {
+        e.preventDefault();
+    } 
 });

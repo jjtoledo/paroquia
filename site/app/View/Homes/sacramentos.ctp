@@ -43,37 +43,40 @@
 
 					<p>De forma resumida, podemos dizer que Jesus instituiu os sete sacramentos, como sinais da graça,
 
-					para os momentos e circunstâncias mais importantes da vida:</p>
+					para os momentos e circunstâncias mais importantes da vida:</p>';
 
-					<p><b>Sacramentos da Iniciação Cristã:</b></p>';
+					echo '<div class="row"><div class="col-md-12 col-sm-12" style="padding: 0; margin-top:30px; margin-bottom:15px"><div class="linkTitulos">'.__('<h3 class="h3">Sacramentos da Iniciação Cristã</h3>'). '</div>';
+					echo '<hr class="hr"></div></div>';
 
-					for ($i=0; $i < 2; $i++) {
+					echo '<div class="col-md-12" style="padding: 0">';
+						for ($i=0; $i < 2; $i++) {
 
-						$id = 'tipo' . $i; 
+							$id = 'tipo' . $i; 
 
-						echo '<div class="panel-group" id="accordion">
-						    <div class="panel panel-default">
-						      	<div class="panel-heading">
-						        	<h4 class="panel-title">
-						          		<a data-toggle="collapse" data-parent="#accordion" href="#' . $id . '">' . $sacramentos[$i]['Sacramento']['nome'] . '</a>
-						        	</h4>
-						      	</div>
-						      	<div id="' . $id . '" class="panel-collapse collapse">
-						        	<div class="panel-body">';
+							echo '<div class="panel-group" id="accordion">
+							    <div class="panel panel-default">
+							      	<div class="panel-heading panel-head-sac">
+							        	<h4 class="panel-title">
+							          		<a class="link-sac" data-toggle="collapse" data-parent="#accordion" href="#' . $id . '">' . $sacramentos[$i]['Sacramento']['nome'] . '&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down icon" style="color: #fff"></span></a>
+							        	</h4>
+							      	</div>
+							      	<div id="' . $id . '" class="panel-collapse collapse">
+							        	<div class="panel-body panel-sac">';
 
-								  		echo '<div class="col-md-4 col-sm-4 col-xs-5 fotoSacramentoPrincipal">';
-											echo '<div class="thumbnail">';
-												echo $this->Html->image($sacramentos[$i]['Sacramento']['foto'], array('class' => 'img img-responsive img_sacramento'));
+									  		echo '<div class="col-md-4 col-sm-4 col-xs-5 fotoSacramentoPrincipal">';
+												echo '<div class="thumbnail">';
+													echo $this->Html->image($sacramentos[$i]['Sacramento']['foto'], array('class' => 'img img-responsive img_sacramento'));
+												echo '</div>';
 											echo '</div>';
-										echo '</div>';
 
-										echo '<p class="txtSac">'. $sacramentos[$i]['Sacramento']['texto'].'</p>';
+											echo '<p class="txtSac">'. $sacramentos[$i]['Sacramento']['texto'].'</p>';
 
-						        	echo '</div>
-						      </div>
-						    </div>
-						</div>';
-					}
+							        	echo '</div>
+							      </div>
+							    </div>
+							</div>';
+						}
+					echo '</div>';
 
 					echo '<br><br><p><b>Sacramentos de Cura:</b></p>';
 

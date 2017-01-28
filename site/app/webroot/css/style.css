@@ -36,8 +36,30 @@ span[class*="entypo-"] {
 ---------------------------------------- */
 
 /* ----------------------------------------
+    Accordion Sacramento
+---------------------------------------- */
+.panel-heading.panel-head-sac {
+  color: #fff;
+  background-color: #721204;
+}
+
+.panel-sac {
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.link-sac:focus, .link-sac:hover {
+  text-decoration: none;
+}
+/* ----------------------------------------
+    Fim Accordion Sacramento
+---------------------------------------- */
+
+/* ----------------------------------------
     Imagens e logo
 ---------------------------------------- */
+
 .thumbnail {
   background-color: #ddd;
 }
