@@ -1,5 +1,8 @@
 <div class="container-fluid margin_semSlide">
 	<div class="row">
+
+		<?php echo $this->Session->flash(); ?>
+		
 		<div class="col-md-3">
 			<?php
 				echo $this->Element('atendimento');
@@ -28,10 +31,10 @@
 								<?php echo $this->Form->input('endereco', array('class' => 'form-control', 'label' => 'Endereço *', 'placeholder' => 'Rua, Número e Bairro', 'required' => 'true'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
-								<?php echo $this->Form->input('tipo', array('options' => $tipo, 'class' => 'form-control', 'label' => 'O que você deseja: *'));?>
+								<?php echo $this->Form->input('tipo', array('options' => $tipo, 'class' => 'form-control', 'label' => 'O que você deseja: *', 'required' => 'true'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
-								<?php echo $this->Form->input('lugar', array('options' => $lugar, 'class' => 'form-control', 'label' => 'Onde deseja ser atendido: *'));?>
+								<?php echo $this->Form->input('lugar', array('options' => $lugar, 'class' => 'form-control', 'label' => 'Onde deseja ser atendido: *', 'required' => 'true'));?>
 							</div>
 							<div class="form-group col-md-10 col-md-offset-1">
 								<?php echo $this->Form->button(__('Enviar <span class="glyphicon glyphicon-send"></span>'), array('type' => 'submit', 'escape' => false, 'class' => 'btn btn-warning')); ?>
@@ -48,7 +51,6 @@
 			<?php echo $this->Element('dizimo') ?>
 		</div>
 
-		
 	</div>
 </div>
 

@@ -70,10 +70,10 @@ class ComunidadesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Comunidade->create();
 			if ($this->Comunidade->save($this->request->data)) {
-				$this->Session->setFlash(__('Comunidade salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Comunidade salva com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The comunidade could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The comunidade could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		}
 	}
@@ -94,10 +94,10 @@ class ComunidadesController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Comunidade->save($this->request->data)) {
-				$this->Session->setFlash(__('Comunidade salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Comunidade salva com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The comunidade could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The comunidade could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Comunidade.' . $this->Comunidade->primaryKey => $id));
@@ -126,9 +126,9 @@ class ComunidadesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Comunidade->delete()) {
-			$this->Session->setFlash(__('Comunidade excluída com sucesso.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Comunidade excluída com sucesso.'), 'success', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The comunidade could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('The comunidade could not be deleted. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

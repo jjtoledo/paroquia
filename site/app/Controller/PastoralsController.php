@@ -82,10 +82,10 @@ class PastoralsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Pastoral->create();
 			if ($this->Pastoral->save($this->request->data)) {
-				$this->Session->setFlash(__('Pastoral salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Pastoral salva com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index', $id));
 			} else {
-				$this->Session->setFlash(__('The Pastoral could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The Pastoral could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		}
 		
@@ -112,10 +112,10 @@ class PastoralsController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Pastoral->save($this->request->data)) {
-				$this->Session->setFlash(__('Pastoral salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Pastoral salva com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index', $idCity));
 			} else {
-				$this->Session->setFlash(__('The Pastoral could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The Pastoral could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Pastoral.' . $this->Pastoral->primaryKey => $id));
@@ -143,9 +143,9 @@ class PastoralsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Pastoral->delete()) {
-			$this->Session->setFlash(__('Pastoral excluída com sucesso.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Pastoral excluída com sucesso.'), 'success', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The Pastoral could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('The Pastoral could not be deleted. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index', $idCity));
 	}

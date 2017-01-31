@@ -43,19 +43,30 @@ class EmailConfig {
 		//'headerCharset' => 'utf-8',
 	);
 
-	public $smtp = array(
-		'transport' => 'Smtp',
-		'from' => array('site@localhost' => 'My Site'),
-		'host' => 'localhost',
-		'port' => 25,
+	public $mail = array(
+		'transport' => 'Mail',
+		'host' => 'mx1.hostinger.com.br',
+		'port' => 110,
 		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
+		'password' => '00110011',
 		'client' => null,
 		'log' => false,
-		//'charset' => 'utf-8',
+		'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
+	
+
+	/*public $smtp = array(
+		'transport' => 'Smtp',
+		'from' => array('guilhermesfelix@planejai.pe.hu' => 'Sistema planejAÃ­'),
+		'host' => 'aspmx.l.google.com',
+		'port' => 587,
+		'timeout' => 30,
+		'username' => 'guilhermesfelix@planejai.pe.hu',
+		'password' => '00110011',
+		'charset' => 'utf-8',
+		'headerCharset' => 'utf-8',
+	);*/
 
 	public $fast = array(
 		'from' => 'you@localhost',

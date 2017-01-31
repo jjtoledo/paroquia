@@ -95,10 +95,10 @@ class FotoComunidadesController extends AppController {
 				$this->FotoComunidade->create();			
 				if (!$this->FotoComunidade->save($photo)) {
 					//debug($this->request->data['FotoComunidade']['fotos']);
-					$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash(__('Erro, tente novamente.'), 'error', array('class' => 'alert alert-danger'));
 				}
 			}
-			$this->Session->setFlash(__('Fotos salvas com sucesso.'), 'default', array('class' => '	alert alert-success'));
+			$this->Session->setFlash(__('Fotos salvas com sucesso.'), 'success', array('class' => '	alert alert-success'));
 			return $this->redirect(array('action' => 'index', $id));
 		}
 
@@ -120,10 +120,10 @@ class FotoComunidadesController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->FotoComunidade->save($this->request->data)) {
-				$this->Session->setFlash(__('Foto salva com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Foto salva com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index', $idComunidade));
 			} else {
-				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		}
 	}
@@ -142,9 +142,9 @@ class FotoComunidadesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->FotoComunidade->delete()) {
-			$this->Session->setFlash(__('Foto exluída com sucesso.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Foto exluída com sucesso.'), 'success', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('Erro, tente novamente.'), 'error', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index', $idComunidade));
 	}

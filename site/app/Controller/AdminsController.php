@@ -47,7 +47,7 @@ class AdminsController extends AppController {
         		$this->redirect(array('controller' => 'comunidades', 'action' => 'index', $admin['0']['Admin']['id']));
         		exit();
         	} else {
-        		$this->Session->setFlash(__('Login e/ou senha inválidos!'), 'default', 
+        		$this->Session->setFlash(__('Login e/ou senha inválidos!'), 'error', 
         			array('class' => 'text-center alert alert-danger'));
         		$this->redirect(array('action' => 'index_login'));
         		exit();

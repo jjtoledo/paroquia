@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 /**
  * Homes Controller
  *
@@ -196,21 +197,30 @@ class HomesController extends AppController {
     }
 
     public function fale_conosco() {
+
         $this->common();
 
         if ($this->request->is('post')) {
-            $Email = new CakeEmail();
-            $Email->config('smtp');
+
+            $Email = new CakeEmail('mail');
+            $Email->emailFormat('html'); 
+            $Email->from(array($this->data['Contato']['email'] => $this->data['Contato']['nome']));
+            $Email->to('parsjb@parsjb.pe.hu');
+            $Email->subject($this->data['Contato']['assunto']);
+            $Email->send($this->data['Contato']['mensagem']);
+
+            /*$Email = new CakeEmail();
+            $Email->config('mail');
             $Email->replyTo(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
                 ->sender(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
-                ->to('contato@portalmediopiracicaba.com')
+                ->to('parsjb@parsjb.pe.hu')
                 ->subject($this->data['Contato']['assunto'])
-                ->message($this->data['Contato']['mensagem']);
+                ->message($this->data['Contato']['mensagem']);*/
             
             if ($Email->send()) {
-                $this->Session->setFlash(__('E-mail enviado com sucesso! Em breve entraremos em contato.'), 'default', array('class' => 'contato alert alert-success'));
+                $this->Session->setFlash(__('E-mail enviado com sucesso! Em breve entraremos em contato.'), 'success', array('class' => 'contato alert alert-success'));
             } else {
-                $this->Session->setFlash(__('E-mail não enviado, tente novamente mais tarde...'), 'default', array('class' => 'contato alert alert-danger'));
+                $this->Session->setFlash(__('E-mail não enviado, tente novamente mais tarde...'), 'error', array('class' => 'contato alert alert-danger'));
             }           
             $this->redirect(array('action' => 'fale_conosco'));
         }
@@ -223,36 +233,36 @@ class HomesController extends AppController {
     public function visitas() {
         
         $tipo = array(
-            1 => 'Confissão',
-            2 => 'Bênção',
-            3 => 'Unção dos enfermos',
-            4 => 'Direção Espiritual'
+            'Confissão' => 'Confissão',
+            'Bênção' => 'Bênção',
+            'Unção dos enfermos' => 'Unção dos enfermos',
+            'Direção Espiritual' => 'Direção Espiritual'
         );
         $this->set(compact('tipo'));
 
         $lugar = array(
-            1 => 'Em casa',
-            2 => 'No escritório'
+            'Em casa' => 'Em casa',
+            'No escritório' => 'No escritório'
         );
         $this->set(compact('lugar'));
 
         $this->common();
 
         if ($this->request->is('post')) {
-            $Email = new CakeEmail();
-            $Email->config('smtp');
-            $Email->replyTo(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
-                ->sender(array($this->data['Contato']['email'] => $this->data['Contato']['nome']))
-                ->to('contato@portalmediopiracicaba.com')
-                ->subject('Agendamento de visita')
-                ->message('Nome: ' .  $this->data['Contato']['nome'] . '<br>Telefone: ' .  $this->data['Contato']['telefone'] .  
+
+            $Email = new CakeEmail('mail');
+            $Email->emailFormat('html');
+            $Email->from(array($this->data['Contato']['email'] => $this->data['Contato']['nome']));  
+            $Email->to('parsjb@parsjb.pe.hu');
+            $Email->subject('Agendamento de visita');
+            $Email->send('Nome: ' .  $this->data['Contato']['nome'] . '<br>Telefone: ' .  $this->data['Contato']['telefone'] .  
                     '<br>Endereço: ' . $this->data['Contato']['endereco'] . '<br>O que deseja: ' . $this->data['Contato']['tipo'] .
                     '<br>Onde deseja ser atendido: ' . $this->data['Contato']['lugar']);
             
             if ($Email->send()) {
-                $this->Session->setFlash(__('Agendamento de visita enviado com sucesso! Em breve entraremos em contato.'), 'default', array('class' => 'contato alert alert-success'));
+                $this->Session->setFlash(__('Agendamento de visita enviado com sucesso! Em breve entraremos em contato.'), 'success', array('class' => 'contato alert alert-success'));
             } else {
-                $this->Session->setFlash(__('E-mail não enviado, tente novamente mais tarde...'), 'default', array('class' => 'contato alert alert-danger'));
+                $this->Session->setFlash(__('E-mail não enviado, tente novamente mais tarde...'), 'error', array('class' => 'contato alert alert-danger'));
             }           
             $this->redirect(array('action' => 'visitas'));
         }

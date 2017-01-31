@@ -6,8 +6,8 @@
 	<div class="row">
 		<div class="col-md-3">
 			<?php
-				echo '<div class="col-md-12 col-sm-6">';
-					echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 15px"><div class="linkTitulos">'.__('<h3 class="h3">Padroeiro</h3>'). '</div>';
+				echo '<div class="col-md-12 col-sm-6" style="padding: 15px">';
+					echo '<br><br><div class="col-md-12 col-sm-12" style="padding: 0"><div class="linkTitulos">'.__('<h3 class="h3">Padroeiro</h3>'). '</div>';
 					echo '<hr class="hr2"></div>';
 
 					echo '<div class="col-md-12 col-sm-12" style="padding: 0 15px">';
@@ -19,7 +19,7 @@
 				echo '</div>';
 
 				echo '<div class="col-md-12 col-sm-6">';
-					echo '<div class="col-md-12 col-sm-12" style="padding: 15px; margin-top: 40px"><span class="glyphicon glyphicon-time icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Celebrações</h3>');
+					echo '<div class="col-md-12 col-sm-12" style="padding: 0; margin-top: 40px"><span class="glyphicon glyphicon-time icon"></span>&nbsp;&nbsp;'.__('<h3 class="h3">Celebrações</h3>');
 					echo '<hr class="hr2"></div>';
 					echo '<br><div class="col-md-12 col-sm-12" style="font-size: 22px">'.$comunidade['Comunidade']['hora_celeb'].'</div>';
 				echo '</div>';					
@@ -31,7 +31,7 @@
 				echo '<br><br><div class="col-md-12 col-sm-12 text-center nome_com" style="padding: 9px 15px 0 15px"><div class="linkTitulos">'.__('<h2 class="h2">'.$comunidade['Comunidade']['nome'].'</h2>'). '</div>';
 				echo '<hr class="hr"></div>';
 
-				echo '<br><div class="col-md-12 col-sm-12" style="font-size: 20px; padding-top: 0">'.$comunidade['Comunidade']['historico'].'</div>';
+				echo '<br><div class="col-md-12 col-sm-12" style="font-size: 20px; padding-top: 15px">'.$comunidade['Comunidade']['historico'].'</div>';
 			?>
 		</div>
 

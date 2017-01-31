@@ -65,10 +65,10 @@ class PadresController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Padre->create();
 			if ($this->Padre->save($this->request->data)) {
-				$this->Session->setFlash(__('Padre / Diácono salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Padre / Diácono salvo com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The padre could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The padre could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		}
 	}
@@ -89,10 +89,10 @@ class PadresController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Padre->save($this->request->data)) {
-				$this->Session->setFlash(__('Padre / Diácono salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Padre / Diácono salvo com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The padre could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The padre could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Padre.' . $this->Padre->primaryKey => $id));
@@ -114,9 +114,9 @@ class PadresController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Padre->delete()) {
-			$this->Session->setFlash(__('Padre / Diácono excluído com sucesso.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Padre / Diácono excluído com sucesso.'), 'success', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The padre could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('The padre could not be deleted. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

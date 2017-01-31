@@ -99,10 +99,10 @@ class EventosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Evento->create();
 			if ($this->Evento->save($this->request->data)) {
-				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index', $id));
 			} else {
-				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		}
 		
@@ -127,10 +127,10 @@ class EventosController extends AppController {
 		
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Evento->save($this->request->data)) {
-				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Evento salvo com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index', $idcomunidade));
 			} else {
-				$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('Erro, tente novamente.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
@@ -162,9 +162,9 @@ class EventosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Evento->delete()) {
-			$this->Session->setFlash(__('Evento excluído com sucesso.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Evento excluído com sucesso.'), 'success', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('Erro, tente novamente.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('Erro, tente novamente.'), 'error', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index', $idcomunidade));
 	}

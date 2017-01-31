@@ -179,6 +179,7 @@ span[class*="entypo-"] {
   margin-right: 150px;
   /*margin-left: 12%; se não centralizar*/
   margin-bottom: 25px;
+  font-family: "Ar Berkley" !important;
 }
 
 .navbar-nav.large {

@@ -65,10 +65,10 @@ class SacramentosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Sacramento->create();
 			if ($this->Sacramento->save($this->request->data)) {
-				$this->Session->setFlash(__('Sacramento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Sacramento salvo com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The sacramento could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The sacramento could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		}
 	}
@@ -89,10 +89,10 @@ class SacramentosController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Sacramento->save($this->request->data)) {
-				$this->Session->setFlash(__('Sacramento salvo com sucesso.'), 'default', array('class' => 'alert alert-success'));
+				$this->Session->setFlash(__('Sacramento salvo com sucesso.'), 'success', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The sacramento could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash(__('The sacramento could not be saved. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Sacramento.' . $this->Sacramento->primaryKey => $id));
@@ -114,9 +114,9 @@ class SacramentosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Sacramento->delete()) {
-			$this->Session->setFlash(__('Sacramento excluído com sucesso.'), 'default', array('class' => 'alert alert-success'));
+			$this->Session->setFlash(__('Sacramento excluído com sucesso.'), 'success', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The sacramento could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('The sacramento could not be deleted. Please, try again.'), 'error', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
