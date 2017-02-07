@@ -27,7 +27,7 @@
 			<?php echo $this->Form->create('Comunidade', array('role' => 'form', 'type' => 'file')); ?>
 
 				<div class="form-group">
-					<?php echo $this->Form->input('nome', array('class' => 'form-control', 'placeholder' => 'Nome'));?>
+					<?php echo $this->Form->input('nome', array('class' => 'form-control', 'placeholder' => 'Nome', 'required' => 'true'));?>
 				</div>
 				<div class="form-group">
 					<?php echo $this->Form->input('tipo', array('options' => $tipo, 'class' => 'form-control'));?>

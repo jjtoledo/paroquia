@@ -1,3 +1,7 @@
+<title>
+    <?php $this->assign('title', $title); ?>
+</title>
+
 <div class="margin"></div>
 
 <?php echo $this->Element('slideshowCom', array('id' => $comunidade['Comunidade']['id'])) ?>

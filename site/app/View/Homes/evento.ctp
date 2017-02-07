@@ -1,3 +1,7 @@
+<title>
+    <?php $this->assign('title', $title); ?>
+</title>
+
 <div class="container-fluid margin_semSlide">
 	<div class="row">
 		<div class="col-md-9">

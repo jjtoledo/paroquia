@@ -60,7 +60,6 @@ class Comunidade extends AppModel {
 		)
 	);
 
-
 	public function beforeSave($options = array()) {
 		//debug($this->data);
 		if(!empty($this->data['Comunidade']['foto_padroeiro']['name'])) {

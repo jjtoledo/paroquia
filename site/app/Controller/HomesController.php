@@ -18,7 +18,10 @@ class HomesController extends AppController {
  */
 	public $components = array('Paginator', 'Flash', 'Session');
 
-	public function index() {        
+	public function index() { 
+
+        $this->set('title', 'Início');
+
         $this->loadModel('FotoComunidade');
         $options = array(
             'order' => 'rand()',
@@ -56,7 +59,10 @@ class HomesController extends AppController {
         }
     }
 
-    public function eventos($tipo = null) {        
+    public function eventos($tipo = null) { 
+
+        $this->set('title', 'Eventos');
+
         $this->loadModel('Evento');
         $this->loadModel('FotoEvento');
         
@@ -99,10 +105,13 @@ class HomesController extends AppController {
     }
 
     public function evento($id = null) {
+
         $this->loadModel('Evento');
 
         $evento = $this->Evento->findById($id);
         $this->set(compact('evento'));
+
+        $this->set('title', 'Evento: '. $evento['Evento']['nome']);
 
         $this->common();
 
@@ -112,6 +121,9 @@ class HomesController extends AppController {
     }
 
     public function pdfs() {
+
+        $this->set('title', 'Jornais');
+
         $this->common();        
         $this->loadModel('Pdf');
 
@@ -128,6 +140,9 @@ class HomesController extends AppController {
     }
 
     public function padresediacono() {
+
+        $this->set('title', 'Padres e Diácono');
+
         $this->loadModel('Padre');
         
         $padres = $this->Padre->find('all');
@@ -141,6 +156,9 @@ class HomesController extends AppController {
     }
 
     public function comunidades() {
+
+        $this->set('title', 'Comunidades');
+
         $this->loadModel('Comunidade');
         
         $comunidades = $this->Comunidade->find('all');
@@ -159,6 +177,8 @@ class HomesController extends AppController {
         $comunidade = $this->Comunidade->findById($id);
         $this->set(compact('comunidade'));
 
+        $this->set('title', 'Comunidade: '. $comunidade['Comunidade']['nome']);
+
         $this->loadModel('FotoComunidade');
         $fotos_com = $this->FotoComunidade->find('all');
         $this->set(compact('fotos_com'));
@@ -171,6 +191,9 @@ class HomesController extends AppController {
     }
 
     public function sacramentos() {
+
+        $this->set('title', 'Sacramentos');
+
         $this->loadModel('Sacramento');
         
         $sacramentos = $this->Sacramento->find('all');
@@ -184,6 +207,9 @@ class HomesController extends AppController {
     }
 
     public function pastoraisemov() {
+
+        $this->set('title', 'Pastorais e Movimentos');
+
         $this->loadModel('Pastoral');
         
         $pastorals = $this->Pastoral->find('all');
@@ -197,6 +223,8 @@ class HomesController extends AppController {
     }
 
     public function fale_conosco() {
+
+        $this->set('title', 'Fale Conosco');
 
         $this->common();
 
@@ -231,6 +259,8 @@ class HomesController extends AppController {
     }
 
     public function visitas() {
+
+        $this->set('title', 'Agendar Visita');
         
         $tipo = array(
             'Confissão' => 'Confissão',
@@ -273,6 +303,9 @@ class HomesController extends AppController {
     }
 
     public function dizimo() {
+
+        $this->set('title', 'Dízimo');
+
         $this->common();
 
         if(isset($this->params['url']['search'])) {  
@@ -292,6 +325,9 @@ class HomesController extends AppController {
     }
 
     public function buscar($busca = null) {
+
+        $this->set('title', 'Resultados da busca');
+
         $this->common();
 
         $this->loadModel('Pdf');

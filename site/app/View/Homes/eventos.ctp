@@ -1,3 +1,7 @@
+<title>
+    <?php $this->assign('title', $title); ?>
+</title>
+
 <?php //echo $this->Element('slideshowEv') ?>
 
 <div class="container-fluid margin_semSlide">
