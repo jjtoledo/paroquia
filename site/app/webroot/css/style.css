@@ -174,7 +174,7 @@ span[class*="entypo-"] {
 .paroquia {
   font-size: 40px;
   color: #f8f8f8;
-  margin-top: 12px;
+  margin-top: 6px;
   text-align: center;
   margin-right: 150px;
   /*margin-left: 12%; se não centralizar*/
@@ -451,7 +451,7 @@ p {
 .pNavbar {
   background-color: #DAA82D !important;
   font-family: 'Ar Berkley' !important;
-  font-size: 45px;
+  font-size: 50px;
 }
 
 @font-face {
