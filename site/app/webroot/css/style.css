@@ -174,7 +174,7 @@ span[class*="entypo-"] {
 .paroquia {
   font-size: 40px;
   color: #f8f8f8;
-  margin-top: 20px;
+  margin-top: 12px;
   text-align: center;
   margin-right: 150px;
   /*margin-left: 12%; se não centralizar*/
@@ -450,6 +450,13 @@ p {
 
 .pNavbar {
   background-color: #DAA82D !important;
+  font-family: 'Ar Berkley' !important;
+  font-size: 45px;
+}
+
+@font-face {
+  font-family: 'Ar Berkley';
+  src: url("../fonts/ARBERKLEY.ttf");
 }
 
 .pRadio {

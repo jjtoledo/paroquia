@@ -15,7 +15,7 @@
     <?php echo $this->Html->image('sj4.png', array('width' => '116px', 'class' => 'saoJoao')) ?>
   </ul> 
   <div class="collapse navbar-collapse">
-    <p class="paroquia pNavbar">Paróquia São João Batista</p>
+    <p class="paroquia pNavbar">&nbsp;Paróquia de São João Batista</p>
     <div class="text-center">
       <div style="display: inline-block">
         <ul class="nav navbar-nav center media-top">

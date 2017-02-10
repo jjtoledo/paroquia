@@ -37,6 +37,8 @@
     	body{ padding: 0px 0px; }
     </style>
 
+    <!--<link href='//fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>-->
+
   </head>
 
   <body style="background-color: #ddd">
